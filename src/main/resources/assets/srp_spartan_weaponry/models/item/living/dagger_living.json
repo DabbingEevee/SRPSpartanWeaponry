@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"spartanweaponry:items/dagger_wood"
+        "layer0":"srp_spartan_weaponry:living/living_dagger"
     },
     "display": {
         "thirdperson_righthand": {
