@@ -37,3 +37,4 @@ bin/
 #idk what these are but they should go in
 *.kate-swp
 .classpath
+.project
