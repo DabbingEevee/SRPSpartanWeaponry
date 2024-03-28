@@ -1,1 +1,6 @@
 material.srp_spartan_weaponry:living=Living
+
+item.srp_spartan_weaponry:claymore_living.name=Living Claymore
+
+item.infectious_long_blade_fragment.name=Infectious Long Base Fragment
+item.hardened_bone_pole.name=Hardened Bone Pole
