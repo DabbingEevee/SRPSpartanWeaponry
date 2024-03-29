@@ -18,7 +18,11 @@ import com.oblivioussp.spartanweaponry.item.ItemHammer;
 import com.oblivioussp.spartanweaponry.item.ItemJavelin;
 import com.oblivioussp.spartanweaponry.item.ItemKatana;
 import com.oblivioussp.spartanweaponry.item.ItemLongsword;
+import com.oblivioussp.spartanweaponry.item.ItemMace;
+import com.oblivioussp.spartanweaponry.item.ItemParryingDagger;
 import com.oblivioussp.spartanweaponry.item.ItemPike;
+import com.oblivioussp.spartanweaponry.item.ItemQuarterstaff;
+import com.oblivioussp.spartanweaponry.item.ItemRapier;
 import com.oblivioussp.spartanweaponry.item.ItemSaber;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
@@ -45,12 +49,17 @@ public class ParasiteSWWeapons {
 	public static ItemJavelin javelinLiving = null;
 	public static ItemKatana katanaLiving = null;
 	public static ItemLongsword longswordLiving = null;
+	public static ItemMace maceLiving = null;
+	public static ItemParryingDagger parryDaggerLiving = null;
 	public static ItemPike pikeLiving = null;
 	public static ItemSaber saberLiving = null;
+	public static ItemQuarterstaff quarterstaffLiving = null;
+	public static ItemRapier rapierLiving = null;
 	public static ItemSpear spearLiving = null;
 	public static ItemThrowingAxe throwingAxeLiving = null;
 	public static ItemThrowingKnife throwingKnifeLiving = null;
 	public static ItemWarhammer warhammerLiving = null;
+
 
 	private static List<Item> initalizeItems(List<Item> items) {
 		
@@ -81,11 +90,23 @@ public class ParasiteSWWeapons {
 		longswordLiving = (ItemLongsword) SpartanWeaponryAPI.createLongsword(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
 		items.add(longswordLiving);
 		
+		maceLiving  = (ItemMace) SpartanWeaponryAPI.createMace(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
+		items.add(maceLiving);
+		
+		parryDaggerLiving = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
+		items.add(parryDaggerLiving);
+		
 		pikeLiving = (ItemPike) SpartanWeaponryAPI.createPike(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
 		items.add(pikeLiving);
 		
 		saberLiving = (ItemSaber) SpartanWeaponryAPI.createSaber(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
 		items.add(saberLiving);
+		
+		quarterstaffLiving = (ItemQuarterstaff) SpartanWeaponryAPI.createQuarterstaff(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
+		items.add(quarterstaffLiving);
+		
+		rapierLiving = (ItemRapier) SpartanWeaponryAPI.createRapier(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
+		items.add(rapierLiving);
 		
 		spearLiving = (ItemSpear) SpartanWeaponryAPI.createSpear(MATERIAL_LIVING, SRPSpartanWeaponry.MOD_ID, CreativeTabsSW.TAB_SW_MOD);
 		items.add(spearLiving);
