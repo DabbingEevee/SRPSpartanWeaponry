@@ -3,4 +3,10 @@ material.srp_spartan_weaponry:living=Living
 item.srp_spartan_weaponry:claymore_living.name=Living Claymore
 
 item.infectious_long_blade_fragment.name=Infectious Long Blade Fragment
+item.infectious_long_blade_fragment.desc=Maybe its not a good idea to use a unfinished weapon as an actual weapon...
+
 item.hardened_bone_pole.name=Hardened Bone Pole
+item.hardened_bone_pole.desc=something aaa
+
+tooltip.srp_spartan_weaponry:bleeding=Bleeding %s
+tooltip.srp_spartan_weaponry:bleeding.desc=Inflicts life-threatening injuries. Higher Bleeding levels will apply more potent bleed.
