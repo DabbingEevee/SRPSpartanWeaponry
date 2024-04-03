@@ -1,7 +1,7 @@
 material.srp_spartan_weaponry:living=§eLiving
 item.srp_spartan_weaponry:claymore_living.name=§eLiving Claymore
 
-easter_egg.srp_spartan_weaponry:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §cNERRRRRDDDDD§f.
+easter_egg.srp_spartan_weaponry:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §c	NERRRRRDDDDD§f.
 
 item.srp_spartan_weaponry:claymore_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.srp_spartan_weaponry:dagger_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
@@ -29,4 +29,4 @@ item.hardened_bone_pole.name=§eHardened Bone Pole
 item.hardened_bone_pole.desc=§fA particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
 
 tooltip.srp_spartan_weaponry:bleeding=Bleeding %s
-tooltip.srp_spartan_weaponry:bleeding.desc=§oInflicts §clife-threatening§7§o injuries. Higher Bleeding levels will apply more potent bleed.
+tooltip.srp_spartan_weaponry:bleeding.desc=§oInflicts §c§olife-threatening§7§o injuries. Higher Bleeding levels will apply more potent bleed.
