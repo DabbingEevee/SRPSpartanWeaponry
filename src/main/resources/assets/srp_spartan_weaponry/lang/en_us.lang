@@ -27,4 +27,4 @@ item.hardened_bone_pole.name=§eHardened Bone Pole
 item.hardened_bone_pole.desc=§fA particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
 
 tooltip.srp_spartan_weaponry:bleeding=Bleeding %s
-tooltip.srp_spartan_weaponry:bleeding.desc=§oInflicts §clife-threatening§o injuries. Higher Bleeding levels will apply more potent bleed.
+tooltip.srp_spartan_weaponry:bleeding.desc=§oInflicts §clife-threatening§7§o injuries. Higher Bleeding levels will apply more potent bleed.
