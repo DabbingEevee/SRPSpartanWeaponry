@@ -1,6 +1,5 @@
 package com.existingeevee.srp_spartan_weaponry.event;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
