@@ -3,10 +3,10 @@ material.srp_spartan_weaponry:living=Living
 item.srp_spartan_weaponry:claymore_living.name=Living Claymore
 
 item.infectious_long_blade_fragment.name=Infectious Long Blade Fragment
-item.infectious_long_blade_fragment.desc=Maybe its not a good idea to use a unfinished weapon as an actual weapon...
+item.infectious_long_blade_fragment.desc=A piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for Weapons.
 
 item.hardened_bone_pole.name=Hardened Bone Pole
-item.hardened_bone_pole.desc=something aaa
+item.hardened_bone_pole.desc=A particularly thick pole, composed of bones, produced from Parasites body parts. A Component for Weapons.
 
 tooltip.srp_spartan_weaponry:bleeding=Bleeding %s
 tooltip.srp_spartan_weaponry:bleeding.desc=Inflicts life-threatening injuries. Higher Bleeding levels will apply more potent bleed.
