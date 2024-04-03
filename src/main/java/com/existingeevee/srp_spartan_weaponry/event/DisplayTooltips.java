@@ -1,8 +1,11 @@
 package com.existingeevee.srp_spartan_weaponry.event;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.lwjgl.input.Keyboard;
 
 import com.existingeevee.srp_spartan_weaponry.SRPSpartanWeaponry;
 
@@ -12,10 +15,13 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber
 public class DisplayTooltips {
 
+	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void onItemTooltip(ItemTooltipEvent e) {
 		try {
@@ -25,12 +31,10 @@ public class DisplayTooltips {
 				return;
 
 			List<String> tooltip = e.getToolTip();
-			
-			//System.out.println(tooltip);
-			
+						
 			int indexToInsert = tooltip.isEmpty() ? 0 : 1;
-
-			String key = stack.getItem().getTranslationKey() + ".desc";
+			
+			String key = Keyboard.isKeyDown(Keyboard.KEY_T) ? "easter_egg.srp_spartan_weaponry:nerdvirus.desc" : stack.getItem().getTranslationKey() + ".desc";
 
 			if (I18n.canTranslate(key)) {
 				String translation = I18n.translateToLocal(key);

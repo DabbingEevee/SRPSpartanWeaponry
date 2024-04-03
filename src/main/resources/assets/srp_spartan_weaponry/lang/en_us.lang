@@ -1,6 +1,8 @@
 material.srp_spartan_weaponry:living=§eLiving
 item.srp_spartan_weaponry:claymore_living.name=§eLiving Claymore
 
+easter_egg.srp_spartan_weaponry:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §cNERRRRRDDDDD§f.
+
 item.srp_spartan_weaponry:claymore_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.srp_spartan_weaponry:dagger_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.srp_spartan_weaponry:glaive_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
