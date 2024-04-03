@@ -110,7 +110,7 @@ public class ParasiteSWWeapons {
 		items.add(quarterstaffLiving);
 		
 		rapierLiving = (ItemRapier) SpartanWeaponryAPI.createRapier(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
-		saberLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_1);
+		rapierLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_1);
 		items.add(rapierLiving);
 		
 		spearLiving = (ItemSpear) SpartanWeaponryAPI.createSpear(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
