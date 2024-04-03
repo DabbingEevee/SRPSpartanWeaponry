@@ -1,8 +1,24 @@
 material.srp_spartan_weaponry:living=§eLiving
 item.srp_spartan_weaponry:claymore_living.name=§eLiving Claymore
 
-item.srp_spartan_weaponry:claymore_living.desc=§fTreeVirus is a §4NERRRRRRRRDDDDDDDDDD§f, this is a massive §4L
-
+item.srp_spartan_weaponry:claymore_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:dagger_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:glaive_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:halberd_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:hammer_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:javelin_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:katana_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:longsword_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:mace_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:parrying_dagger_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:pike_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:saber_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:staff_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:rapier_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:spear_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:throwing_axe_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:throwing_knife_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.srp_spartan_weaponry:warhammer_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 
 item.infectious_long_blade_fragment.name=§eInfectious Long Blade Fragment
 item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for §6Weapons§f.
@@ -11,4 +27,4 @@ item.hardened_bone_pole.name=§eHardened Bone Pole
 item.hardened_bone_pole.desc=§fA particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
 
 tooltip.srp_spartan_weaponry:bleeding=Bleeding %s
-tooltip.srp_spartan_weaponry:bleeding.desc=§fInflicts §clife-threatening§f injuries. Higher Bleeding levels will apply more potent bleed.
+tooltip.srp_spartan_weaponry:bleeding.desc=§oInflicts §clife-threatening§o injuries. Higher Bleeding levels will apply more potent bleed.
