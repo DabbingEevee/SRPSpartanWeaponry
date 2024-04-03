@@ -39,7 +39,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber
 public class ParasiteSWWeapons {
 
-	public static final ToolMaterialEx MATERIAL_LIVING = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, 1000, 7.5f, 5.0f, 18);
+	public static final ToolMaterialEx MATERIAL_LIVING = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, 1000, 7.5f, 7.0f, 18);
 
 	public static ItemGreatsword claymoreLiving = null; 
 	public static ItemDagger daggerLiving = null;

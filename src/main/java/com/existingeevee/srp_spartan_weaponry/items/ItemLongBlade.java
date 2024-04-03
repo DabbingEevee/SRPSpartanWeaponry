@@ -1,18 +1,10 @@
 package com.existingeevee.srp_spartan_weaponry.items;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemLongBlade extends ItemSword {
 
@@ -31,10 +23,5 @@ public class ItemLongBlade extends ItemSword {
 			shouldProc.set(true);
 		}
 		return true;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 	}
 }
