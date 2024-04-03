@@ -1,12 +1,14 @@
-material.srp_spartan_weaponry:living=Living
+material.srp_spartan_weaponry:living=§eLiving
+item.srp_spartan_weaponry:claymore_living.name=§eLiving Claymore
 
-item.srp_spartan_weaponry:claymore_living.name=Living Claymore
+item.srp_spartan_weaponry:claymore_living.desc=§fTreeVirus is a §4NERRRRRRRRDDDDDDDDDD§f, this is a massive §4L
 
-item.infectious_long_blade_fragment.name=Infectious Long Blade Fragment
-item.infectious_long_blade_fragment.desc=A piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for §6Weapons§f.
 
-item.hardened_bone_pole.name=Hardened Bone Pole
-item.hardened_bone_pole.desc=A particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
+item.infectious_long_blade_fragment.name=§eInfectious Long Blade Fragment
+item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for §6Weapons§f.
+
+item.hardened_bone_pole.name=§eHardened Bone Pole
+item.hardened_bone_pole.desc=§fA particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
 
 tooltip.srp_spartan_weaponry:bleeding=Bleeding %s
 tooltip.srp_spartan_weaponry:bleeding.desc=§fInflicts §clife-threatening§f injuries. Higher Bleeding levels will apply more potent bleed.

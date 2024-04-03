@@ -2,7 +2,6 @@ package com.existingeevee.srp_spartan_weaponry.init;
 
 import com.dhanantry.scapeandrunparasites.SRPMain;
 import com.existingeevee.srp_spartan_weaponry.SRPSpartanWeaponry;
-import com.existingeevee.srp_spartan_weaponry.items.DescriptiveItem;
 import com.existingeevee.srp_spartan_weaponry.items.ItemLongBlade;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 
@@ -25,7 +24,7 @@ public class ParasiteSWItems {
 	@SubscribeEvent
 	public static void onItemRegisterEvent(RegistryEvent.Register<Item> ev) {
 		infLongBlade = new ItemLongBlade(longBladeToolMat).setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("infectious_long_blade_fragment").setRegistryName("infectious_long_blade_fragment");
-		hardbonePole = new DescriptiveItem().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole").setRegistryName("hardened_bone_pole");
+		hardbonePole = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole").setRegistryName("hardened_bone_pole");
 		
 		ev.getRegistry().register(infLongBlade);
 		ModelRenderRegistry.addItemToRegistry(infLongBlade, 
