@@ -73,13 +73,15 @@ public class ParasiteSWWeapons {
 		items.add(daggerLiving);
 
 		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
-		glaiveLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_3);
+		glaiveLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_2);
 		items.add(glaiveLiving);
 		
 		halbardLiving = (ItemHalberd) SpartanWeaponryAPI.createHalberd(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		halbardLiving.addWeaponProperty(ParasiteSWProperties.CORROSION_1);
 		items.add(halbardLiving);
 		
 		hammerLiving = (ItemHammer) SpartanWeaponryAPI.createHammer(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		hammerLiving.addWeaponProperty(ParasiteSWProperties.IMMALLEABLE);
 		items.add(hammerLiving);
 		
 		javelinLiving = (ItemJavelin) SpartanWeaponryAPI.createJavelin(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -93,6 +95,7 @@ public class ParasiteSWWeapons {
 		items.add(longswordLiving);
 		
 		maceLiving  = (ItemMace) SpartanWeaponryAPI.createMace(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		maceLiving.addWeaponProperty(ParasiteSWProperties.CORROSION_2);
 		items.add(maceLiving);
 		
 		parryDaggerLiving = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -103,10 +106,11 @@ public class ParasiteSWWeapons {
 		items.add(pikeLiving);
 		
 		saberLiving = (ItemSaber) SpartanWeaponryAPI.createSaber(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
-		saberLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_2);
+		saberLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_1);
 		items.add(saberLiving);
 		
 		quarterstaffLiving = (ItemQuarterstaff) SpartanWeaponryAPI.createQuarterstaff(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		quarterstaffLiving.addWeaponProperty(ParasiteSWProperties.IMMALLEABLE);
 		items.add(quarterstaffLiving);
 		
 		rapierLiving = (ItemRapier) SpartanWeaponryAPI.createRapier(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -118,12 +122,14 @@ public class ParasiteSWWeapons {
 		items.add(spearLiving);
 		
 		throwingAxeLiving = (ItemThrowingAxe) SpartanWeaponryAPI.createThrowingAxe(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		throwingAxeLiving.addWeaponProperty(ParasiteSWProperties.CORROSION_1);
 		items.add(throwingAxeLiving);
 		
 		throwingKnifeLiving = (ItemThrowingKnife) SpartanWeaponryAPI.createThrowingKnife(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		items.add(throwingKnifeLiving);
 		
 		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		warhammerLiving.addWeaponProperty(ParasiteSWProperties.IMMALLEABLE);
 		items.add(warhammerLiving);
 		
 		return items;
