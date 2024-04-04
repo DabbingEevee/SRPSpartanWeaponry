@@ -9,17 +9,17 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 
-public class BleedingWeaponProperty extends WeaponPropertyWithCallback {
+public class CorrosionWeaponProperty extends WeaponPropertyWithCallback {
 
-	public BleedingWeaponProperty(int propLevel) {
-		super("bleeding", SRPSpartanWeaponry.MODID, propLevel, propLevel);
+	public CorrosionWeaponProperty(int propLevel) {
+		super("corrosion", SRPSpartanWeaponry.MODID, propLevel, propLevel);
 	}
 
 	@Override
 	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {		
 		//Im sorry
 		for (int i = 0; i < getMagnitude(); i++) {
-			SRPItems.weapon_sword.hitEntity(stack, target, attacker);
+			SRPItems.weapon_axe.hitEntity(stack, target, attacker);
 		}
 	}
 }
