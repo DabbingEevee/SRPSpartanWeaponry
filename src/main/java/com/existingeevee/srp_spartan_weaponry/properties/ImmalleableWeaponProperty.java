@@ -18,11 +18,11 @@ public class ImmalleableWeaponProperty extends WeaponPropertyWithCallback {
 
 	@Override
 	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {
-		double chance = 1d / 6;
+		double chance = 1d / 8;
 		int amp = 0;
 
 		if (attacker.world.rand.nextDouble() < chance) {
-			target.addPotionEffect(new PotionEffect(SRPPotions.RES_E, 100, amp, false, false));
+			target.addPotionEffect(new PotionEffect(SRPPotions.RES_E, 40, amp, false, false));
 		}
 	}
 }
