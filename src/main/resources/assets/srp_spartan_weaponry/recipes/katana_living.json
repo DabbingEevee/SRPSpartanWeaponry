@@ -4,7 +4,7 @@
   "pattern": [
     " OB",
     "OLV",
-    "HV"
+    "HV "
   ],
   "key": {
     "B": {
@@ -18,10 +18,7 @@
     },
     "H": {
       "item": "srparasites:hardened_bone_handle"
-    }
-    "P": {
-      "item": "srp_spartan_weaponry:hardened_bone_pole"
-    }
+    },
     "O": {
       "item": "srp_spartan_weaponry:infectious_long_blade_fragment"
     }

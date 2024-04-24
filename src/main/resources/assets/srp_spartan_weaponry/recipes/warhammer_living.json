@@ -2,9 +2,9 @@
   "group": "srp_spartan_weaponry",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "VV",
+    "VV ",
     "VLB",
-    " H"
+    " H "
   ],
   "key": {
     "B": {

@@ -4,12 +4,9 @@
   "pattern": [
     "VVV",
     "VLV",
-    " H"
+    " H "
   ],
   "key": {
-    "B": {
-      "item": "srparasites:infectious_blade_fragment"
-    },
     "V": {
       "item": "srparasites:vile_shell"
     },

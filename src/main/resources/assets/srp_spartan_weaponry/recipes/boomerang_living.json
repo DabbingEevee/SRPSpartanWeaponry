@@ -3,13 +3,10 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "LVH",
-    "V",
-    "H"
+    "V  ",
+    "H  "
   ],
   "key": {
-    "B": {
-      "item": "srparasites:infectious_blade_fragment"
-    },
     "V": {
       "item": "srparasites:vile_shell"
     },

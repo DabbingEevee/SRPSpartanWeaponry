@@ -3,8 +3,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " BV",
-    "HLB",
-    ""
+    "HLB"
   ],
   "key": {
     "B": {
