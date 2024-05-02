@@ -33,8 +33,16 @@ public class DisplayTooltips {
 						
 			int indexToInsert = tooltip.isEmpty() ? 0 : 1;
 			
-			String key = Keyboard.isKeyDown(Keyboard.KEY_T) ? "easter_egg.srp_spartan_weaponry:nerdvirus.desc" : stack.getItem().getTranslationKey() + ".desc";
-
+			String key = stack.getItem().getTranslationKey() + ".desc";
+			
+			if (Keyboard.isKeyDown(Keyboard.KEY_T)) {
+				key = "easter_egg.srp_spartan_weaponry:nerdvirus.desc";
+			} else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
+				key = "easter_egg.srp_spartan_weaponry:sweebozo.desc";
+			} else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
+				key = "easter_egg.srp_spartan_weaponry:ev.desc";
+			}
+			
 			if (I18n.canTranslate(key)) {
 				String translation = I18n.translateToLocal(key);
 				if (!translation.contains("--null")) {

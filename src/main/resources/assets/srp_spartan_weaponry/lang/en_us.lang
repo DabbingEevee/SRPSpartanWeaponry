@@ -1,7 +1,9 @@
 material.srp_spartan_weaponry:living=§eLiving
 
 
-easter_egg.srp_spartan_weaponry:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §c	NERRRRRDDDDD§f.
+easter_egg.srp_spartan_weaponry:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §cNERRRRRDDDDD§f. :3
+easter_egg.srp_spartan_weaponry:sweebozo.desc=SWEEBOZO MOMENT RAHHHH
+easter_egg.srp_spartan_weaponry:ev.desc=ExistingEevee was here :3
 
 
 item.srp_spartan_weaponry:claymore_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
