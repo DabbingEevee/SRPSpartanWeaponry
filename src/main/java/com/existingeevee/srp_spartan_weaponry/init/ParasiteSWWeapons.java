@@ -67,9 +67,11 @@ public class ParasiteSWWeapons {
 				.setTranslationKey("claymore_living");
 		Utils.forceSetRegistryName(claymoreLiving, "claymore_living");
 		Utils.resetAutogenName(claymoreLiving);
+		claymoreLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
 		items.add(claymoreLiving);
 		
 		daggerLiving = (ItemDagger) SpartanWeaponryAPI.createDagger(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		daggerLiving.addWeaponProperty(ParasiteSWProperties.CLOAKING);
 		items.add(daggerLiving);
 
 		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -89,9 +91,11 @@ public class ParasiteSWWeapons {
 		items.add(javelinLiving);
 		
 		katanaLiving = (ItemKatana) SpartanWeaponryAPI.createKatana(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		katanaLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
 		items.add(katanaLiving);
 		
 		longswordLiving = (ItemLongsword) SpartanWeaponryAPI.createLongsword(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		longswordLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_2);
 		items.add(longswordLiving);
 		
 		maceLiving  = (ItemMace) SpartanWeaponryAPI.createMace(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -99,6 +103,7 @@ public class ParasiteSWWeapons {
 		items.add(maceLiving);
 		
 		parryDaggerLiving = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		parryDaggerLiving.addWeaponProperty(ParasiteSWProperties.REPULSE);
 		items.add(parryDaggerLiving);
 		
 		pikeLiving = (ItemPike) SpartanWeaponryAPI.createPike(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
@@ -126,6 +131,7 @@ public class ParasiteSWWeapons {
 		items.add(throwingAxeLiving);
 		
 		throwingKnifeLiving = (ItemThrowingKnife) SpartanWeaponryAPI.createThrowingKnife(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		throwingKnifeLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
 		items.add(throwingKnifeLiving);
 		
 		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
