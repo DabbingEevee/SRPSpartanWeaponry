@@ -39,7 +39,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber
 public class ParasiteSWWeapons {
 
-	public static final ToolMaterialEx MATERIAL_LIVING = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, 1000, 7.5f, 7.0f, 18);
+	public static final ToolMaterialEx MATERIAL_LIVING = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, 1000, 7.5f, 6.0f, 18);
 
 	public static ItemGreatsword claymoreLiving = null; 
 	public static ItemDagger daggerLiving = null;
@@ -59,7 +59,6 @@ public class ParasiteSWWeapons {
 	public static ItemThrowingAxe throwingAxeLiving = null;
 	public static ItemThrowingKnife throwingKnifeLiving = null;
 	public static ItemWarhammer warhammerLiving = null;
-
 
 	private static List<Item> initalizeItems(List<Item> items) {
 		
@@ -155,6 +154,9 @@ public class ParasiteSWWeapons {
 				}
 				
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
+				
+				container.addWeaponProperty(ParasiteSWProperties.SLOW);
+				
 				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();
 				

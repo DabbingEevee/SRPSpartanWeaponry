@@ -5,6 +5,7 @@ import com.existingeevee.swparasites.properties.CloakingWeaponProperty;
 import com.existingeevee.swparasites.properties.CorrosionWeaponProperty;
 import com.existingeevee.swparasites.properties.ImmalleableWeaponProperty;
 import com.existingeevee.swparasites.properties.RepulseWeaponProperty;
+import com.existingeevee.swparasites.properties.HeavyWeaponProperty;
 import com.existingeevee.swparasites.properties.ViralWeaponProperty;
 
 public class ParasiteSWProperties {
@@ -23,6 +24,8 @@ public class ParasiteSWProperties {
 	public static final CloakingWeaponProperty CLOAKING = new CloakingWeaponProperty();
 	
 	public static final RepulseWeaponProperty REPULSE = new RepulseWeaponProperty();
+	
+	public static final HeavyWeaponProperty SLOW = new HeavyWeaponProperty();
 
 	
 }

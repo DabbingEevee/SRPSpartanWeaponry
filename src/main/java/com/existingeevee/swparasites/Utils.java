@@ -15,4 +15,8 @@ public class Utils {
 	public static void resetAutogenName(ItemSwordBase impl) {
 		ObfuscationReflectionHelper.setPrivateValue(ItemSwordBase.class, impl, null, "displayName");
 	}
+		
+	public static void multiplyAttackSpeed(ItemSwordBase impl, double multiplier) {
+		ObfuscationReflectionHelper.setPrivateValue(ItemSwordBase.class, impl, null, "attackSpeed");
+	}
 }
