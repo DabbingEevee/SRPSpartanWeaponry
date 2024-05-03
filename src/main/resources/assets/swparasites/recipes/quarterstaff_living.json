@@ -1,0 +1,24 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " VV",
+    " P ",
+    "VL "
+  ],
+  "key": {
+    "V": {
+      "item": "srparasites:vile_shell"
+    },
+    "L": {
+      "item": "srparasites:living_core"
+    },
+    "P": {
+      "item": "swparasites:hardened_bone_pole"
+    }
+  },
+  "result": {
+    "item": "swparasites:quarterstaff_living",
+    "count": 1
+  }
+}

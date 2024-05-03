@@ -1,0 +1,27 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B",
+    "VL",
+    " H"
+  ],
+  "key": {
+    "B": {
+      "item": "srparasites:infectious_blade_fragment"
+    },
+    "V": {
+      "item": "srparasites:vile_shell"
+    },
+    "L": {
+      "item": "srparasites:living_core"
+    },
+    "H": {
+      "item": "srparasites:hardened_bone_handle"
+    }
+  },
+  "result": {
+    "item": "swparasites:dagger_living",
+    "count": 1
+  }
+}
