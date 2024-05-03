@@ -20,7 +20,7 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
 		PotionEffect effect = entity.getActivePotionEffect(MobEffects.INVISIBILITY);
 		
-		if (entity.isSneaking() && (effect == null || effect.getDuration() <= 1)) {
+		if (entity.isSneaking() && (effect == null || effect.getDuration() <= 1) && isSelected) {
 			entity.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 2, 0, false, false));
 		}
 	}
