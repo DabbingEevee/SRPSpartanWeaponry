@@ -2,8 +2,8 @@ material.swparasites:living=§eLiving
 
 
 easter_egg.swparasites:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §cNERRRRRDDDDD§f. :3
-easter_egg.swparasites:sweebozo.desc=SWEEBOZO MOMENT RAHHHH
-easter_egg.swparasites:ev.desc=ExistingEevee was here :3
+easter_egg.swparasites:sweebozo.desc=§6SWEEBOZO §fMOMENT RAHHHH
+easter_egg.swparasites:ev.desc=§6ExistingEevee §fwas here §c:3
 
 
 item.swparasites:claymore_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
@@ -43,3 +43,9 @@ tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over ti
 
 tooltip.swparasites:immalleable=Immalleable
 tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation.
+
+tooltip.swparasites:repulse=Repulse
+tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the user.
+
+tooltip.swparasites:cloaking=Cloaking
+tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming.
