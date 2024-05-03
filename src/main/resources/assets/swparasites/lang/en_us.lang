@@ -39,7 +39,7 @@ tooltip.swparasites:bleeding=Bleeding %s
 tooltip.swparasites:bleeding.desc=§oInflicts §c§olife-threatening§7§o injuries. Higher Bleeding levels will apply more a potent bleed more often.
 
 tooltip.swparasites:corrosion=Corrosion %s
-tooltip.swparasites:corrosion.desc=§oAGAGAGAAGAAG
+tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher Corrosion levels will apply more potent acid.
 
 tooltip.swparasites:immalleable=Immalleable
-tooltip.swparasites:immalleable.desc=§oAGAGAGAAGAAG
+tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation.
