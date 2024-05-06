@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
+import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -39,9 +40,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber
 public class ParasiteSWWeapons {
 
-	public static final ToolMaterialEx MATERIAL_LIVING = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, 1000, 7.5f, 6.0f, 18);
+	public static ToolMaterialEx livingMaterial;
 
-	public static ItemGreatsword claymoreLiving = null; 
+	public static ItemGreatsword claymoreLiving = null;
 	public static ItemDagger daggerLiving = null;
 	public static ItemGlaive glaiveLiving = null;
 	public static ItemHalberd halbardLiving = null;
@@ -61,83 +62,92 @@ public class ParasiteSWWeapons {
 	public static ItemWarhammer warhammerLiving = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
-		
-		claymoreLiving = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD)
+
+		livingMaterial = getLivingMaterial();
+
+		claymoreLiving = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD)
 				.setTranslationKey("claymore_living");
 		Utils.forceSetRegistryName(claymoreLiving, "claymore_living");
 		Utils.resetAutogenName(claymoreLiving);
 		claymoreLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
 		items.add(claymoreLiving);
-		
-		daggerLiving = (ItemDagger) SpartanWeaponryAPI.createDagger(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		daggerLiving = (ItemDagger) SpartanWeaponryAPI.createDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		daggerLiving.addWeaponProperty(ParasiteSWProperties.CLOAKING);
 		items.add(daggerLiving);
 
-		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		glaiveLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_2);
 		items.add(glaiveLiving);
-		
-		halbardLiving = (ItemHalberd) SpartanWeaponryAPI.createHalberd(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		halbardLiving = (ItemHalberd) SpartanWeaponryAPI.createHalberd(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		halbardLiving.addWeaponProperty(ParasiteSWProperties.CORROSION_1);
 		items.add(halbardLiving);
-		
-		hammerLiving = (ItemHammer) SpartanWeaponryAPI.createHammer(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		hammerLiving = (ItemHammer) SpartanWeaponryAPI.createHammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		hammerLiving.addWeaponProperty(ParasiteSWProperties.IMMALLEABLE);
 		items.add(hammerLiving);
-		
-		javelinLiving = (ItemJavelin) SpartanWeaponryAPI.createJavelin(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		javelinLiving = (ItemJavelin) SpartanWeaponryAPI.createJavelin(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		javelinLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_2);
 		items.add(javelinLiving);
-		
-		katanaLiving = (ItemKatana) SpartanWeaponryAPI.createKatana(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		katanaLiving = (ItemKatana) SpartanWeaponryAPI.createKatana(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		katanaLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
 		items.add(katanaLiving);
-		
-		longswordLiving = (ItemLongsword) SpartanWeaponryAPI.createLongsword(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		longswordLiving = (ItemLongsword) SpartanWeaponryAPI.createLongsword(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		longswordLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_2);
 		items.add(longswordLiving);
-		
-		maceLiving  = (ItemMace) SpartanWeaponryAPI.createMace(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		maceLiving = (ItemMace) SpartanWeaponryAPI.createMace(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		maceLiving.addWeaponProperty(ParasiteSWProperties.CORROSION_2);
 		items.add(maceLiving);
-		
-		parryDaggerLiving = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		parryDaggerLiving = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		parryDaggerLiving.addWeaponProperty(ParasiteSWProperties.REPULSE);
 		items.add(parryDaggerLiving);
-		
-		pikeLiving = (ItemPike) SpartanWeaponryAPI.createPike(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		pikeLiving = (ItemPike) SpartanWeaponryAPI.createPike(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		pikeLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_2);
 		items.add(pikeLiving);
-		
-		saberLiving = (ItemSaber) SpartanWeaponryAPI.createSaber(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		saberLiving = (ItemSaber) SpartanWeaponryAPI.createSaber(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		saberLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_1);
 		items.add(saberLiving);
-		
-		quarterstaffLiving = (ItemQuarterstaff) SpartanWeaponryAPI.createQuarterstaff(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		quarterstaffLiving = (ItemQuarterstaff) SpartanWeaponryAPI.createQuarterstaff(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		quarterstaffLiving.addWeaponProperty(ParasiteSWProperties.IMMALLEABLE);
 		items.add(quarterstaffLiving);
-		
-		rapierLiving = (ItemRapier) SpartanWeaponryAPI.createRapier(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		rapierLiving = (ItemRapier) SpartanWeaponryAPI.createRapier(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		rapierLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_1);
 		items.add(rapierLiving);
-		
-		spearLiving = (ItemSpear) SpartanWeaponryAPI.createSpear(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		spearLiving = (ItemSpear) SpartanWeaponryAPI.createSpear(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		spearLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_1);
 		items.add(spearLiving);
-		
-		throwingAxeLiving = (ItemThrowingAxe) SpartanWeaponryAPI.createThrowingAxe(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		throwingAxeLiving = (ItemThrowingAxe) SpartanWeaponryAPI.createThrowingAxe(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		throwingAxeLiving.addWeaponProperty(ParasiteSWProperties.CORROSION_1);
 		items.add(throwingAxeLiving);
-		
-		throwingKnifeLiving = (ItemThrowingKnife) SpartanWeaponryAPI.createThrowingKnife(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		throwingKnifeLiving = (ItemThrowingKnife) SpartanWeaponryAPI.createThrowingKnife(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		throwingKnifeLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
 		items.add(throwingKnifeLiving);
-		
-		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(MATERIAL_LIVING, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+
+		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		warhammerLiving.addWeaponProperty(ParasiteSWProperties.IMMALLEABLE);
 		items.add(warhammerLiving);
-		
+
 		return items;
+	}
+
+	public static ToolMaterialEx getLivingMaterial() {
+		if (livingMaterial == null) {
+			livingMaterial = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, 1000, 7.5f, ParasiteSWConfig.livingBaseDmg, 18);
+		}
+		return livingMaterial;
 	}
 
 	@SubscribeEvent
@@ -152,14 +162,14 @@ public class ParasiteSWWeapons {
 				if (!(i instanceof IWeaponPropertyContainer)) {
 					continue;
 				}
-				
+
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
-				
+
 				container.addWeaponProperty(ParasiteSWProperties.SLOW);
-				
+
 				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();
-				
+
 				if (mat.getPrimaryColour() >= 0 && mat.getSecondaryColour() >= 0) {
 					ModelRenderRegistry.addItemToRegistry(i, new ResourceLocation(SRPSpartanWeaponry.MODID, modelPath), mat);
 				} else {

@@ -1,15 +1,20 @@
 package com.existingeevee.swparasites.items;
 
+import com.existingeevee.swparasites.config.ParasiteSWConfig;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class ItemLongBlade extends ItemSword {
 
-	public ItemLongBlade(ToolMaterial material) {
-		super(material);
+	public static ToolMaterial material;
+	
+	public ItemLongBlade() {
+		super(getMaterial());
 	}
 
 	private static final ThreadLocal<Boolean> shouldProc = ThreadLocal.withInitial(() -> true);
@@ -23,5 +28,12 @@ public class ItemLongBlade extends ItemSword {
 			shouldProc.set(true);
 		}
 		return true;
+	}
+	
+	private static ToolMaterial getMaterial() {
+		if (material == null) {
+			material = EnumHelper.addToolMaterial("SRPSW$LONG_BLADE", 0, 0, 0, ParasiteSWConfig.longBladeDmg, 0);
+		}
+		return material;
 	}
 }
