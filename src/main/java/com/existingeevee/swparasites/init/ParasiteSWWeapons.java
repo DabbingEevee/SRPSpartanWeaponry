@@ -143,7 +143,7 @@ public class ParasiteSWWeapons {
 
 	public static ToolMaterialEx getLivingMaterial() {
 		if (livingMaterial == null) {
-			livingMaterial = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, 1000, 7.5f, ParasiteSWConfig.livingBaseDmg, 18);
+			livingMaterial = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, ParasiteSWConfig.maxLivingDamage, 7.5f, ParasiteSWConfig.livingBaseDmg, 18);
 		}
 		return livingMaterial;
 	}
