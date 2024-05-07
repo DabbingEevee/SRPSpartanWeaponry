@@ -1,5 +1,5 @@
 {
-  "group": "srp_spartan_weaponry",
+  "group": "swparasites",
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " OB",
@@ -20,11 +20,11 @@
       "item": "srparasites:hardened_bone_handle"
     },
     "O": {
-      "item": "srp_spartan_weaponry:infectious_long_blade_fragment"
+      "item": "swparasites:infectious_long_blade_fragment"
     }
   },
   "result": {
-    "item": "srp_spartan_weaponry:longsword_living",
+    "item": "swparasites:longsword_living",
     "count": 1
   }
 }

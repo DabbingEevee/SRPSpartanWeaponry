@@ -30,7 +30,7 @@
             "predicate": {
                 "blocking": 1
             },
-            "model": "srp_spartan_weaponry:item/living/parrying_dagger_living_blocking"
+            "model": "swparasites:item/living/parrying_dagger_living_blocking"
         }
     ]
 }
