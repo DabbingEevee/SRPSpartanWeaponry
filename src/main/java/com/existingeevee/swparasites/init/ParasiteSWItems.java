@@ -8,10 +8,8 @@ import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod.EventBusSubscriber(modid = SRPSpartanWeaponry.MODID)
 public class ParasiteSWItems {
 	
 	public static Item infLongBlade = null;

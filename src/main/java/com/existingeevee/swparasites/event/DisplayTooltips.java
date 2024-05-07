@@ -11,13 +11,11 @@ import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod.EventBusSubscriber(modid = SRPSpartanWeaponry.MODID)
 public class DisplayTooltips {
 
 	@SideOnly(Side.CLIENT)

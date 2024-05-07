@@ -33,11 +33,9 @@ import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-@Mod.EventBusSubscriber(modid = SRPSpartanWeaponry.MODID)
 public class ParasiteSWWeapons {
 
 	public static ToolMaterialEx livingMaterial;
