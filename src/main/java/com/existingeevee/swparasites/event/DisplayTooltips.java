@@ -8,6 +8,7 @@ import org.lwjgl.input.Keyboard;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -33,16 +34,19 @@ public class DisplayTooltips {
 			
 			String key = stack.getItem().getTranslationKey() + ".desc";
 			
-			if (Keyboard.isKeyDown(Keyboard.KEY_T)) {
-				key = "easter_egg.swparasites:nerdvirus.desc";
-			} else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
-				key = "easter_egg.swparasites:sweebozo.desc";
-			} else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
-				key = "easter_egg.swparasites:ev.desc";
-			} else if (Keyboard.isKeyDown(Keyboard.KEY_L)) {
-				key = "easter_egg.swparasites:light.desc";
+
+			if (ParasiteSWConfig.easterEgg) {
+				if (Keyboard.isKeyDown(Keyboard.KEY_T)) {
+					key = "easter_egg.swparasites:nerdvirus.desc";
+				} else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
+					key = "easter_egg.swparasites:sweebozo.desc";
+				} else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
+					key = "easter_egg.swparasites:ev.desc";
+				} else if (Keyboard.isKeyDown(Keyboard.KEY_L)) {
+					key = "easter_egg.swparasites:light.desc";
+				}
 			}
-			
+
 			if (I18n.canTranslate(key)) {
 				String translation = I18n.translateToLocal(key);
 				if (!translation.contains("--null")) {
