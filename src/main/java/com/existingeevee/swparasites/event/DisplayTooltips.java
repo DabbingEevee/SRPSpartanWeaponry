@@ -39,6 +39,8 @@ public class DisplayTooltips {
 				key = "easter_egg.swparasites:sweebozo.desc";
 			} else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
 				key = "easter_egg.swparasites:ev.desc";
+			} else if (Keyboard.isKeyDown(Keyboard.KEY_L)) {
+				key = "easter_egg.swparasites:light.desc";
 			}
 			
 			if (I18n.canTranslate(key)) {
