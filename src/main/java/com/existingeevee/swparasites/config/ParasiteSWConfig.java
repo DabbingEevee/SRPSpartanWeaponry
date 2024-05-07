@@ -15,8 +15,8 @@ public class ParasiteSWConfig {
 	@RequiresMcRestart
 	public static double weaponSlowness = 0.2;
 	
-	@Name("Living Weapon Base Damage")
-	@Comment("What should the base damage value for the weapons added be?")
+	@Name("Long Blade Damage")
+	@Comment("What should the base damage value for Long Blade be?")
 	@RequiresMcRestart
 	public static float longBladeDmg = 1;
 	
