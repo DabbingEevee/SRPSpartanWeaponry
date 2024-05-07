@@ -11,17 +11,17 @@ import net.minecraftforge.common.config.Config.RequiresMcRestart;
 public class ParasiteSWConfig {
 
 	@Name("Parasite Weapon Slowness")
-	@Comment("How much slower should parasite weapons be in terms of swinging?")
+	@Comment("How much slower should parasite weapons be in terms of swinging? (default: 0.25)")
 	@RequiresMcRestart
 	public static double weaponSlowness = 0.25;
 	
 	@Name("Long Blade Damage")
-	@Comment("What should the base damage value for Long Blade be?")
+	@Comment("What should the base damage value for Long Blade be? (default: 3.5)")
 	@RequiresMcRestart
 	public static float longBladeDmg = 3.5f;
 	
 	@Name("Living Weapon Base Damage")
-	@Comment("What should the base damage value for the living weapons added be?")
+	@Comment("What should the base damage value for the living weapons added be? (default: 6.0)")
 	@RequiresMcRestart
-	public static float livingBaseDmg = 6f;
+	public static float livingBaseDmg = 6.0f;
 }
