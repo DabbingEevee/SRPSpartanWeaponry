@@ -2,7 +2,7 @@ material.swparasites:living=§eLiving
 
 
 easter_egg.swparasites:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §cNERRRRRDDDDD§f. :3
-easter_egg.swparasites:sweebozo.desc=§6SWEEBOZO §fMOMENT RAHHHH
+easter_egg.swparasites:sweebozo.desc=§6Swee §fis §cbozo
 easter_egg.swparasites:ev.desc=§6ExistingEevee §fwas here §c:3
 
 
@@ -34,12 +34,14 @@ item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produ
 item.hardened_bone_pole.name=§eHardened Bone Pole
 item.hardened_bone_pole.desc=§fA particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
 
+tooltip.swparasites:virulent=Virulent %s
+tooltip.swparasites:virulent.desc=§oLashes out §a§ovirulent§7§o strikes. Higher Viral levels will apply more potent toxin more often.
 
 tooltip.swparasites:bleeding=Bleeding %s
 tooltip.swparasites:bleeding.desc=§oInflicts §c§olife-threatening§7§o injuries. Higher Bleeding levels will apply more a potent bleed more often.
 
 tooltip.swparasites:corrosion=Corrosion %s
-tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher Corrosion levels will apply more potent acid.
+tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher Corrosion levels will apply more potent acid more often.
 
 tooltip.swparasites:immalleable=Immalleable
 tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation.
@@ -49,3 +51,6 @@ tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the 
 
 tooltip.swparasites:cloaking=Cloaking
 tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming.
+
+tooltip.swparasites:heavy=Heavy
+tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of Parasite parts.
