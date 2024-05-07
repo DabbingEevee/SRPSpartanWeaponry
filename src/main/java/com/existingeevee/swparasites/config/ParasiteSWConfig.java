@@ -18,10 +18,10 @@ public class ParasiteSWConfig {
 	@Name("Long Blade Damage")
 	@Comment("What should the base damage value for Long Blade be?")
 	@RequiresMcRestart
-	public static float longBladeDmg = 3.5;
+	public static float longBladeDmg = 3.5f;
 	
 	@Name("Living Weapon Base Damage")
 	@Comment("What should the base damage value for the living weapons added be?")
 	@RequiresMcRestart
-	public static float livingBaseDmg = 6;
+	public static float livingBaseDmg = 6f;
 }
