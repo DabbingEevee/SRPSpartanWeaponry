@@ -36,11 +36,11 @@ public class DisplayTooltips {
 			String key = stack.getItem().getTranslationKey() + ".desc";
 			
 			if (Keyboard.isKeyDown(Keyboard.KEY_T)) {
-				key = "easter_egg.srp_spartan_weaponry:nerdvirus.desc";
+				key = "easter_egg.swparasites:nerdvirus.desc";
 			} else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
-				key = "easter_egg.srp_spartan_weaponry:sweebozo.desc";
+				key = "easter_egg.swparasites:sweebozo.desc";
 			} else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
-				key = "easter_egg.srp_spartan_weaponry:ev.desc";
+				key = "easter_egg.swparasites:ev.desc";
 			}
 			
 			if (I18n.canTranslate(key)) {
