@@ -12,6 +12,7 @@ import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
+import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
 import com.oblivioussp.spartanweaponry.item.ItemGlaive;
 import com.oblivioussp.spartanweaponry.item.ItemGreatsword;
 import com.oblivioussp.spartanweaponry.item.ItemHalberd;
@@ -41,6 +42,7 @@ public class ParasiteSWWeapons {
 	public static ToolMaterialEx livingMaterial;
 
 	public static ItemGreatsword claymoreLiving = null;
+	public static ItemBoomerang boomerangLiving = null;
 	public static ItemDagger daggerLiving = null;
 	public static ItemGlaive glaiveLiving = null;
 	public static ItemHalberd halbardLiving = null;
@@ -73,6 +75,10 @@ public class ParasiteSWWeapons {
 		daggerLiving = (ItemDagger) SpartanWeaponryAPI.createDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		daggerLiving.addWeaponProperty(ParasiteSWProperties.CLOAKING);
 		items.add(daggerLiving);
+
+		boomerangLiving = (ItemBoomerang) SpartanWeaponryAPI.createBoomerang(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		boomerangLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
+		items.add(boomerangLiving);
 
 		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		glaiveLiving.addWeaponProperty(ParasiteSWProperties.BLEEDING_2);
