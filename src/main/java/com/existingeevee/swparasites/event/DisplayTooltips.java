@@ -7,7 +7,7 @@ import java.util.List;
 import org.lwjgl.input.Keyboard;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
-
+import com.existingeevee.swparasites.config.ParasiteSWConfig;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.translation.I18n;
