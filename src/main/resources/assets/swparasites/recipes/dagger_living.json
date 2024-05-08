@@ -2,9 +2,9 @@
   "group": "swparasites",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " B",
-    "VL",
-    " H"
+    " B ",
+    "VLL",
+    " H "
   ],
   "key": {
     "B": {
