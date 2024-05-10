@@ -38,7 +38,7 @@ public class ParasiteSWConfig {
 	@Name("Cloaking Detection Range")
 	@Comment("How far should mobs be able to detect players while they are using the cloaking ability? (default: true)")
 	@RequiresMcRestart
-	public static double cloakingRange = true;
+	public static double cloakingRange = 4.0;
 
 	@Name("Easter Egg")
 	@Comment("Should easter eggs when holding down specific keys on an item show a funny little message? (default: true)")
