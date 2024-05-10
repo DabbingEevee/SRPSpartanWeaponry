@@ -1,6 +1,7 @@
 package com.existingeevee.swparasites.properties;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
+import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCallback;
@@ -33,8 +34,6 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 	}
 
 	private static final ThreadLocal<Boolean> isResetting = ThreadLocal.withInitial(() -> false);
-
-	private static final double maxDetectRangeSq = 2.5 * 2.5;
 	
 	@SubscribeEvent
 	public void onLivingSetAttackTargetEvent(LivingSetAttackTargetEvent event) {
@@ -47,7 +46,7 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 			IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) mainHand;
 			
 			boolean wasAttacked = event.getEntityLiving().getRevengeTarget() == event.getTarget();
-			boolean outOfRange = event.getEntityLiving().getDistanceSq(event.getTarget()) > maxDetectRangeSq;
+			boolean outOfRange = event.getEntityLiving().getDistanceSq(event.getTarget()) > ParasiteSWConfig.cloakingRange * ParasiteSWConfig.cloakingRange;
 			
 			if (container.hasWeaponProperty(this) && event.getTarget().isSneaking() && outOfRange && !wasAttacked && event.getEntityLiving() instanceof EntityLiving) {
 				isResetting.set(true);
