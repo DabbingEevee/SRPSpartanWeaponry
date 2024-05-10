@@ -6,13 +6,15 @@ import java.util.List;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
+import com.existingeevee.swparasites.items.ItemNoReequipDagger;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
-import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
+import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.item.ItemGlaive;
 import com.oblivioussp.spartanweaponry.item.ItemGreatsword;
 import com.oblivioussp.spartanweaponry.item.ItemHalberd;
@@ -30,7 +32,9 @@ import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
+import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -72,7 +76,7 @@ public class ParasiteSWWeapons {
 		claymoreLiving.addWeaponProperty(ParasiteSWProperties.VIRAL_1);
 		items.add(claymoreLiving);
 
-		daggerLiving = (ItemDagger) SpartanWeaponryAPI.createDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
+		daggerLiving = (ItemDagger) addDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD);
 		daggerLiving.addWeaponProperty(ParasiteSWProperties.CLOAKING);
 		items.add(daggerLiving);
 
@@ -152,6 +156,19 @@ public class ParasiteSWWeapons {
 			livingMaterial = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, ParasiteSWConfig.maxLivingDamage, 7.5f, ParasiteSWConfig.livingBaseDmg, 18);
 		}
 		return livingMaterial;
+	}
+
+	public static Item addDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
+		if (ConfigHandler.disableDagger)
+			return null;
+
+		ItemDagger dagger = new ItemNoReequipDagger("dagger_" + material.getUnlocName(), modId, material);
+		dagger.setCreativeTab(tab);
+
+		for (WeaponProperty prop : properties) {
+			dagger.addWeaponProperty(prop);
+		}
+		return dagger;
 	}
 
 	@SubscribeEvent
