@@ -29,6 +29,11 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 		PotionEffect effect = entity.getActivePotionEffect(MobEffects.INVISIBILITY);
 
 		if (entity.isSneaking() && (effect == null || effect.getDuration() <= 1) && isSelected) {
+		
+			if (world.getTotalWorldTime() % ParasiteSWConfig.cloakingDrain == 0) {
+				stack.damageItem(1, entity);
+			}
+			
 			entity.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 2, 0, false, false));
 		}
 	}
