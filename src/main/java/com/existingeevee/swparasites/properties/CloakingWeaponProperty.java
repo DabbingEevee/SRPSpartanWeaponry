@@ -8,6 +8,8 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCall
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,17 +31,17 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 		PotionEffect effect = entity.getActivePotionEffect(MobEffects.INVISIBILITY);
 
 		if (entity.isSneaking() && (effect == null || effect.getDuration() <= 1) && isSelected) {
-		
-			if (world.getTotalWorldTime() % ParasiteSWConfig.cloakingDrain == 0) {
-				stack.damageItem(1, entity);
+
+			if (world.getTotalWorldTime() % ParasiteSWConfig.cloakingDrain == 0 && !world.isRemote) {
+				stack.attemptDamageItem(itemSlot, world.rand, entity instanceof EntityPlayer ? (EntityPlayerMP) entity : null);
 			}
-			
+
 			entity.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 2, 0, false, false));
 		}
 	}
 
 	private static final ThreadLocal<Boolean> isResetting = ThreadLocal.withInitial(() -> false);
-	
+
 	@SubscribeEvent
 	public void onLivingSetAttackTargetEvent(LivingSetAttackTargetEvent event) {
 		if (isResetting.get() || event.getTarget() == null)
@@ -49,10 +51,10 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 
 		if (mainHand instanceof IWeaponPropertyContainer<?>) {
 			IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) mainHand;
-			
+
 			boolean wasAttacked = event.getEntityLiving().getRevengeTarget() == event.getTarget();
 			boolean outOfRange = event.getEntityLiving().getDistanceSq(event.getTarget()) > ParasiteSWConfig.cloakingRange * ParasiteSWConfig.cloakingRange;
-			
+
 			if (container.hasWeaponProperty(this) && event.getTarget().isSneaking() && outOfRange && !wasAttacked && event.getEntityLiving() instanceof EntityLiving) {
 				isResetting.set(true);
 				((EntityLiving) event.getEntityLiving()).setAttackTarget(null);
