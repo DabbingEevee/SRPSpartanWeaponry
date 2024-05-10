@@ -30,6 +30,16 @@ public class ParasiteSWConfig {
 	@RequiresMcRestart
 	public static double weaponSlowness = 0.25;
 
+	@Name("Cloaking Durability Drain Interval")
+	@Comment("In how many ticks should 1 durability drain while using the cloaking ability? (default: 7)")
+	@RequiresMcRestart
+	public static int cloakingDrain = 7;
+
+	@Name("Cloaking Detection Range")
+	@Comment("How far should mobs be able to detect players while they are using the cloaking ability? (default: true)")
+	@RequiresMcRestart
+	public static double cloakingRange = true;
+
 	@Name("Easter Egg")
 	@Comment("Should easter eggs when holding down specific keys on an item show a funny little message? (default: true)")
 	@RequiresMcRestart
