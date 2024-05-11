@@ -9,14 +9,14 @@ import net.minecraftforge.registries.IForgeRegistryEntry.Impl;
 public class Utils {
 
 	public static void forceSetRegistryName(Impl impl, String str) {
+		if (impl == null)
+			return;
 		ObfuscationReflectionHelper.setPrivateValue(Impl.class, impl, GameData.checkPrefix(str, true), "registryName");
 	}
 
 	public static void resetAutogenName(ItemSwordBase impl) {
+		if (impl == null)
+			return;	
 		ObfuscationReflectionHelper.setPrivateValue(ItemSwordBase.class, impl, null, "displayName");
-	}
-		
-	public static void multiplyAttackSpeed(ItemSwordBase impl, double multiplier) {
-		ObfuscationReflectionHelper.setPrivateValue(ItemSwordBase.class, impl, null, "attackSpeed");
 	}
 }
