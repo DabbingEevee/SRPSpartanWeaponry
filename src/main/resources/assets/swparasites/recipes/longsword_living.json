@@ -1,0 +1,30 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " OB",
+    "VLV",
+    "HV "
+  ],
+  "key": {
+    "B": {
+      "item": "srparasites:infectious_blade_fragment"
+    },
+    "V": {
+      "item": "srparasites:vile_shell"
+    },
+    "L": {
+      "item": "srparasites:living_core"
+    },
+    "H": {
+      "item": "srparasites:hardened_bone_handle"
+    },
+    "O": {
+      "item": "swparasites:infectious_long_blade_fragment"
+    }
+  },
+  "result": {
+    "item": "swparasites:longsword_living",
+    "count": 1
+  }
+}

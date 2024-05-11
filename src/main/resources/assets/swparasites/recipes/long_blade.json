@@ -1,0 +1,21 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FTT",
+    "FT ",
+    "FT "
+  ],
+  "key": {
+    "T": {
+      "item": "srparasites:ada_reeker_drop"
+    },
+    "F": {
+      "item": "srparasites:assimilated_flesh"
+    }
+  },
+  "result": {
+    "item": "swparasites:infectious_long_blade_fragment",
+    "count": 1
+  }
+}

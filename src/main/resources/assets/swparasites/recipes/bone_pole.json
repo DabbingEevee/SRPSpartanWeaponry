@@ -1,0 +1,21 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBF",
+    "FBF",
+    "BBF"
+  ],
+  "key": {
+    "B": {
+      "item": "srparasites:ada_yelloweye_drop"
+    },
+    "F": {
+      "item": "srparasites:assimilated_flesh"
+    }
+  },
+  "result": {
+    "item": "swparasites:hardened_bone_pole",
+    "count": 1
+  }
+}
