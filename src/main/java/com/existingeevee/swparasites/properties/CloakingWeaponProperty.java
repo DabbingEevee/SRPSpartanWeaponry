@@ -8,8 +8,6 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCall
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -30,13 +28,13 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
 		PotionEffect effect = entity.getActivePotionEffect(MobEffects.INVISIBILITY);
 
-		if (entity.isSneaking() && (effect == null || effect.getDuration() <= 1) && isSelected) {
+		if (entity.isSneaking() && isSelected) {
 
-			if (world.getTotalWorldTime() % ParasiteSWConfig.cloakingDrain == 0 && !world.isRemote) {
-				stack.attemptDamageItem(itemSlot, world.rand, entity instanceof EntityPlayer ? (EntityPlayerMP) entity : null);
-			}
+			if (world.getTotalWorldTime() % ParasiteSWConfig.cloakingDrain == 0 && !world.isRemote) 
+				stack.damageItem(1, entity);
 
-			entity.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 2, 0, false, false));
+			if (effect == null || effect.getDuration() <= 1)
+				entity.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 2, 0, false, false));
 		}
 	}
 
