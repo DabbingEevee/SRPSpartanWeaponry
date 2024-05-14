@@ -9,26 +9,26 @@ import net.minecraftforge.common.config.Config.RequiresMcRestart;
 
 @Config(modid = SRPSpartanWeaponry.MODID)
 public class ParasiteSWConfig {
-	
+
 	@Name("Long Blade Damage")
 	@Comment("What should the base damage value for Long Blade be? (default: 3.5)")
 	@RequiresMcRestart
-	public static float longBladeDmg = 3.5f;
+	public static float longBladeDmg = 4.5f;
 
 	@Name("Living Weapon Base Durability")
 	@Comment("What should the base durability value for the living weapons added be? (default: 1000)")
 	@RequiresMcRestart
 	public static int maxLivingDamage = 1000;
-	
+
 	@Name("Living Weapon Base Damage")
 	@Comment("What should the base damage value for the living weapons added be? (default: 6.0)")
 	@RequiresMcRestart
-	public static float livingBaseDmg = 6.0f;
+	public static float livingBaseDmg = 15.0f;
 
 	@Name("Parasite Weapon Slowness")
 	@Comment("How much slower should parasite weapons be in terms of swinging? (default: 0.25)")
 	@RequiresMcRestart
-	public static double weaponSlowness = 0.25;
+	public static double weaponSlowness = 0.33;
 
 	@Name("Cloaking Durability Drain Interval")
 	@Comment("In how many ticks should 1 durability drain while using the cloaking ability? (default: 7)")
