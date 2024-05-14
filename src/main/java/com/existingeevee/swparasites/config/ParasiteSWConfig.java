@@ -36,7 +36,7 @@ public class ParasiteSWConfig {
 	public static int cloakingDrain = 7;
 
 	@Name("Cloaking Detection Range")
-	@Comment("How far should mobs be able to detect players while they are using the cloaking ability? (default: true)")
+	@Comment("How far should mobs be able to detect players while they are using the cloaking ability? (default: 4.0)")
 	@RequiresMcRestart
 	public static double cloakingRange = 4.0;
 
