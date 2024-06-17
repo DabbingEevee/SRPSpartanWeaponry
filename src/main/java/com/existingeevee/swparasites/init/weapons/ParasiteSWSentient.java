@@ -167,7 +167,7 @@ public class ParasiteSWSentient {
 
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
-				container.addWeaponProperty(ParasiteSWProperties.SLOW_1);
+				container.addWeaponProperty(ParasiteSWProperties.SLOW_2);
 
 				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();

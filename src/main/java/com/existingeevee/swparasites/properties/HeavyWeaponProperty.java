@@ -88,7 +88,7 @@ public class HeavyWeaponProperty extends WeaponProperty {
 	
 	private static AttributeModifier getModifierII() {
 		if (modifierII == null) {
-			modifierII = new AttributeModifier(UUID.fromString("aeeee3df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponSlowness, 2);
+			modifierII = new AttributeModifier(UUID.fromString("aeeee3df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponIISlowness, 2);
 		}
 		return modifierII;
 	}
