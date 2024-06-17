@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:sentient/quarterstaff"
+        "layer0":"swparasites:sentient/staff"
     },
     "display": {
         "thirdperson_righthand": {
