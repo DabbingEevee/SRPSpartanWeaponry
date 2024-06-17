@@ -24,12 +24,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class HeavyWeaponProperty extends WeaponProperty {
 
-	public HeavyWeaponProperty() {
+	final boolean lvl2;
+	
+	public HeavyWeaponProperty(boolean lvl2) {
 		super("heavy", SRPSpartanWeaponry.MODID, 0, 0);
 		MinecraftForge.EVENT_BUS.register(this);
+		
+		this.lvl2 = lvl2;
 	}
 
 	private static AttributeModifier modifier;
+	private static AttributeModifier modifierII;
 
 	@SubscribeEvent
 	public void onLivingUpdate(LivingUpdateEvent event) {
@@ -48,11 +53,13 @@ public class HeavyWeaponProperty extends WeaponProperty {
 		IAttributeInstance attr = event.getEntityLiving().getAttributeMap().getAttributeInstance(SharedMonsterAttributes.ATTACK_SPEED);
 
 		if (attr != null) {
-			if (shouldHaveSlowing && !attr.hasModifier(getModifier())) {
-				attr.applyModifier(getModifier());
+			AttributeModifier modifier = lvl2 ? getModifierII() : getModifier();
+			
+			if (shouldHaveSlowing && !attr.hasModifier(modifier)) {
+				attr.applyModifier(modifier);
 			}
-			if (!shouldHaveSlowing && attr.hasModifier(getModifier())) {
-				attr.removeModifier(getModifier());
+			if (!shouldHaveSlowing && attr.hasModifier(modifier)) {
+				attr.removeModifier(modifier);
 			}
 		}
 	}
@@ -77,5 +84,12 @@ public class HeavyWeaponProperty extends WeaponProperty {
 			modifier = new AttributeModifier(UUID.fromString("aeee73df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponSlowness, 2);
 		}
 		return modifier;
+	}
+	
+	private static AttributeModifier getModifierII() {
+		if (modifierII == null) {
+			modifierII = new AttributeModifier(UUID.fromString("aeee73df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponSlowness, 2);
+		}
+		return modifierII;
 	}
 }

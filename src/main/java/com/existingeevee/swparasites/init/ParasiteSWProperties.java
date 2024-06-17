@@ -25,14 +25,14 @@ public class ParasiteSWProperties {
 	public static final ViralWeaponProperty VIRAL_2 = new ViralWeaponProperty(2);
 	public static final ViralWeaponProperty VIRAL_3 = new ViralWeaponProperty(3);
 
-	public static final CloakingWeaponProperty CLOAKING_1 = new CloakingWeaponProperty(1);
-	public static final CloakingWeaponProperty CLOAKING_2 = new CloakingWeaponProperty(2);
+	public static final CloakingWeaponProperty CLOAKING_1 = new CloakingWeaponProperty(false);
+	public static final CloakingWeaponProperty CLOAKING_2 = new CloakingWeaponProperty(true);
 
 	public static final RepulseWeaponProperty REPULSE_1 = new RepulseWeaponProperty(1);
 	public static final RepulseWeaponProperty REPULSE_2 = new RepulseWeaponProperty(2);
 
-	public static final HeavyWeaponProperty SLOW_1 = new HeavyWeaponProperty(1);
-	public static final HeavyWeaponProperty SLOW_2 = new HeavyWeaponProperty(2);
+	public static final HeavyWeaponProperty SLOW_1 = new HeavyWeaponProperty(false);
+	public static final HeavyWeaponProperty SLOW_2 = new HeavyWeaponProperty(true);
 
 
 }
