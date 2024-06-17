@@ -17,8 +17,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class RepulseWeaponProperty extends WeaponProperty {
 
-	public RepulseWeaponProperty() {
-		super("repulse", SRPSpartanWeaponry.MODID, 0, 0);
+	public RepulseWeaponProperty(int propLevel) {
+		super("repulse", SRPSpartanWeaponry.MODID, propLevel, propLevel);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -49,7 +49,7 @@ public class RepulseWeaponProperty extends WeaponProperty {
 					if (blockSuccess) {
 						//Blocked (EZ)
 						
-						player.addPotionEffect(new PotionEffect(SRPPotions.RAGE_E, 5 * 20, 1));
+						player.addPotionEffect(new PotionEffect(SRPPotions.RAGE_E, 5 * 20, Math.round(this.getMagnitude())));
 						
 					}
 				}

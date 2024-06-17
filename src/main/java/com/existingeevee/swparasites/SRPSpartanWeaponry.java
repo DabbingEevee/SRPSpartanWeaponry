@@ -2,7 +2,8 @@ package com.existingeevee.swparasites;
 
 import com.existingeevee.swparasites.event.DisplayTooltips;
 import com.existingeevee.swparasites.init.ParasiteSWItems;
-import com.existingeevee.swparasites.init.ParasiteSWWeapons;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWLiving;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWSentient;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +22,9 @@ public class SRPSpartanWeaponry {
     public void onPreInit(FMLPreInitializationEvent event) {
     	MinecraftForge.EVENT_BUS.register(DisplayTooltips.class);
     	MinecraftForge.EVENT_BUS.register(ParasiteSWItems.class);
-    	MinecraftForge.EVENT_BUS.register(ParasiteSWWeapons.class);
+    	
+    	MinecraftForge.EVENT_BUS.register(ParasiteSWLiving.class);
+    	MinecraftForge.EVENT_BUS.register(ParasiteSWSentient.class);
     }
     
 }

@@ -19,9 +19,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 
-	public CloakingWeaponProperty() {
+	final boolean lvl2;
+	
+	public CloakingWeaponProperty(boolean lvl2) {
 		super("cloaking", SRPSpartanWeaponry.MODID, 0, 0);
 		MinecraftForge.EVENT_BUS.register(this);
+		this.lvl2 = lvl2;
 	}
 
 	@Override
@@ -51,7 +54,7 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 			IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) mainHand;
 
 			boolean wasAttacked = event.getEntityLiving().getRevengeTarget() == event.getTarget();
-			boolean outOfRange = event.getEntityLiving().getDistanceSq(event.getTarget()) > ParasiteSWConfig.cloakingRange * ParasiteSWConfig.cloakingRange;
+			boolean outOfRange = event.getEntityLiving().getDistanceSq(event.getTarget()) > (lvl2 ? ParasiteSWConfig.cloakingRange * ParasiteSWConfig.cloakingRange : ParasiteSWConfig.cloakingIIRange * ParasiteSWConfig.cloakingIIRange);
 
 			if (container.hasWeaponProperty(this) && event.getTarget().isSneaking() && outOfRange && !wasAttacked && event.getEntityLiving() instanceof EntityLiving) {
 				isResetting.set(true);
