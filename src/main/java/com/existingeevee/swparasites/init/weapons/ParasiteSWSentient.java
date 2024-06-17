@@ -11,6 +11,7 @@ import com.existingeevee.swparasites.items.ItemNoReequipDagger;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
+import com.oblivioussp.spartanweaponry.api.WeaponProperties;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
@@ -30,6 +31,7 @@ import com.oblivioussp.spartanweaponry.item.ItemQuarterstaff;
 import com.oblivioussp.spartanweaponry.item.ItemRapier;
 import com.oblivioussp.spartanweaponry.item.ItemSaber;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
+import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
@@ -39,6 +41,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -169,6 +172,16 @@ public class ParasiteSWSentient {
 
 				container.addWeaponProperty(ParasiteSWProperties.SLOW_2);
 
+				if (container.hasWeaponProperty(WeaponProperties.REACH_2)) {
+					tryRemoveProperty(container, WeaponProperties.REACH_2);
+					container.addWeaponProperty(ParasiteSWProperties.REACH_3);
+				} else if (container.hasWeaponProperty(WeaponProperties.REACH_1)) {
+					tryRemoveProperty(container, WeaponProperties.REACH_1);
+					container.addWeaponProperty(WeaponProperties.REACH_2);
+				} else {
+					container.addWeaponProperty(WeaponProperties.REACH_1);
+				}
+
 				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();
 
@@ -178,6 +191,13 @@ public class ParasiteSWSentient {
 					ModelRenderRegistry.addItemToRegistry(i, new ResourceLocation(SRPSpartanWeaponry.MODID, modelPath));
 				}
 			}
+		}
+	}
+
+	public static void tryRemoveProperty(IWeaponPropertyContainer<?> cont, WeaponProperty prop) {
+		if (cont instanceof ItemSwordBase) {
+			List<WeaponProperty> props = ObfuscationReflectionHelper.getPrivateValue(ItemSwordBase.class, (ItemSwordBase) cont, "properties", "field_185051_m");
+			props.remove(prop);
 		}
 	}
 }

@@ -30,7 +30,7 @@
             "predicate": {
                 "blocking": 1
             },
-            "model": "swparasites:item/sentient/parrying_dagger_blocking"
+            "model": "swparasites:item/sentient/parrying_dagger_sentient_blocking"
         }
     ]
 }

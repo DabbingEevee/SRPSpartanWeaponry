@@ -3,10 +3,13 @@ package com.existingeevee.swparasites.init;
 import com.existingeevee.swparasites.properties.BleedingWeaponProperty;
 import com.existingeevee.swparasites.properties.CloakingWeaponProperty;
 import com.existingeevee.swparasites.properties.CorrosionWeaponProperty;
+import com.existingeevee.swparasites.properties.HeavyWeaponProperty;
 import com.existingeevee.swparasites.properties.ImmalleableWeaponProperty;
 import com.existingeevee.swparasites.properties.RepulseWeaponProperty;
-import com.existingeevee.swparasites.properties.HeavyWeaponProperty;
 import com.existingeevee.swparasites.properties.ViralWeaponProperty;
+import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
+import com.oblivioussp.spartanweaponry.api.WeaponProperties;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 
 public class ParasiteSWProperties {
 
@@ -18,13 +21,13 @@ public class ParasiteSWProperties {
 	public static final CorrosionWeaponProperty CORROSION_2 = new CorrosionWeaponProperty(2);
 	public static final CorrosionWeaponProperty CORROSION_3 = new CorrosionWeaponProperty(3);
 
-	public static final ImmalleableWeaponProperty IMMALLEABLE_1 = new ImmalleableWeaponProperty(1);
-	public static final ImmalleableWeaponProperty IMMALLEABLE_2 = new ImmalleableWeaponProperty(2);
-
 	public static final ViralWeaponProperty VIRAL_1 = new ViralWeaponProperty(1);
 	public static final ViralWeaponProperty VIRAL_2 = new ViralWeaponProperty(2);
 	public static final ViralWeaponProperty VIRAL_3 = new ViralWeaponProperty(3);
 
+	public static final ImmalleableWeaponProperty IMMALLEABLE_1 = new ImmalleableWeaponProperty(1);
+	public static final ImmalleableWeaponProperty IMMALLEABLE_2 = new ImmalleableWeaponProperty(2);
+	
 	public static final CloakingWeaponProperty CLOAKING_1 = new CloakingWeaponProperty(false);
 	public static final CloakingWeaponProperty CLOAKING_2 = new CloakingWeaponProperty(true);
 
@@ -34,5 +37,6 @@ public class ParasiteSWProperties {
 	public static final HeavyWeaponProperty SLOW_1 = new HeavyWeaponProperty(false);
 	public static final HeavyWeaponProperty SLOW_2 = new HeavyWeaponProperty(true);
 
+	public static final WeaponProperty REACH_3 = new WeaponProperty(WeaponProperties.PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 3, 8.0f);
 
 }
