@@ -70,9 +70,12 @@ public class ParasiteSWLiving {
 
 		livingMaterial = getLivingMaterial();
 
-		claymoreLiving = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1).setTranslationKey("claymore_living");
-		Utils.forceSetRegistryName(claymoreLiving, "claymore_living");
-		Utils.resetAutogenName(claymoreLiving);
+		claymoreLiving = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
+		if (claymoreLiving != null) {
+			claymoreLiving.setTranslationKey("claymore_living");
+			Utils.forceSetRegistryName(claymoreLiving, "claymore_living");
+			Utils.resetAutogenName(claymoreLiving);
+		}
 		items.add(claymoreLiving);
 
 		daggerLiving = (ItemDagger) addDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_1);
@@ -168,6 +171,7 @@ public class ParasiteSWLiving {
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
 				container.addWeaponProperty(ParasiteSWProperties.SLOW_1);
+				container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
 
 				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();

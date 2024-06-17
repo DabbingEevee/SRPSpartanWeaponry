@@ -73,9 +73,12 @@ public class ParasiteSWSentient {
 
 		sentientMaterial = getSentientMaterial();
 
-		claymoreSentient = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2).setTranslationKey("claymore_sentient");
-		Utils.forceSetRegistryName(claymoreSentient, "claymore_sentient");
-		Utils.resetAutogenName(claymoreSentient);
+		claymoreSentient = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
+		if (claymoreSentient != null) {
+			claymoreSentient.setTranslationKey("claymore_sentient");
+			Utils.forceSetRegistryName(claymoreSentient, "claymore_sentient");
+			Utils.resetAutogenName(claymoreSentient);
+		}
 		items.add(claymoreSentient);
 
 		daggerSentient = (ItemDagger) addDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_2);
@@ -171,7 +174,8 @@ public class ParasiteSWSentient {
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
 				container.addWeaponProperty(ParasiteSWProperties.SLOW_2);
-
+				container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
+				
 				if (container.hasWeaponProperty(WeaponProperties.REACH_2)) {
 					tryRemoveProperty(container, WeaponProperties.REACH_2);
 					container.addWeaponProperty(ParasiteSWProperties.REACH_3);

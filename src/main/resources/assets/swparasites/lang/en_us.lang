@@ -75,3 +75,7 @@ tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming. Hi
 
 tooltip.swparasites:heavy=Heavy %s
 tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of Parasite parts.
+
+tooltip.swparasites:uncapped=Uncapped
+tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
+
