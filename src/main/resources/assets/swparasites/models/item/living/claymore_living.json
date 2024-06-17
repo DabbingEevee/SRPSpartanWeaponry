@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_claymore"
+        "layer0":"swparasites:living/claymore"
     },
     "display": {
         "thirdperson_righthand": {

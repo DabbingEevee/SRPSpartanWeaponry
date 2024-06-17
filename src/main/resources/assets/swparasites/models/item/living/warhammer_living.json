@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_warhammer"
+        "layer0":"swparasites:living/warhammer"
     },
     "display": {
         "thirdperson_righthand": {

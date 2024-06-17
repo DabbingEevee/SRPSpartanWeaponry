@@ -22,7 +22,7 @@ public class CloakingWeaponProperty extends WeaponPropertyWithCallback {
 	final boolean lvl2;
 	
 	public CloakingWeaponProperty(boolean lvl2) {
-		super("cloaking", SRPSpartanWeaponry.MODID, 0, 0);
+		super("cloaking", SRPSpartanWeaponry.MODID, lvl2 ? 2 : 1, 0);
 		MinecraftForge.EVENT_BUS.register(this);
 		this.lvl2 = lvl2;
 	}

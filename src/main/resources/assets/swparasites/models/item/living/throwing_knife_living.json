@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_throwing_knife"
+        "layer0":"swparasites:living/throwing_knife"
     },
     "display": {
         "thirdperson_righthand": {

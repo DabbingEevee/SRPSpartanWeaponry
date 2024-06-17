@@ -1,7 +1,7 @@
 {
     "parent":"item/generated",
     "textures": {
-        "layer0": "swparasites:living/living_boomerang"
+        "layer0": "swparasites:living/boomerang"
     },
     "display": {
         "thirdperson_righthand": {

@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_halberd"
+        "layer0":"swparasites:living/halberd"
     },
     "display": {
         "thirdperson_righthand": {

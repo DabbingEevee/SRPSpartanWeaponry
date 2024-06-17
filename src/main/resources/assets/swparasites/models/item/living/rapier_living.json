@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_rapier"
+        "layer0":"swparasites:living/rapier"
     },
     "display": {
         "thirdperson_righthand": {
