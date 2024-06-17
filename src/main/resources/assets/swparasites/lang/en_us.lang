@@ -1,5 +1,5 @@
 material.swparasites:living=§eLiving
-
+material.swparasites:sentient=§6Sentient
 
 easter_egg.swparasites:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §cNERRRRRDDDDD§f. :3
 easter_egg.swparasites:sweebozo.desc=§6Swee §fis §cbozo
@@ -26,8 +26,28 @@ item.swparasites:throwing_axe_living.desc=§fResult of various Parasites body pa
 item.swparasites:throwing_knife_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.swparasites:warhammer_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 
+item.swparasites:claymore_sentient.desc=§fThe ulterior Evolution of the Living Claymore. It has gained a §bMind§f.
+item.swparasites:boomerang_sentient.desc=§fThe ulterior Evolution of the Living Boomerang. It has gained a §bMind§f.
+item.swparasites:dagger_sentient.desc=§fThe ulterior Evolution of the Living Dagger. It has gained a §bMind§f.
+item.swparasites:glaive_sentient.desc=§fThe ulterior Evolution of the Living Glaive. It has gained a §bMind§f.
+item.swparasites:halberd_sentient.desc=§fThe ulterior Evolution of the Living Halberd. It has gained a §bMind§f.
+item.swparasites:hammer_sentient.desc=§fThe ulterior Evolution of the Living Hammer. It has gained a §bMind§f.
+item.swparasites:javelin_sentient.desc=§fThe ulterior Evolution of the Living Javelin. It has gained a §bMind§f.
+item.swparasites:katana_sentient.desc=§fThe ulterior Evolution of the Living Katana. It has gained a §bMind§f.
+item.swparasites:longsword_sentient.desc=§fThe ulterior Evolution of the Living Longsword. It has gained a §bMind§f.
+item.swparasites:mace_sentient.desc=§fThe ulterior Evolution of the Living Mace. It has gained a §bMind§f.
+item.swparasites:parrying_dagger_sentient.desc=§fThe ulterior Evolution of the Living Parrying Dagger. It has gained a §bMind§f.
+item.swparasites:pike_sentient.desc=§fThe ulterior Evolution of the Living Pike. It has gained a §bMind§f.
+item.swparasites:saber_sentient.desc=§fThe ulterior Evolution of the Living Saber. It has gained a §bMind§f.
+item.swparasites:staff_sentient.desc=§fThe ulterior Evolution of the Living Quarterstaff. It has gained a §bMind§f.
+item.swparasites:rapier_sentient.desc=§fThe ulterior Evolution of the Living Rapier. It has gained a §bMind§f.
+item.swparasites:spear_sentient.desc=§fThe ulterior Evolution of the Living Spear. It has gained a §bMind§f.
+item.swparasites:throwing_axe_sentient.desc=§fThe ulterior Evolution of the Living Throwing Axe. It has gained a §bMind§f.
+item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the Living Throwing Knife. It has gained a §bMind§f.
+item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.
 
 item.swparasites:claymore_living.name=§eLiving Claymore
+item.swparasites:claymore_sentient.name=§6Sentient Claymore
 
 item.infectious_long_blade_fragment.name=§eInfectious Long Blade Fragment
 item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for §6Weapons§f.
@@ -44,14 +64,14 @@ tooltip.swparasites:bleeding.desc=§oInflicts §c§olife-threatening§7§o injur
 tooltip.swparasites:corrosion=Corrosion %s
 tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher Corrosion levels will apply more potent acid more often.
 
-tooltip.swparasites:immalleable=Immalleable
+tooltip.swparasites:immalleable=Immalleable %s
 tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation.
 
-tooltip.swparasites:repulse=Repulse
-tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the user.
+tooltip.swparasites:repulse=Repulse %s
+tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the user. Higher Repulse levels enrage you even further.
 
-tooltip.swparasites:cloaking=Cloaking
-tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming.
+tooltip.swparasites:cloaking=Cloaking %s
+tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming. Higher levels of Cloaking make it harder to be detected.
 
-tooltip.swparasites:heavy=Heavy
+tooltip.swparasites:heavy=Heavy %s
 tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of Parasite parts.
