@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_hammer"
+        "layer0":"swparasites:living/hammer"
     },
     "display": {
         "thirdperson_righthand": {

@@ -27,7 +27,7 @@ public class HeavyWeaponProperty extends WeaponProperty {
 	final boolean lvl2;
 	
 	public HeavyWeaponProperty(boolean lvl2) {
-		super("heavy", SRPSpartanWeaponry.MODID, 0, 0);
+		super("heavy", SRPSpartanWeaponry.MODID, lvl2 ? 2 : 1, 0);
 		MinecraftForge.EVENT_BUS.register(this);
 		
 		this.lvl2 = lvl2;
@@ -74,7 +74,7 @@ public class HeavyWeaponProperty extends WeaponProperty {
 	@Override
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) {
-		String percent = FORMATTER.format(ParasiteSWConfig.weaponSlowness * 100);
+		String percent = FORMATTER.format((lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness) * 100);
 		
 		tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateString(type + ".desc", "tooltip", modId).replace("$s", percent + "%"));
 	}
@@ -88,7 +88,7 @@ public class HeavyWeaponProperty extends WeaponProperty {
 	
 	private static AttributeModifier getModifierII() {
 		if (modifierII == null) {
-			modifierII = new AttributeModifier(UUID.fromString("aeee73df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponSlowness, 2);
+			modifierII = new AttributeModifier(UUID.fromString("aeeee3df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponSlowness, 2);
 		}
 		return modifierII;
 	}

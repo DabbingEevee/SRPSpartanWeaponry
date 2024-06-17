@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_katana"
+        "layer0":"swparasites:living/katana"
     },
     "display": {
         "thirdperson_righthand": {

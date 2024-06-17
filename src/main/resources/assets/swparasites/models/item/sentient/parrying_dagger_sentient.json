@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_throwing_knife"
+        "layer0":"swparasites:sentient/parrying_dagger"
     },
     "display": {
         "thirdperson_righthand": {
@@ -28,9 +28,9 @@
     "overrides": [
         {
             "predicate": {
-                "empty": 1
+                "blocking": 1
             },
-            "model": "spartanweaponry:item/throwing_knife_empty"
+            "model": "swparasites:item/sentient/parrying_dagger_blocking"
         }
     ]
 }

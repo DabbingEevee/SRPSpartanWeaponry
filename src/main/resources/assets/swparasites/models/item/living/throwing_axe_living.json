@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_throwing_axe"
+        "layer0":"swparasites:living/throwing_axe"
     },
     "display": {
         "thirdperson_righthand": {

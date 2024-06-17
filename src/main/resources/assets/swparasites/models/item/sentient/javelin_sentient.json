@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_javelin"
+        "layer0":"swparasites:sentient/javelin"
     },
     "display": {
         "thirdperson_righthand": {

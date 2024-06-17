@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:living/living_longsword"
+        "layer0":"swparasites:living/longsword"
     },
     "display": {
         "thirdperson_righthand": {
