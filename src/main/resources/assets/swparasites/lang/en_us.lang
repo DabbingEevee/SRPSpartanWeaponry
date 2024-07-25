@@ -65,7 +65,7 @@ tooltip.swparasites:corrosion=Corrosion %s
 tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher Corrosion levels will apply more potent acid more often.
 
 tooltip.swparasites:immalleable=Immalleable %s
-tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation.
+tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Higher Immalleable levels crush adaptation more often.
 
 tooltip.swparasites:repulse=Repulse %s
 tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the user. Higher Repulse levels enrage you even further.
