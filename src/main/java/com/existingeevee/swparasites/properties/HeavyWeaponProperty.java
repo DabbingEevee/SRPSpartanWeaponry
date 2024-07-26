@@ -4,25 +4,31 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
+import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
+import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class HeavyWeaponProperty extends WeaponProperty {
+public class HeavyWeaponProperty extends WeaponProperty { //https://wiki.teamfortress.com/wiki/Heavy
 
 	final boolean lvl2;
 	
@@ -36,12 +42,22 @@ public class HeavyWeaponProperty extends WeaponProperty {
 	private static AttributeModifier modifier;
 	private static AttributeModifier modifierII;
 
+	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
+		//We didn't want to make another trait for this, so i slapped this here
+		if (entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entity;
+			if (ParasiteSWConfig.sentientScent) { //Add a check for in the tool has "Heavy II" here
+			   player.addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0));
+			}
+		}
+	}
+	
 	@SubscribeEvent
 	public void onLivingUpdate(LivingUpdateEvent event) {
 		Item item = event.getEntityLiving().getHeldItemMainhand().getItem();
 
 		boolean shouldHaveSlowing = false;
-
+		
 		if (item instanceof IWeaponPropertyContainer<?>) {
 			IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) item;
 

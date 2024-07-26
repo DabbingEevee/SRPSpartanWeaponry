@@ -59,6 +59,11 @@ public class ParasiteSWConfig {
 	@Comment("How far should mobs be able to detect players while they are using the Sentient Dagger's cloaking ability? (default: 3.0)")
 	@RequiresMcRestart
 	public static double cloakingIIRange = 3.0;
+	
+	@Name("Sentient Prey")
+	@Comment("Should the player get the Prey status effect while holding a Sentient weapon? (default: true)")
+	@RequiresMcRestart
+	public static boolean sentientScent = true;
 
 	@Name("Easter Egg")
 	@Comment("Should easter eggs when holding down specific keys on an item show a funny little message? (default: true)")
