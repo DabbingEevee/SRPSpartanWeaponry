@@ -8,7 +8,7 @@ import net.minecraftforge.registries.IForgeRegistryEntry.Impl;
 
 public class Utils {
 
-	public static void forceSetRegistryName(Impl impl, String str) {
+	public static void forceSetRegistryName(Impl<?> impl, String str) {
 		if (impl == null)
 			return;
 		ObfuscationReflectionHelper.setPrivateValue(Impl.class, impl, GameData.checkPrefix(str, true), "registryName");

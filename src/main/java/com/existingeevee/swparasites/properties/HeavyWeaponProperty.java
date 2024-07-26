@@ -28,41 +28,36 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class HeavyWeaponProperty extends WeaponProperty { //https://wiki.teamfortress.com/wiki/Heavy
+public class HeavyWeaponProperty extends WeaponProperty { // https://wiki.teamfortress.com/wiki/Heavy :3
 
 	final boolean lvl2;
-	
+
 	public HeavyWeaponProperty(boolean lvl2) {
 		super("heavy", SRPSpartanWeaponry.MODID, lvl2 ? 2 : 1, 0);
 		MinecraftForge.EVENT_BUS.register(this);
-		
+
 		this.lvl2 = lvl2;
 	}
 
 	private static AttributeModifier modifier;
 	private static AttributeModifier modifierII;
 
-	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
-		//We didn't want to make another trait for this, so i slapped this here
-		if (entity instanceof EntityPlayer) {
-			EntityPlayer player = (EntityPlayer) entity;
-			if (ParasiteSWConfig.sentientScent) { //Add a check for in the tool has "Heavy II" here
-			   player.addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0));
-			}
-		}
-	}
-	
 	@SubscribeEvent
 	public void onLivingUpdate(LivingUpdateEvent event) {
 		Item item = event.getEntityLiving().getHeldItemMainhand().getItem();
 
 		boolean shouldHaveSlowing = false;
-		
+
 		if (item instanceof IWeaponPropertyContainer<?>) {
 			IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) item;
 
 			if (container.getAllWeaponProperties().stream().anyMatch(p -> p == this)) {
 				shouldHaveSlowing = true;
+
+				// We didn't want to make another trait for this, so i slapped this here
+				if (ParasiteSWConfig.sentientScent && this.lvl2) { // Only if sentient scent is enabled and its heavy 2
+					event.getEntityLiving().addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0));
+				}
 			}
 		}
 
@@ -70,7 +65,7 @@ public class HeavyWeaponProperty extends WeaponProperty { //https://wiki.teamfor
 
 		if (attr != null) {
 			AttributeModifier modifier = lvl2 ? getModifierII() : getModifier();
-			
+
 			if (shouldHaveSlowing && !attr.hasModifier(modifier)) {
 				attr.applyModifier(modifier);
 			}
@@ -86,12 +81,12 @@ public class HeavyWeaponProperty extends WeaponProperty { //https://wiki.teamfor
 	}
 
 	private static final DecimalFormat FORMATTER = new DecimalFormat("0.##");
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) {
 		String percent = FORMATTER.format((lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness) * 100);
-		
+
 		tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateString(type + ".desc", "tooltip", modId).replace("$s", percent + "%"));
 	}
 
@@ -101,7 +96,7 @@ public class HeavyWeaponProperty extends WeaponProperty { //https://wiki.teamfor
 		}
 		return modifier;
 	}
-	
+
 	private static AttributeModifier getModifierII() {
 		if (modifierII == null) {
 			modifierII = new AttributeModifier(UUID.fromString("aeeee3df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponIISlowness, 2);
