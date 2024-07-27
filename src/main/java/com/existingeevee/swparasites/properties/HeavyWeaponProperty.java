@@ -45,7 +45,7 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
 		// We didn't want to make another trait for this, so i slapped this here
 		if (ParasiteSWConfig.sentientScent && this.lvl2) { // Only if sentient scent is enabled and its heavy 2
-			entity.addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0));
+			entity.addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0, false, false));
 		}
 	}
 
