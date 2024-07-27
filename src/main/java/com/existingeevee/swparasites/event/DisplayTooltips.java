@@ -65,24 +65,25 @@ public class DisplayTooltips {
 
 	private static List<String> smartSplitString(String toSplit, int max) {
 		List<String> ret = new ArrayList<String>();
-		String temp = "";
-		for (String s : toSplit.split(" ")) {
-			if (s.indexOf("\\n") >= 0) {
-				String[] newlined = s.split("\\n");
-				for (String n : newlined) {
-					ret.add(temp + n);
-					temp = "";
+
+		if (toSplit.indexOf("\\n") >= 0) {
+			String[] newlined = toSplit.split("\\\\n");
+			for (String n : newlined) {
+				ret.addAll(smartSplitString(n, max));
+			}
+		} else {
+
+			String temp = "";
+			for (String s : toSplit.split(" ")) {
+				if (temp.replace("%s%", " ").length() + s.replace("%s%", " ").length() > max) {
+					ret.add(temp.trim().replace("%s%", " "));
+					temp = s + " ";
+				} else {
+					temp += s + " ";
 				}
 			}
-						
-			if (temp.replace("%s%", " ").length() + s.replace("%s%", " ").length() > max) {
-				ret.add(temp.trim().replace("%s%", " "));
-				temp = s + " ";
-			} else {
-				temp += s + " ";
-			}
+			ret.add("" + temp.trim().replace("%s%", " "));
 		}
-		ret.add("" + temp.trim().replace("%s%", " "));
 		return ret;
 	}
 
