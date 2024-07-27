@@ -9,8 +9,10 @@ import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
-import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
+import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCallback;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -18,13 +20,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class HeavyWeaponProperty extends WeaponProperty { // https://wiki.teamfortress.com/wiki/Heavy :3
+public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https://wiki.teamfortress.com/wiki/Heavy :3
 
 	final boolean lvl2;
 
@@ -38,6 +41,15 @@ public class HeavyWeaponProperty extends WeaponProperty { // https://wiki.teamfo
 	private static AttributeModifier modifier;
 	private static AttributeModifier modifierII;
 
+	@Override
+	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
+		// We didn't want to make another trait for this, so i slapped this here
+		if (ParasiteSWConfig.sentientScent && this.lvl2) { // Only if sentient scent is enabled and its heavy 2
+			entity.addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0));
+		}
+	}
+
+	
 	@SubscribeEvent
 	public void onLivingUpdate(LivingUpdateEvent event) {
 		Item item = event.getEntityLiving().getHeldItemMainhand().getItem();
@@ -49,11 +61,6 @@ public class HeavyWeaponProperty extends WeaponProperty { // https://wiki.teamfo
 
 			if (container.getAllWeaponProperties().stream().anyMatch(p -> p == this)) {
 				shouldHaveSlowing = true;
-
-				// We didn't want to make another trait for this, so i slapped this here
-				if (ParasiteSWConfig.sentientScent && this.lvl2) { // Only if sentient scent is enabled and its heavy 2
-					event.getEntityLiving().addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0));
-				}
 			}
 		}
 
