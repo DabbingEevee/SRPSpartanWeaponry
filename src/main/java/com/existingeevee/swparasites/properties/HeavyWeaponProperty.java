@@ -56,7 +56,7 @@ public class HeavyWeaponProperty extends WeaponProperty { // https://wiki.teamfo
 
 				// We didn't want to make another trait for this, so i slapped this here
 				if (ParasiteSWConfig.sentientScent && this.lvl2) { // Only if sentient scent is enabled and its heavy 2
-					event.getEntityLiving().addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0));
+					event.getEntityLiving().addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 60 * 20, 0, false, false));
 				}
 			}
 		}
