@@ -53,7 +53,7 @@ public class ParasiteSWSentient {
 	public static ItemBoomerang boomerangSentient = null;
 	public static ItemDagger daggerSentient = null;
 	public static ItemGlaive glaiveSentient = null;
-	public static ItemHalberd halbardSentient = null;
+	public static ItemHalberd halberdSentient = null;
 	public static ItemHammer hammerSentient = null;
 	public static ItemJavelin javelinSentient = null;
 	public static ItemKatana katanaSentient = null;
