@@ -50,7 +50,7 @@ public class ParasiteSWLiving {
 	public static ItemBoomerang boomerangLiving = null;
 	public static ItemDagger daggerLiving = null;
 	public static ItemGlaive glaiveLiving = null;
-	public static ItemHalberd halbardLiving = null;
+	public static ItemHalberd halberdLiving = null;
 	public static ItemHammer hammerLiving = null;
 	public static ItemJavelin javelinLiving = null;
 	public static ItemKatana katanaLiving = null;
