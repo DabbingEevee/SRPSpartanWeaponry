@@ -13,6 +13,7 @@ import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
+import com.oblivioussp.spartanweaponry.init.EnchantmentRegistrySW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
@@ -36,7 +37,9 @@ import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -134,7 +137,7 @@ public class ParasiteSWLiving {
 
 		return items;
 	}
-
+	
 	public static ToolMaterialEx getLivingMaterial() {
 		if (livingMaterial == null) {
 			livingMaterial = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, ParasiteSWConfig.maxLivingDamage, 7.5f, ParasiteSWConfig.livingBaseDmg, 18);
@@ -143,6 +146,58 @@ public class ParasiteSWLiving {
 	}
 
 	public static Item addDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
+		if (ConfigHandler.disableDagger)
+			return null;
+
+		ItemDagger dagger = new ItemNoReequipDagger("dagger_" + material.getUnlocName(), modId, material);
+		dagger.setCreativeTab(tab);
+
+		for (WeaponProperty prop : properties) {
+			dagger.addWeaponProperty(prop);
+		}
+		return dagger;
+	}
+	
+	public static Item addBoomerang(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
+		if (ConfigHandler.disableBoomerang)
+			return null;
+
+		ItemBoomerang boomerang = new ItemNoReequipDagger("boomerang_" + material.getUnlocName(), modId, material);
+		boomerang.setCreativeTab(tab);
+
+		for (WeaponProperty prop : properties) {
+			boomerang.addWeaponProperty(prop);
+		}
+		return boomerang;
+	}
+	
+	public static Item addJavelin(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
+		if (ConfigHandler.disableJavelin)
+			return null;
+
+		ItemDagger javelin = new ItemNoReequipDagger("javelin_" + material.getUnlocName(), modId, material);
+		javelin.setCreativeTab(tab);
+
+		for (WeaponProperty prop : properties) {
+			javelin.addWeaponProperty(prop);
+		}
+		return javelin;
+	}
+	
+	public static Item addThrowingAxe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
+		if (ConfigHandler.disableThrowingAxe)
+			return null;
+
+		ItemDagger throwingAxe = new ItemNoReequipDagger("throwing_axe_" + material.getUnlocName(), modId, material);
+		throwingAxe.setCreativeTab(tab);
+
+		for (WeaponProperty prop : properties) {
+			throwingAxe.addWeaponProperty(prop);
+		}
+		return throwingAxe;
+	}
+	
+	public static Item addThrowingKnife(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
 		if (ConfigHandler.disableDagger)
 			return null;
 
