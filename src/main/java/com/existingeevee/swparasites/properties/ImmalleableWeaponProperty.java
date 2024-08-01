@@ -7,6 +7,7 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCall
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 
@@ -19,7 +20,9 @@ public class ImmalleableWeaponProperty extends WeaponPropertyWithCallback {
 	@Override
 	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {
 		double chance = this.getMagnitude() / 8;
-
+		if (attacker instanceof EntityPlayer && ((EntityPlayer) attacker).getCooledAttackStrength(1f) <= 0.9) {
+			return;
+		}
 		if (attacker.world.rand.nextDouble() < chance) {
 			target.addPotionEffect(new PotionEffect(SRPPotions.RES_E, 40, 0, false, false));
 		}
