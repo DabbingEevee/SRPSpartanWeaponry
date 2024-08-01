@@ -108,19 +108,21 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 			EntityPlayer player = (EntityPlayer) attacker;
 
 			ItemStack weapon = projThrown.getWeaponStack();
-			
+
 			Utils.executeInNTicks(() -> {
-				// Find any stack that might fit this item.
-				for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
-					System.out.println("checking player inventory slot " + i);
-					ItemStack slotStack = player.inventory.getStackInSlot(i);
-					if (ItemStack.areItemsEqualIgnoreDurability(slotStack, weapon) && weapon.hasTagCompound()
-							&& slotStack.hasTagCompound()
-							&& weapon.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID)
-									.equals(slotStack.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID))
-							&& weapon.getItem() instanceof ItemThrowingWeapon) {
-						System.out.println("throwing weapon increased srpkills");
-						add(slotStack, (int) target.getMaxHealth());
+				if (target.getHealth() <= 0.0f) {
+					// Find any stack that might fit this item.
+					for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+						System.out.println("checking player inventory slot " + i);
+						ItemStack slotStack = player.inventory.getStackInSlot(i);
+						if (ItemStack.areItemsEqualIgnoreDurability(slotStack, weapon) && weapon.hasTagCompound()
+								&& slotStack.hasTagCompound()
+								&& weapon.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID)
+										.equals(slotStack.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID))
+								&& weapon.getItem() instanceof ItemThrowingWeapon) {
+							System.out.println("throwing weapon increased srpkills");
+							add(slotStack, (int) target.getMaxHealth());
+						}
 					}
 				}
 				System.out.println("finished checking player inventory");
