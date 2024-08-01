@@ -100,7 +100,7 @@ public class DisplayTooltips {
 			IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) stack.getItem();
 
 			if (container.getAllWeaponProperties().stream()
-					.anyMatch(p -> p == ParasiteSWProperties.SLOW_1 || p == ParasiteSWProperties.SLOW_2)) {
+					.anyMatch(p -> p == ParasiteSWProperties.HEAVY_1 || p == ParasiteSWProperties.HEAVY_2)) {
 				final NBTTagCompound compound = stack.getTagCompound();
 				if (compound != null) {
 					return (TextFormatting.BLUE + "---> " + compound.getInteger("srpkills"));

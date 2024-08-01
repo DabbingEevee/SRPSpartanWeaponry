@@ -35,8 +35,8 @@ public class ParasiteSWProperties {
 	public static final RepulseWeaponProperty REPULSE_1 = new RepulseWeaponProperty(1);
 	public static final RepulseWeaponProperty REPULSE_2 = new RepulseWeaponProperty(2);
 
-	public static final HeavyWeaponProperty SLOW_1 = new HeavyWeaponProperty(false);
-	public static final HeavyWeaponProperty SLOW_2 = new HeavyWeaponProperty(true);
+	public static final HeavyWeaponProperty HEAVY_1 = new HeavyWeaponProperty(false);
+	public static final HeavyWeaponProperty HEAVY_2 = new HeavyWeaponProperty(true);
 
 	public static final WeaponProperty REACH_3 = new WeaponProperty(WeaponProperties.PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 3, 8.0f);
 	

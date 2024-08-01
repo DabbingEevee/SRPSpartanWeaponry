@@ -6,8 +6,8 @@ import java.util.List;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
+import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
-import com.existingeevee.swparasites.items.ItemNoReequipDagger;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -35,9 +35,7 @@ import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
-import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -81,10 +79,10 @@ public class ParasiteSWSentient {
 		}
 		items.add(claymoreSentient);
 
-		daggerSentient = (ItemDagger) addDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_2);
+		daggerSentient = (ItemDagger) CustomWeaponCreator.addDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_2);
 		items.add(daggerSentient);
 
-		boomerangSentient = (ItemBoomerang) SpartanWeaponryAPI.createBoomerang(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
+		boomerangSentient = (ItemBoomerang) CustomWeaponCreator.addBoomerang(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
 		items.add(boomerangSentient);
 
 		glaiveSentient = (ItemGlaive) SpartanWeaponryAPI.createGlaive(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
@@ -96,7 +94,7 @@ public class ParasiteSWSentient {
 		hammerSentient = (ItemHammer) SpartanWeaponryAPI.createHammer(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
 		items.add(hammerSentient);
 
-		javelinSentient = (ItemJavelin) SpartanWeaponryAPI.createJavelin(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
+		javelinSentient = (ItemJavelin) CustomWeaponCreator.addJavelin(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
 		items.add(javelinSentient);
 
 		katanaSentient = (ItemKatana) SpartanWeaponryAPI.createKatana(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
@@ -126,10 +124,10 @@ public class ParasiteSWSentient {
 		spearSentient = (ItemSpear) SpartanWeaponryAPI.createSpear(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
 		items.add(spearSentient);
 
-		throwingAxeSentient = (ItemThrowingAxe) SpartanWeaponryAPI.createThrowingAxe(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
+		throwingAxeSentient = (ItemThrowingAxe) CustomWeaponCreator.addThrowingAxe(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
 		items.add(throwingAxeSentient);
 
-		throwingKnifeSentient = (ItemThrowingKnife) SpartanWeaponryAPI.createThrowingKnife(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
+		throwingKnifeSentient = (ItemThrowingKnife) CustomWeaponCreator.addThrowingKnife(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
 		items.add(throwingKnifeSentient);
 
 		warhammerSentient = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
@@ -143,19 +141,6 @@ public class ParasiteSWSentient {
 			sentientMaterial = new ToolMaterialEx("sentient", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, ParasiteSWConfig.maxSentientDamage, 7.5f, ParasiteSWConfig.sentientBaseDmg, 18);
 		}
 		return sentientMaterial;
-	}
-
-	public static Item addDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
-		if (ConfigHandler.disableDagger)
-			return null;
-
-		ItemDagger dagger = new ItemNoReequipDagger("dagger_" + material.getUnlocName(), modId, material);
-		dagger.setCreativeTab(tab);
-
-		for (WeaponProperty prop : properties) {
-			dagger.addWeaponProperty(prop);
-		}
-		return dagger;
 	}
 
 	@SubscribeEvent
@@ -173,7 +158,7 @@ public class ParasiteSWSentient {
 
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
-				container.addWeaponProperty(ParasiteSWProperties.SLOW_2);
+				container.addWeaponProperty(ParasiteSWProperties.HEAVY_2);
 				container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
 				
 				if (container.hasWeaponProperty(WeaponProperties.REACH_2)) {

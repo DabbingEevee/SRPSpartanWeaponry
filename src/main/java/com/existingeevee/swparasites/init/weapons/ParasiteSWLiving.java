@@ -6,14 +6,12 @@ import java.util.List;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
+import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
-import com.existingeevee.swparasites.items.ItemNoReequipDagger;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
-import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
-import com.oblivioussp.spartanweaponry.init.EnchantmentRegistrySW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
@@ -34,12 +32,8 @@ import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
-import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -81,14 +75,14 @@ public class ParasiteSWLiving {
 		}
 		items.add(claymoreLiving);
 
-		daggerLiving = (ItemDagger) addDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_1);
+		daggerLiving = (ItemDagger) CustomWeaponCreator.addDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_1);
 		items.add(daggerLiving);
 
-		boomerangLiving = (ItemBoomerang) SpartanWeaponryAPI.createBoomerang(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
+		boomerangLiving = (ItemBoomerang) CustomWeaponCreator.addBoomerang(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
 		items.add(boomerangLiving);
 
 		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
-		items.add(glaiveLiving);
+		items.add(glaiveLiving); 
 
 		halberdLiving = (ItemHalberd) SpartanWeaponryAPI.createHalberd(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_1);
 		items.add(halberdLiving);
@@ -96,7 +90,7 @@ public class ParasiteSWLiving {
 		hammerLiving = (ItemHammer) SpartanWeaponryAPI.createHammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
 		items.add(hammerLiving);
 
-		javelinLiving = (ItemJavelin) SpartanWeaponryAPI.createJavelin(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
+		javelinLiving = (ItemJavelin) CustomWeaponCreator.addJavelin(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
 		items.add(javelinLiving);
 
 		katanaLiving = (ItemKatana) SpartanWeaponryAPI.createKatana(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
@@ -126,10 +120,10 @@ public class ParasiteSWLiving {
 		spearLiving = (ItemSpear) SpartanWeaponryAPI.createSpear(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_1);
 		items.add(spearLiving);
 
-		throwingAxeLiving = (ItemThrowingAxe) SpartanWeaponryAPI.createThrowingAxe(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_1);
+		throwingAxeLiving = (ItemThrowingAxe) CustomWeaponCreator.addThrowingAxe(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_1);
 		items.add(throwingAxeLiving);
 
-		throwingKnifeLiving = (ItemThrowingKnife) SpartanWeaponryAPI.createThrowingKnife(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
+		throwingKnifeLiving = (ItemThrowingKnife) CustomWeaponCreator.addThrowingKnife(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
 		items.add(throwingKnifeLiving);
 
 		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
@@ -143,71 +137,6 @@ public class ParasiteSWLiving {
 			livingMaterial = new ToolMaterialEx("living", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, ParasiteSWConfig.maxLivingDamage, 7.5f, ParasiteSWConfig.livingBaseDmg, 18);
 		}
 		return livingMaterial;
-	}
-
-	public static Item addDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
-		if (ConfigHandler.disableDagger)
-			return null;
-
-		ItemDagger dagger = new ItemNoReequipDagger("dagger_" + material.getUnlocName(), modId, material);
-		dagger.setCreativeTab(tab);
-
-		for (WeaponProperty prop : properties) {
-			dagger.addWeaponProperty(prop);
-		}
-		return dagger;
-	}
-	
-	public static Item addBoomerang(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
-		if (ConfigHandler.disableBoomerang)
-			return null;
-
-		ItemBoomerang boomerang = new ItemNoReequipDagger("boomerang_" + material.getUnlocName(), modId, material);
-		boomerang.setCreativeTab(tab);
-
-		for (WeaponProperty prop : properties) {
-			boomerang.addWeaponProperty(prop);
-		}
-		return boomerang;
-	}
-	
-	public static Item addJavelin(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
-		if (ConfigHandler.disableJavelin)
-			return null;
-
-		ItemDagger javelin = new ItemNoReequipDagger("javelin_" + material.getUnlocName(), modId, material);
-		javelin.setCreativeTab(tab);
-
-		for (WeaponProperty prop : properties) {
-			javelin.addWeaponProperty(prop);
-		}
-		return javelin;
-	}
-	
-	public static Item addThrowingAxe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
-		if (ConfigHandler.disableThrowingAxe)
-			return null;
-
-		ItemDagger throwingAxe = new ItemNoReequipDagger("throwing_axe_" + material.getUnlocName(), modId, material);
-		throwingAxe.setCreativeTab(tab);
-
-		for (WeaponProperty prop : properties) {
-			throwingAxe.addWeaponProperty(prop);
-		}
-		return throwingAxe;
-	}
-	
-	public static Item addThrowingKnife(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
-		if (ConfigHandler.disableDagger)
-			return null;
-
-		ItemDagger dagger = new ItemNoReequipDagger("dagger_" + material.getUnlocName(), modId, material);
-		dagger.setCreativeTab(tab);
-
-		for (WeaponProperty prop : properties) {
-			dagger.addWeaponProperty(prop);
-		}
-		return dagger;
 	}
 
 	@SubscribeEvent
@@ -225,7 +154,7 @@ public class ParasiteSWLiving {
 
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
-				container.addWeaponProperty(ParasiteSWProperties.SLOW_1);
+				container.addWeaponProperty(ParasiteSWProperties.HEAVY_1);
 				container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
 
 				ToolMaterialEx mat = container.getMaterialEx();
