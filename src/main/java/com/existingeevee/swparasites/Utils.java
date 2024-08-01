@@ -3,7 +3,6 @@ package com.existingeevee.swparasites;
 import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
 
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -24,7 +23,7 @@ public class Utils {
 		ObfuscationReflectionHelper.setPrivateValue(ItemSwordBase.class, impl, null, "displayName");
 	}
 
-	public static void executeInNTicks(Executor executor, int executeIn) {
+	public static void executeInNTicks(Runnable executor, int executeIn) {
 		new Object() {
 			private int ticks = 0;
 			private float waitTicks;
@@ -46,13 +45,8 @@ public class Utils {
 			}
 
 			private void run() {
-				executor.execute();
+				executor.run();
 			}
 		}.start(executeIn);
-	}
-
-	@FunctionalInterface
-	public static interface Executor {
-		void execute();
 	}
 }

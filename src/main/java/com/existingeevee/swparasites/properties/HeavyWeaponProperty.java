@@ -8,6 +8,7 @@ import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
+import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.event.EvolutionHandler;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
@@ -97,19 +98,18 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target,
 			EntityLivingBase attacker, Entity projectile) {
 		System.out.println("target hit");
-		if (target.getHealth() <= 0.0f) {
-			System.out.println("target dead");
-			if (projectile instanceof EntityThrownWeapon) {
-				System.out.println("throwing weapon detected");
-				if (!(attacker instanceof EntityPlayer)) {
-					System.out.println("attacker detected as non-player, returning");
-					return;
-				}
-				EntityThrownWeapon projThrown = (EntityThrownWeapon) projectile;
-				EntityPlayer player = (EntityPlayer) attacker;
+		if (projectile instanceof EntityThrownWeapon) {
+			System.out.println("throwing weapon detected");
+			if (!(attacker instanceof EntityPlayer)) {
+				System.out.println("attacker detected as non-player, returning");
+				return;
+			}
+			EntityThrownWeapon projThrown = (EntityThrownWeapon) projectile;
+			EntityPlayer player = (EntityPlayer) attacker;
 
-				ItemStack weapon = projThrown.getWeaponStack();
-
+			ItemStack weapon = projThrown.getWeaponStack();
+			
+			Utils.executeInNTicks(() -> {
 				// Find any stack that might fit this item.
 				for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
 					System.out.println("checking player inventory slot " + i);
@@ -124,7 +124,10 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 					}
 				}
 				System.out.println("finished checking player inventory");
-			} else {
+			}, 1);
+		} else {
+			if (target.getHealth() <= 0.0f) {
+				System.out.println("target dead");
 				System.out.println("non-throwing weapon detected, increased srpkills");
 				add(stack, (int) target.getMaxHealth());
 			}
