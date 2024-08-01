@@ -30,7 +30,7 @@
             "predicate": {
                 "blocking": 1
             },
-            "model": "swparasites:item/living/parrying_dagger_blocking"
+            "model": "swparasites:item/living/parrying_dagger_living_blocking"
         }
     ]
 }

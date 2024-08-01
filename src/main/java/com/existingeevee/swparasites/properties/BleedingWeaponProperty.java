@@ -17,7 +17,7 @@ public class BleedingWeaponProperty extends WeaponPropertyWithCallback {
 
 	@Override
 	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {		
-		//Im sorry
+		//Im sorry bro is sorry
 		for (int i = 0; i < getMagnitude(); i++) {
 			SRPItems.weapon_sword.hitEntity(stack, target, attacker);
 		}

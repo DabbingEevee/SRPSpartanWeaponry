@@ -90,8 +90,8 @@ public class ParasiteSWSentient {
 		glaiveSentient = (ItemGlaive) SpartanWeaponryAPI.createGlaive(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
 		items.add(glaiveSentient);
 
-		halbardSentient = (ItemHalberd) SpartanWeaponryAPI.createHalberd(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
-		items.add(halbardSentient);
+		halberdSentient = (ItemHalberd) SpartanWeaponryAPI.createHalberd(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
+		items.add(halberdSentient);
 
 		hammerSentient = (ItemHammer) SpartanWeaponryAPI.createHammer(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
 		items.add(hammerSentient);
