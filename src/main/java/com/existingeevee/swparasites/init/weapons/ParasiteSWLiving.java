@@ -31,6 +31,7 @@ import com.oblivioussp.spartanweaponry.item.ItemSaber;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
+import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 
 import net.minecraft.item.Item;
@@ -155,8 +156,9 @@ public class ParasiteSWLiving {
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
 				container.addWeaponProperty(ParasiteSWProperties.HEAVY_1);
-				container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
-
+				if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
+					container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
+				}
 				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();
 

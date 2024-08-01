@@ -34,6 +34,7 @@ import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
+import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 
 import net.minecraft.item.Item;
@@ -159,7 +160,9 @@ public class ParasiteSWSentient {
 				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
 				container.addWeaponProperty(ParasiteSWProperties.HEAVY_2);
-				container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
+				if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
+					container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
+				}
 				
 				if (container.hasWeaponProperty(WeaponProperties.REACH_2)) {
 					tryRemoveProperty(container, WeaponProperties.REACH_2);
