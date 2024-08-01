@@ -1,6 +1,6 @@
 package com.existingeevee.swparasites.properties;
 
-import com.dhanantry.scapeandrunparasites.init.SRPItems;
+import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCallback;
@@ -16,10 +16,12 @@ public class CorrosionWeaponProperty extends WeaponPropertyWithCallback {
 	}
 
 	@Override
-	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {		
-		//Im sorry
+	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {
+		//I fixed it :D
 		for (int i = 0; i < getMagnitude(); i++) {
-			SRPItems.weapon_axe.hitEntity(stack, target, attacker);
+			if (attacker.world.rand.nextDouble() < 0.25) {
+				SRPPotions.applyStackPotion(SRPPotions.CORRO_E, target, 100, 0);
+			}
 		}
 	}
 }
