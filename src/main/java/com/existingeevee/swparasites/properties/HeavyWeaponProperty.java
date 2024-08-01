@@ -14,6 +14,8 @@ import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCallback;
+import com.oblivioussp.spartanweaponry.entity.projectile.EntityThrownWeapon;
+import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,6 +24,7 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -50,51 +53,76 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 
 	@Override
 	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
-		// We didn't want to make another trait for living weapon evolution and sentient weapons giving Prey, so we hid it in Heavy :3
-        if (!world.isRemote) {
-            if (ParasiteSWConfig.sentientScent && this.lvl2 && SRPConfigSystems.useScent && world.rand.nextInt(100) == 0 && entity.ticksExisted % 40 == 0) {
-                ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
-            }
-            if (entity.ticksExisted % 80 == 0) {
-                int key = 0;
-                final NBTTagCompound compound = stack.getTagCompound();
-                if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
-                    if (compound.hasKey("srpkills")) {
-                        key = compound.getInteger("srpkills");
-                    }
-                    if (key > SRPConfig.weapon_livingSentient_HP_needed) {
-                        compound.setInteger("srpkills", 0);
-                        final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
-                        final EntityItem entityitem = new EntityItem(world, entity.posX, entity.posY, entity.posZ, stackW);
-                        entityitem.setDefaultPickupDelay();
-                        world.spawnEntity((Entity)entityitem);
-                        stack.shrink(1);
-                        if (SRPConfig.thunderEnable) {
-                            world.addWeatherEffect((Entity)new EntityLightningBolt(world, entity.posX, entity.posY, entity.posZ, true));
-                        }
-                    }
-                }
-            }
-        }
+		// We didn't want to make another trait for living weapon evolution and sentient
+		// weapons giving Prey, so we hid it in Heavy :3
+		if (!world.isRemote) {
+			if (ParasiteSWConfig.sentientScent && this.lvl2 && SRPConfigSystems.useScent && world.rand.nextInt(100) == 0 && entity.ticksExisted % 40 == 0) {
+				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
+			}
+			if (entity.ticksExisted % 80 == 0) {
+				int key = 0;
+				final NBTTagCompound compound = stack.getTagCompound();
+				if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
+					if (compound.hasKey("srpkills")) {
+						key = compound.getInteger("srpkills");
+					}
+					if (key > SRPConfig.weapon_livingSentient_HP_needed) {
+						compound.setInteger("srpkills", 0);
+						final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
+						final EntityItem entityitem = new EntityItem(world, entity.posX, entity.posY, entity.posZ, stackW);
+						entityitem.setDefaultPickupDelay();
+						world.spawnEntity((Entity) entityitem);
+						stack.shrink(1);
+						if (SRPConfig.thunderEnable) {
+							world.addWeatherEffect((Entity) new EntityLightningBolt(world, entity.posX, entity.posY, entity.posZ, true));
+						}
+					}
+				}
+			}
+		}
 	}
-	
+
 	@Override
-	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {	
-        if (target.getHealth() <= 0.0f) {
-            NBTTagCompound compound = stack.getTagCompound();
-            if (compound == null) {
-                compound = new NBTTagCompound();
-            }
-            if (compound.hasKey("srpkills")) {
-                final int key = (int)(compound.getInteger("srpkills") + target.getMaxHealth());
-                compound.setInteger("srpkills", key);
-            }
-            else {
-                compound.setInteger("srpkills", (int)target.getMaxHealth());
-            }
-            stack.setTagCompound(compound);
-        }
-    }
+	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {
+		if (target.getHealth() <= 0.0f) {
+			if (projectile instanceof EntityThrownWeapon) {
+				if (!(attacker instanceof EntityPlayer))
+					return;
+
+				EntityThrownWeapon projThrown = (EntityThrownWeapon) projectile;
+				EntityPlayer player = (EntityPlayer) attacker;
+
+				ItemStack weapon = projThrown.getWeaponStack();
+
+				// Find any stack that might fit this item.
+				for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+					ItemStack slotStack = player.inventory.getStackInSlot(i);
+					if (ItemStack.areItemsEqualIgnoreDurability(slotStack, weapon) && weapon.hasTagCompound() && slotStack.hasTagCompound() &&
+							weapon.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID).equals(slotStack.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID)) &&
+							weapon.getItem() instanceof ItemThrowingWeapon) {
+						
+						add(slotStack, (int) target.getMaxHealth());
+					}
+				}
+			} else {
+				add(stack, (int) target.getMaxHealth());
+			}
+		}
+	}
+
+	public static void add(ItemStack stack, int amount) {
+		NBTTagCompound compound = stack.getTagCompound();
+		if (compound == null) {
+			compound = new NBTTagCompound();
+		}
+		if (compound.hasKey("srpkills")) {
+			final int key = (int) (compound.getInteger("srpkills") + amount);
+			compound.setInteger("srpkills", key);
+		} else {
+			compound.setInteger("srpkills", amount);
+		}
+		stack.setTagCompound(compound);
+	}
 	
 	@SubscribeEvent
 	public void onLivingUpdate(LivingUpdateEvent event) {
