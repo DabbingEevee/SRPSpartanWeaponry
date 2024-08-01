@@ -18,7 +18,7 @@ public class ItemParasiteJavelin extends ItemJavelin {
 		WeaponProperty prop = this.getFirstWeaponPropertyWithType("heavy");
 		if (prop != null) { 
 			boolean lvl2 = prop.getLevel() != 1;
-			float mult = (float) (1f / (lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness));
+			float mult = (float) (1 + (lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness));
 			return (int) Math.round(super.getMaxChargeTicks(stack) * mult);
 		}
 		return super.getMaxChargeTicks(stack);

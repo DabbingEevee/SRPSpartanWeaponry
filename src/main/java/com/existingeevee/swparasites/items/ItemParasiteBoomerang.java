@@ -25,14 +25,14 @@ public class ItemParasiteBoomerang extends ItemBoomerang {
 	}
 
 	@Override
-	public int getMaxItemUseDuration(ItemStack stack) {
+	public int getMaxChargeTicks(ItemStack stack) {
 		WeaponProperty prop = this.getFirstWeaponPropertyWithType("heavy");
-		if (prop != null) {
+		if (prop != null) { 
 			boolean lvl2 = prop.getLevel() != 1;
-			float mult = (float) (1f / (lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness));
-			return (int) Math.round(super.getMaxItemUseDuration(stack) * mult);
+			float mult = (float) (1 + (lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness));
+			return (int) Math.round(super.getMaxChargeTicks(stack) * mult);
 		}
-		return super.getMaxItemUseDuration(stack);
+		return super.getMaxChargeTicks(stack);
 	}
 
 	@Override
