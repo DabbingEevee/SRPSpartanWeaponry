@@ -78,7 +78,7 @@ public class ParasiteSWLiving {
 		daggerLiving = (ItemDagger) CustomWeaponCreator.addDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_1);
 		items.add(daggerLiving);
 
-		boomerangLiving = (ItemBoomerang) CustomWeaponCreator.addBoomerang(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
+		boomerangLiving = (ItemBoomerang) CustomWeaponCreator.addBoomerang(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
 		items.add(boomerangLiving);
 
 		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);

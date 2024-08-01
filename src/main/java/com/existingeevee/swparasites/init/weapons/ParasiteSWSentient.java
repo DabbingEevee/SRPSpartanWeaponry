@@ -82,7 +82,7 @@ public class ParasiteSWSentient {
 		daggerSentient = (ItemDagger) CustomWeaponCreator.addDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_2);
 		items.add(daggerSentient);
 
-		boomerangSentient = (ItemBoomerang) CustomWeaponCreator.addBoomerang(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
+		boomerangSentient = (ItemBoomerang) CustomWeaponCreator.addBoomerang(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
 		items.add(boomerangSentient);
 
 		glaiveSentient = (ItemGlaive) SpartanWeaponryAPI.createGlaive(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
