@@ -60,6 +60,16 @@ public class ParasiteSWConfig {
 	@RequiresMcRestart
 	public static double cloakingIIRange = 3.0;
 	
+	@Name("Evolution Keeps NBT")
+	@Comment("Should Living weapons keep NBT (enchantments, name, and other extra data) when evolving to Sentient? (default: true)")
+	@RequiresMcRestart
+	public static boolean evolutionKeepNBT = true;
+	
+	@Name("Evolution Drop on Ground")
+	@Comment("Should Living weapons drop on the ground when evolving to Sentient? (default: false)")
+	@RequiresMcRestart
+	public static boolean evolutionDropOnGround = false;
+	
 	@Name("Sentient Prey")
 	@Comment("Should the player get the Prey status effect while holding a Sentient weapon? (default: true)")
 	@RequiresMcRestart

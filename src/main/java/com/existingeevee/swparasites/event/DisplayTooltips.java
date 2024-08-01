@@ -8,8 +8,12 @@ import org.lwjgl.input.Keyboard;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
+import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -29,11 +33,10 @@ public class DisplayTooltips {
 				return;
 
 			List<String> tooltip = e.getToolTip();
-						
+
 			int indexToInsert = tooltip.isEmpty() ? 0 : 1;
-			
+
 			String key = stack.getItem().getTranslationKey() + ".desc";
-			
 
 			if (ParasiteSWConfig.easterEgg) {
 				if (Keyboard.isKeyDown(Keyboard.KEY_T)) {
@@ -58,6 +61,11 @@ public class DisplayTooltips {
 					toAdd.forEach(t -> tooltip.add(indexToInsert, t));
 
 				}
+			}
+			String progress = getProgress(stack);
+			if (progress != null) {
+				tooltip.add(1, "");
+				tooltip.add(1, progress);
 			}
 		} catch (Exception er) {
 		}
@@ -87,4 +95,18 @@ public class DisplayTooltips {
 		return ret;
 	}
 
+	public static String getProgress(final ItemStack stack) {
+		if (stack.getItem() instanceof IWeaponPropertyContainer<?>) {
+			IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) stack.getItem();
+
+			if (container.getAllWeaponProperties().stream()
+					.anyMatch(p -> p == ParasiteSWProperties.SLOW_1 || p == ParasiteSWProperties.SLOW_2)) {
+				final NBTTagCompound compound = stack.getTagCompound();
+				if (compound != null) {
+					return (TextFormatting.BLUE + "---> " + compound.getInteger("srpkills"));
+				}
+			}
+		}
+		return null;
+	}
 }
