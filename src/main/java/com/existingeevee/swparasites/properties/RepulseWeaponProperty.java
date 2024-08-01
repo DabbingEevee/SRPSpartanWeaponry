@@ -2,12 +2,14 @@ package com.existingeevee.swparasites.properties;
 
 import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
+import com.existingeevee.swparasites.init.ParasiteSWProperties;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.item.IBlockingWeapon;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.common.MinecraftForge;
@@ -48,9 +50,21 @@ public class RepulseWeaponProperty extends WeaponProperty {
 					}
 					if (blockSuccess) {
 						//Blocked (EZ)
-						
 						player.addPotionEffect(new PotionEffect(SRPPotions.RAGE_E, 5 * 20, Math.round(this.getMagnitude())));
-						
+						if (container.hasWeaponProperty(ParasiteSWProperties.SLOW_1)) {
+							NBTTagCompound compound = activeStack.getTagCompound();
+				            if (compound == null) {
+				                compound = new NBTTagCompound();
+				            }
+				            if (compound.hasKey("srpkills")) {
+				                final int key = (int)(compound.getInteger("srpkills") + ev.getAmount());
+				                compound.setInteger("srpkills", key);
+				            }
+				            else {
+				                compound.setInteger("srpkills", (int)ev.getAmount());
+				            }
+				            activeStack.setTagCompound(compound);
+						}
 					}
 				}
 			}
