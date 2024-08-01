@@ -52,50 +52,59 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 	private static AttributeModifier modifierII;
 
 	@Override
-	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
-		// We didn't want to make another trait for living weapon evolution and sentient weapons giving Prey, so we hid it in Heavy :3
-        if (!world.isRemote) {
-            if (ParasiteSWConfig.sentientScent && this.lvl2 && SRPConfigSystems.useScent && world.rand.nextInt(100) == 0 && entity.ticksExisted % 40 == 0) {
-                ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
-            }
-            if (entity.ticksExisted % 80 == 0) {
-                int key = 0;
-                final NBTTagCompound compound = stack.getTagCompound();
-                if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
-                    if (compound.hasKey("srpkills")) {
-                        key = compound.getInteger("srpkills");
-                    }
-                    if (key > SRPConfig.weapon_livingSentient_HP_needed) {
-                        compound.setInteger("srpkills", 0);
-                        final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
-                        if (ParasiteSWConfig.evolutionKeepNBT) {
-                        	stackW.setTagCompound(compound.copy());
-                        }
-                        final EntityItem entityitem = new EntityItem(world, entity.posX, entity.posY, entity.posZ, stackW);
-                        if (ParasiteSWConfig.evolutionDropOnGround) {
-                        	entityitem.setDefaultPickupDelay();
-                        }
-                        else {
-                        	entityitem.setNoPickupDelay();
-                        }
-                        world.spawnEntity((Entity)entityitem);
-                        stack.shrink(1);
-                        if (SRPConfig.thunderEnable) {
-                            world.addWeatherEffect((Entity)new EntityLightningBolt(world, entity.posX, entity.posY, entity.posZ, true));
-                        }
-                    }
-                }
-            }
-        }
+	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity,
+			int itemSlot, boolean isSelected) {
+		// We didn't want to make another trait for living weapon evolution and sentient
+		// weapons giving Prey, so we hid it in Heavy :3
+		if (!world.isRemote) {
+			if (ParasiteSWConfig.sentientScent && this.lvl2 && SRPConfigSystems.useScent && world.rand.nextInt(100) == 0
+					&& entity.ticksExisted % 40 == 0) {
+				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
+			}
+			if (entity.ticksExisted % 80 == 0) {
+				int key = 0;
+				final NBTTagCompound compound = stack.getTagCompound();
+				if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
+					if (compound.hasKey("srpkills")) {
+						key = compound.getInteger("srpkills");
+					}
+					if (key > SRPConfig.weapon_livingSentient_HP_needed) {
+						compound.setInteger("srpkills", 0);
+						final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
+						if (ParasiteSWConfig.evolutionKeepNBT) {
+							stackW.setTagCompound(compound.copy());
+						}
+						final EntityItem entityitem = new EntityItem(world, entity.posX, entity.posY, entity.posZ,
+								stackW);
+						if (ParasiteSWConfig.evolutionDropOnGround) {
+							entityitem.setDefaultPickupDelay();
+						} else {
+							entityitem.setNoPickupDelay();
+						}
+						world.spawnEntity((Entity) entityitem);
+						stack.shrink(1);
+						if (SRPConfig.thunderEnable) {
+							world.addWeatherEffect((Entity) new EntityLightningBolt(world, entity.posX, entity.posY,
+									entity.posZ, true));
+						}
+					}
+				}
+			}
+		}
 	}
 
 	@Override
-	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {
+	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target,
+			EntityLivingBase attacker, Entity projectile) {
+		System.out.println("target hit");
 		if (target.getHealth() <= 0.0f) {
+			System.out.println("target dead");
 			if (projectile instanceof EntityThrownWeapon) {
-				if (!(attacker instanceof EntityPlayer))
+				System.out.println("throwing weapon detected");
+				if (!(attacker instanceof EntityPlayer)) {
+					System.out.println("attacker detected as non-player, returning");
 					return;
-
+				}
 				EntityThrownWeapon projThrown = (EntityThrownWeapon) projectile;
 				EntityPlayer player = (EntityPlayer) attacker;
 
@@ -103,15 +112,20 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 
 				// Find any stack that might fit this item.
 				for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+					System.out.println("checking player inventory slot " + i);
 					ItemStack slotStack = player.inventory.getStackInSlot(i);
-					if (ItemStack.areItemsEqualIgnoreDurability(slotStack, weapon) && weapon.hasTagCompound() && slotStack.hasTagCompound() &&
-							weapon.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID).equals(slotStack.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID)) &&
-							weapon.getItem() instanceof ItemThrowingWeapon) {
-						
+					if (ItemStack.areItemsEqualIgnoreDurability(slotStack, weapon) && weapon.hasTagCompound()
+							&& slotStack.hasTagCompound()
+							&& weapon.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID)
+									.equals(slotStack.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID))
+							&& weapon.getItem() instanceof ItemThrowingWeapon) {
+						System.out.println("throwing weapon increased srpkills");
 						add(slotStack, (int) target.getMaxHealth());
 					}
 				}
+				System.out.println("finished checking player inventory");
 			} else {
+				System.out.println("non-throwing weapon detected, increased srpkills");
 				add(stack, (int) target.getMaxHealth());
 			}
 		}
@@ -130,7 +144,7 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 		}
 		stack.setTagCompound(compound);
 	}
-	
+
 	@SubscribeEvent
 	public void onLivingUpdate(LivingUpdateEvent event) {
 		Item item = event.getEntityLiving().getHeldItemMainhand().getItem();
@@ -145,7 +159,8 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 			}
 		}
 
-		IAttributeInstance attr = event.getEntityLiving().getAttributeMap().getAttributeInstance(SharedMonsterAttributes.ATTACK_SPEED);
+		IAttributeInstance attr = event.getEntityLiving().getAttributeMap()
+				.getAttributeInstance(SharedMonsterAttributes.ATTACK_SPEED);
 
 		if (attr != null) {
 			AttributeModifier modifier = lvl2 ? getModifierII() : getModifier();
@@ -169,21 +184,25 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 	@Override
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) {
-		String percent = FORMATTER.format((lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness) * 100);
+		String percent = FORMATTER
+				.format((lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness) * 100);
 
-		tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateString(type + ".desc", "tooltip", modId).replace("$s", percent + "%"));
+		tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler
+				.translateString(type + ".desc", "tooltip", modId).replace("$s", percent + "%"));
 	}
 
 	private static AttributeModifier getModifier() {
 		if (modifier == null) {
-			modifier = new AttributeModifier(UUID.fromString("aeee73df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponSlowness, 2);
+			modifier = new AttributeModifier(UUID.fromString("aeee73df-79af-4de9-eeee-44b5eee4df1d"),
+					"heavy_weapon_property", -ParasiteSWConfig.weaponSlowness, 2);
 		}
 		return modifier;
 	}
 
 	private static AttributeModifier getModifierII() {
 		if (modifierII == null) {
-			modifierII = new AttributeModifier(UUID.fromString("aeeee3df-79af-4de9-eeee-44b5eee4df1d"), "heavy_weapon_property", -ParasiteSWConfig.weaponIISlowness, 2);
+			modifierII = new AttributeModifier(UUID.fromString("aeeee3df-79af-4de9-eeee-44b5eee4df1d"),
+					"heavy_weapon_property", -ParasiteSWConfig.weaponIISlowness, 2);
 		}
 		return modifierII;
 	}
