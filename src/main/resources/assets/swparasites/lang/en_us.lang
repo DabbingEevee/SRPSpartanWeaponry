@@ -47,7 +47,25 @@ item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the L
 item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.\n§0You can't hide anymore...
 
 item.swparasites:claymore_living.name=§eLiving Claymore
-item.swparasites:claymore_sentient.name=§6Sentient Claymore
+item.swparasites:claymore_sentient.name=§6Sentient Greatclaymore
+item.swparasites:boomerang_sentient.name=§6Sentient Great-Boomerang
+item.swparasites:dagger_sentient.name=§6Sentient Greatdagger
+item.swparasites:glaive_sentient.name=§6Sentient Greatglaive
+item.swparasites:halberd_sentient.name=§6Sentient Greathalberd
+item.swparasites:hammer_sentient.name=§6Sentient Greathammer
+item.swparasites:javelin_sentient.name=§6Sentient Greatjavelin
+item.swparasites:katana_sentient.name=§6Sentient Greatkatana
+item.swparasites:longsword_sentient.name=§6Sentient Great-Longsword
+item.swparasites:mace_sentient.name=§6Sentient Greatmace
+item.swparasites:parrying_dagger_sentient.name=§6Sentient Great-Parrying Dagger
+item.swparasites:pike_sentient.name=§6Sentient Greatpike
+item.swparasites:saber_sentient.name=§6Sentient Greatsaber
+item.swparasites:staff_sentient.name=§6Sentient Great-Quarterstaff
+item.swparasites:rapier_sentient.name=§6Sentient Greatrapier
+item.swparasites:spear_sentient.name=§6Sentient Greatspear
+item.swparasites:throwing_axe_sentient.name=§6Sentient Great-Throwing Axe
+item.swparasites:throwing_knife_sentient.name=§6Sentient Great-Throwing Knife
+item.swparasites:warhammer_sentient.name=§6Sentient Greatwarhammer
 
 item.infectious_long_blade_fragment.name=§eInfectious Long Blade Fragment
 item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for §6Weapons§f.
