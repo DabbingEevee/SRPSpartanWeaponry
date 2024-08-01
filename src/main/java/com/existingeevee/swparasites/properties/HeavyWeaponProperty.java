@@ -53,33 +53,40 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 
 	@Override
 	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {
-		// We didn't want to make another trait for living weapon evolution and sentient
-		// weapons giving Prey, so we hid it in Heavy :3
-		if (!world.isRemote) {
-			if (ParasiteSWConfig.sentientScent && this.lvl2 && SRPConfigSystems.useScent && world.rand.nextInt(100) == 0 && entity.ticksExisted % 40 == 0) {
-				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
-			}
-			if (entity.ticksExisted % 80 == 0) {
-				int key = 0;
-				final NBTTagCompound compound = stack.getTagCompound();
-				if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
-					if (compound.hasKey("srpkills")) {
-						key = compound.getInteger("srpkills");
-					}
-					if (key > SRPConfig.weapon_livingSentient_HP_needed) {
-						compound.setInteger("srpkills", 0);
-						final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
-						final EntityItem entityitem = new EntityItem(world, entity.posX, entity.posY, entity.posZ, stackW);
-						entityitem.setDefaultPickupDelay();
-						world.spawnEntity((Entity) entityitem);
-						stack.shrink(1);
-						if (SRPConfig.thunderEnable) {
-							world.addWeatherEffect((Entity) new EntityLightningBolt(world, entity.posX, entity.posY, entity.posZ, true));
-						}
-					}
-				}
-			}
-		}
+		// We didn't want to make another trait for living weapon evolution and sentient weapons giving Prey, so we hid it in Heavy :3
+        if (!world.isRemote) {
+            if (ParasiteSWConfig.sentientScent && this.lvl2 && SRPConfigSystems.useScent && world.rand.nextInt(100) == 0 && entity.ticksExisted % 40 == 0) {
+                ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
+            }
+            if (entity.ticksExisted % 80 == 0) {
+                int key = 0;
+                final NBTTagCompound compound = stack.getTagCompound();
+                if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
+                    if (compound.hasKey("srpkills")) {
+                        key = compound.getInteger("srpkills");
+                    }
+                    if (key > SRPConfig.weapon_livingSentient_HP_needed) {
+                        compound.setInteger("srpkills", 0);
+                        final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
+                        if (ParasiteSWConfig.evolutionKeepNBT) {
+                        	stackW.setTagCompound(compound.copy());
+                        }
+                        final EntityItem entityitem = new EntityItem(world, entity.posX, entity.posY, entity.posZ, stackW);
+                        if (ParasiteSWConfig.evolutionDropOnGround) {
+                        	entityitem.setDefaultPickupDelay();
+                        }
+                        else {
+                        	entityitem.setNoPickupDelay();
+                        }
+                        world.spawnEntity((Entity)entityitem);
+                        stack.shrink(1);
+                        if (SRPConfig.thunderEnable) {
+                            world.addWeatherEffect((Entity)new EntityLightningBolt(world, entity.posX, entity.posY, entity.posZ, true));
+                        }
+                    }
+                }
+            }
+        }
 	}
 
 	@Override
