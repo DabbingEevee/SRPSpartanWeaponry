@@ -36,14 +36,14 @@ public class ParasiteSWConfig {
 	public static float sentientBaseDmg = 34.0f;
 
 	@Name("Living Weapon Slowness")
-	@Comment("How much slower should living weapons be in terms of swinging? (Note: The weapons have high dmg to compensate for the low atk speed, keep this in mind) (default: 0.33)")
+	@Comment("How much slower should living weapons be in terms of swinging? (Note: The weapons have low atk speed in trade for high dmg, keep this in mind) (default: 0.33)")
 	@RequiresMcRestart
 	public static double weaponSlowness = 0.33;
 
 	@Name("Sentient Weapon Slowness")
-	@Comment("How much slower should sentient weapons be in terms of swinging? (default: 0.50)")
+	@Comment("How much slower should sentient weapons be in terms of swinging? (default: 0.5)")
 	@RequiresMcRestart
-	public static double weaponIISlowness = 0.50;
+	public static double weaponIISlowness = 0.5;
 
 	@Name("Cloaking Durability Drain Interval")
 	@Comment("In how many ticks should 1 durability drain while using the cloaking ability? (default: 7)")
@@ -66,7 +66,7 @@ public class ParasiteSWConfig {
 	public static boolean evolutionKeepNBT = true;
 	
 	@Name("Evolution Drop on Ground")
-	@Comment("Should Living weapons drop on the ground when evolving to Sentient? (default: false)")
+	@Comment("Should Living weapons drop on the ground when evolving to Sentient? (Note: Effects that change weapon evolution only apply to the living weapons added by this mod, download Scape and Run Tweaker for the same effect for SRP's living weapons. (default: false)")
 	@RequiresMcRestart
 	public static boolean evolutionDropOnGround = false;
 	
