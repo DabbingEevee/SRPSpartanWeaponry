@@ -1,0 +1,21 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " AF",
+    "AFA",
+    "FA "
+  ],
+  "key": {
+    "A": {
+      "item": "srparasites:ada_longarms_drop"
+    },
+    "F": {
+      "item": "srparasites:assimilated_flesh"
+    }
+  },
+  "result": {
+    "item": "swparasites:vile_plate",
+    "count": 1
+  }
+}

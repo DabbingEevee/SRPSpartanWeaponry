@@ -107,7 +107,7 @@ public class ParasiteSWSentient {
 		maceSentient = (ItemMace) SpartanWeaponryAPI.createMace(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_3);
 		items.add(maceSentient);
 
-		parryDaggerSentient = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.REPULSE_2);
+		parryDaggerSentient = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.REPULSE_3);
 		items.add(parryDaggerSentient);
 
 		pikeSentient = (ItemPike) SpartanWeaponryAPI.createPike(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);

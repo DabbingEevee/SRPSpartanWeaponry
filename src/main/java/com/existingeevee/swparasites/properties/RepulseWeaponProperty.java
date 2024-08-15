@@ -50,7 +50,7 @@ public class RepulseWeaponProperty extends WeaponProperty {
 					}
 					if (blockSuccess) {
 						//Blocked (EZ)
-						player.addPotionEffect(new PotionEffect(SRPPotions.RAGE_E, 5 * 20, Math.round(this.getMagnitude())));
+						player.addPotionEffect(new PotionEffect(SRPPotions.RAGE_E, 5 * 20, Math.round(this.getMagnitude()) - 1));
 						if (container.hasWeaponProperty(ParasiteSWProperties.HEAVY_1)) {
 							NBTTagCompound compound = activeStack.getTagCompound();
 				            if (compound == null) {

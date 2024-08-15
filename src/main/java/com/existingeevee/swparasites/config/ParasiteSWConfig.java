@@ -74,6 +74,11 @@ public class ParasiteSWConfig {
 	@Comment("Should the player get the Prey status effect while holding a Sentient weapon? (default: true)")
 	@RequiresMcRestart
 	public static boolean sentientScent = true;
+	
+	@Name("Enable Shields")
+	@Comment("Disables the Shields in this mod (default: true)")
+	@RequiresMcRestart
+	public static boolean enableShields = true;
 
 	@Name("Easter Egg")
 	@Comment("Should easter eggs when holding down specific keys on an item show a funny little message? (default: true)")

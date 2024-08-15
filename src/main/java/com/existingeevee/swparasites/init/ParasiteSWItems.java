@@ -14,6 +14,7 @@ public class ParasiteSWItems {
 	
 	public static Item infLongBlade = null;
 	public static Item hardbonePole = null;
+	public static Item vilePlate = null;
 	
 	@SubscribeEvent
 	public static void onItemRegisterEvent(RegistryEvent.Register<Item> ev) {
@@ -27,6 +28,10 @@ public class ParasiteSWItems {
 		ev.getRegistry().register(hardbonePole);
 		ModelRenderRegistry.addItemToRegistry(hardbonePole, 
 				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + hardbonePole.getRegistryName().getPath()));
+		
+		ev.getRegistry().register(vilePlate);
+		ModelRenderRegistry.addItemToRegistry(vilePlate, 
+				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + vilePlate.getRegistryName().getPath()));
 
 	} 
 	
