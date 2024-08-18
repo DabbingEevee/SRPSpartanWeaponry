@@ -22,7 +22,7 @@ public class ParasiteSWShields {
 
 	private static List<Item> initalizeItems(List<Item> items) {
 
-		livingMaterial = getLivingMaterial();
+		
 
 		return items;
 	}
