@@ -1,0 +1,27 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " PS",
+    "SHP",
+    "CS "
+  ],
+  "key": {
+    "P": {
+      "item": "swparasites:vile_plate"
+    },
+    "S": {
+      "item": "srparasites:vile_shell"
+    },
+    "H": {
+      "item": "srparasites:hardened_bone_handle"
+    },
+    "C": {
+      "item": "srparasites:living_core"
+    }
+  },
+  "result": {
+    "item": "swparasites:buckler_shield_living",
+    "count": 1
+  }
+}
