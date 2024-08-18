@@ -76,7 +76,7 @@ public class ParasiteSWConfig {
 	public static boolean sentientScent = true;
 	
 	@Name("Enable Shields")
-	@Comment("Disables the Shields in this mod (default: true)")
+	@Comment("Set to false to disable the Shields in this mod (default: true)")
 	@RequiresMcRestart
 	public static boolean enableShields = true;
 

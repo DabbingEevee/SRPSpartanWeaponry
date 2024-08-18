@@ -15,11 +15,14 @@ public class ParasiteSWItems {
 	public static Item infLongBlade = null;
 	public static Item hardbonePole = null;
 	public static Item vilePlate = null;
+	public static Item livingNucleus = null;
 	
 	@SubscribeEvent
 	public static void onItemRegisterEvent(RegistryEvent.Register<Item> ev) {
 		infLongBlade = new ItemLongBlade().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("infectious_long_blade_fragment").setRegistryName("infectious_long_blade_fragment");
 		hardbonePole = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole").setRegistryName("hardened_bone_pole");
+		vilePlate = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("vile_plate").setRegistryName("vile_plate");
+		livingNucleus = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("living_nucleus").setRegistryName("living_nucleus");
 		
 		ev.getRegistry().register(infLongBlade);
 		ModelRenderRegistry.addItemToRegistry(infLongBlade, 
@@ -32,6 +35,10 @@ public class ParasiteSWItems {
 		ev.getRegistry().register(vilePlate);
 		ModelRenderRegistry.addItemToRegistry(vilePlate, 
 				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + vilePlate.getRegistryName().getPath()));
+		
+		ev.getRegistry().register(livingNucleus);
+		ModelRenderRegistry.addItemToRegistry(livingNucleus, 
+				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + livingNucleus.getRegistryName().getPath()));
 
 	} 
 	

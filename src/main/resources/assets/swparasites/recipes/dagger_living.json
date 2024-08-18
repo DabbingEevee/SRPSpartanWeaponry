@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " B ",
-    "VLL",
+    "VL ",
     " H "
   ],
   "key": {
@@ -14,7 +14,7 @@
       "item": "srparasites:vile_shell"
     },
     "L": {
-      "item": "srparasites:living_core"
+      "item": "swparasites:living_nucleus"
     },
     "H": {
       "item": "srparasites:hardened_bone_handle"

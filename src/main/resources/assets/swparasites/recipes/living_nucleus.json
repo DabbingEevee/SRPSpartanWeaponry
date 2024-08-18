@@ -1,0 +1,27 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "FLF",
+    " M "
+  ],
+  "key": {
+    "L": {
+      "item": "srparasites:living_core"
+    },
+    "M": {
+      "item": "srparasites:ada_manducater_drop"
+    },
+    "S": {
+      "item": "srparasites:ada_summoner_drop"
+    },
+    "F": {
+      "item": "srparasites:assimilated_flesh"
+    }
+  },
+  "result": {
+    "item": "swparasites:living_nucleus",
+    "count": 1
+  }
+}

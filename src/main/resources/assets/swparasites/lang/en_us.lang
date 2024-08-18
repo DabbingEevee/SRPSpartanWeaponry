@@ -46,6 +46,11 @@ item.swparasites:throwing_axe_sentient.desc=§fThe ulterior Evolution of the Liv
 item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the Living Throwing Knife. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.\n§0You can't hide anymore...
 
+item.swparasites:impaler_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.
+item.swparasites:buckler_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.
+item.swparasites:impaler_sentient.desc=§fThe ulterior Evolution of the Living Impaler. It has gained a §bMind§f.\n§0You can't hide anymore...
+item.swparasites:buckler_sentient.desc=§fThe ulterior Evolution of the Living Buckler. It has gained a §bMind§f.\n§0You can't hide anymore...
+
 item.swparasites:claymore_living.name=§eLiving Claymore
 item.swparasites:claymore_sentient.name=§6Sentient Greatclaymore
 item.swparasites:boomerang_sentient.name=§6Sentient Great-Boomerang
@@ -73,22 +78,28 @@ item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produ
 item.hardened_bone_pole.name=§eHardened Bone Pole
 item.hardened_bone_pole.desc=§fA particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
 
+item.vile_plate.name=§eVile Plate
+item.vile_plate.desc=§fAn extremely resilient and tough plate, produced from Parasites body parts. Although unwieldly, it seems large enough to be used as a shield by itself. A Component for §6Shields§f.
+
+item.living_nucleus.name=§eLiving Nucleus
+item.living_nucleus.desc=§fA more powerful version of the Living Core, the flame of life still has yet to shine. A Component for §6stronger Weapons§f.
+
 tooltip.swparasites:virulent=Virulent %s
-tooltip.swparasites:virulent.desc=§oLashes out §a§ovirulent§7§o strikes. Higher Viral levels will apply more potent toxin more often.
+tooltip.swparasites:virulent.desc=§oLashes out §a§ovirulent§7§o strikes. Higher levels of Viral will apply more potent toxin more often.
 
 tooltip.swparasites:bleeding=Bleeding %s
-tooltip.swparasites:bleeding.desc=§oInflicts §c§olife-threatening§7§o injuries. Higher Bleeding levels will apply more a potent bleed more often.
+tooltip.swparasites:bleeding.desc=§oInflicts §c§olife-threatening§7§o injuries. Higher levels of Bleeding will apply more a potent bleed more often.
 
 tooltip.swparasites:corrosion=Corrosion %s
-tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher Corrosion levels will apply more potent acid more often.
+tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher levels of Corrosion will apply more potent acid more often.
 
 tooltip.swparasites:immalleable=Immalleable %s
-tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Higher Immalleable levels crush adaptation more often.
+tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Higher levels of Immalleable crush adaptation more often.
 
 tooltip.swparasites:repulse=Repulse %s
-tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the user. Higher Repulse levels enrage you even further.
+tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the user. Higher levels of Repulse enrage you even further.
 
-tooltip.swparasites:cloaking=Cloaking %s
+tooltip.swparasites:cloaking=Cloaking %s §9[Sneak]
 tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming. Higher levels of Cloaking make it harder to be detected.
 
 tooltip.swparasites:heavy=Heavy %s
@@ -96,3 +107,6 @@ tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of 
 
 tooltip.swparasites:uncapped=Uncapped
 tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
+
+tooltip.swparasites:charge=Charge %s §9[Sneak + Block]
+tooltip.swparasites:charge.desc=§oUnleash a §c§opowerful§7§o dash. Higher levels of Charge increase the dash's distance.
