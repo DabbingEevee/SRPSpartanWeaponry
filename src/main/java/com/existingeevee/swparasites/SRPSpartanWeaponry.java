@@ -10,10 +10,12 @@ import com.existingeevee.swparasites.init.ParasiteSWItems;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWLiving;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWSentient;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWShields;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
@@ -34,6 +36,10 @@ public class SRPSpartanWeaponry {
 
 		MinecraftForge.EVENT_BUS.register(ParasiteSWLiving.class);
 		MinecraftForge.EVENT_BUS.register(ParasiteSWSentient.class);
+		
+		if (Loader.isModLoaded("spartanshields")) { //Haha loader. me when the rain is being risked twice
+			MinecraftForge.EVENT_BUS.register(ParasiteSWShields.class);
+		}
 	}
 
 	@EventHandler

@@ -1,10 +1,11 @@
-package com.existingeevee.swparasites.init;
+package com.existingeevee.swparasites.init.weapons;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
-import com.existingeevee.swparasites.config.ParasiteSWConfig;
+import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.existingeevee.swparasites.items.ItemBucklerShield;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
@@ -20,10 +21,16 @@ public class ParasiteSWShields {
 
 	public static ToolMaterialEx livingMaterial;
 
+	public static ItemBucklerShield bucklerShieldLiving = null;
+	public static ItemBucklerShield bucklerShieldSentient = null;
+	
 	private static List<Item> initalizeItems(List<Item> items) {
+		bucklerShieldLiving = new ItemBucklerShield("buckler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 0);
+		items.add(bucklerShieldLiving);
 
+		bucklerShieldSentient = new ItemBucklerShield("buckler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 1);
+		items.add(bucklerShieldSentient);
 		
-
 		return items;
 	}
 	
@@ -37,25 +44,8 @@ public class ParasiteSWShields {
 
 			if (i != null) {
 				reg.register(i);
-
-				if (!(i instanceof IWeaponPropertyContainer)) {
-					continue;
-				}
-
-				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
-
-				container.addWeaponProperty(ParasiteSWProperties.HEAVY_1);
-				if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
-					container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
-				}
-				ToolMaterialEx mat = container.getMaterialEx();
-				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();
-
-				if (mat.getPrimaryColour() >= 0 && mat.getSecondaryColour() >= 0) {
-					ModelRenderRegistry.addItemToRegistry(i, new ResourceLocation(SRPSpartanWeaponry.MODID, modelPath), mat);
-				} else {
-					ModelRenderRegistry.addItemToRegistry(i, new ResourceLocation(SRPSpartanWeaponry.MODID, modelPath));
-				}
+				String modelPath = "shield/" + i.getRegistryName().getPath();
+				ModelRenderRegistry.addItemToRegistry(i, new ResourceLocation(SRPSpartanWeaponry.MODID, modelPath));
 			}
 		}
 	}
