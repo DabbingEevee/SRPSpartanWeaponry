@@ -2,7 +2,6 @@ package com.existingeevee.swparasites.init;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.properties.BleedingWeaponProperty;
-import com.existingeevee.swparasites.properties.ChargeWeaponProperty;
 import com.existingeevee.swparasites.properties.CloakingWeaponProperty;
 import com.existingeevee.swparasites.properties.CorrosionWeaponProperty;
 import com.existingeevee.swparasites.properties.HeavyWeaponProperty;
@@ -39,9 +38,6 @@ public class ParasiteSWProperties {
 
 	public static final HeavyWeaponProperty HEAVY_1 = new HeavyWeaponProperty(false);
 	public static final HeavyWeaponProperty HEAVY_2 = new HeavyWeaponProperty(true);
-	
-	public static final ChargeWeaponProperty CHARGE_1 = new ChargeWeaponProperty(1);
-	public static final ChargeWeaponProperty CHARGE_2 = new ChargeWeaponProperty(2);
 
 	public static final WeaponProperty REACH_3 = new WeaponProperty(WeaponProperties.PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 3, 8.0f);
 	

@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
-import com.existingeevee.swparasites.init.ParasiteSWProperties;
 import com.existingeevee.swparasites.items.ItemBucklerShield;
-import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
+import com.existingeevee.swparasites.items.ItemImpalerShield;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
-import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -23,6 +21,8 @@ public class ParasiteSWShields {
 
 	public static ItemBucklerShield bucklerShieldLiving = null;
 	public static ItemBucklerShield bucklerShieldSentient = null;
+	public static ItemImpalerShield impalerShieldLiving = null;
+	public static ItemImpalerShield impalerShieldSentient = null;
 	
 	private static List<Item> initalizeItems(List<Item> items) {
 		bucklerShieldLiving = new ItemBucklerShield("buckler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 0);
@@ -30,6 +30,12 @@ public class ParasiteSWShields {
 
 		bucklerShieldSentient = new ItemBucklerShield("buckler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 1);
 		items.add(bucklerShieldSentient);
+		
+		impalerShieldLiving = new ItemImpalerShield("impaler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 1);
+		items.add(impalerShieldLiving);
+
+		impalerShieldSentient = new ItemImpalerShield("impaler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 2);
+		items.add(impalerShieldSentient);
 		
 		return items;
 	}
