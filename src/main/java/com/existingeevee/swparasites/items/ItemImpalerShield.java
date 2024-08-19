@@ -29,7 +29,6 @@ public class ItemImpalerShield extends ItemShieldBase {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
-	@SubscribeEvent(priority = EventPriority.HIGH)
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack item = playerIn.getHeldItem(handIn);

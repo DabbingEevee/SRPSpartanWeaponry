@@ -1,7 +1,7 @@
 {
     "parent":"item/generated",
     "textures": {
-    	"layer0":"swparasites:item/components/vile_plate"
+    	"layer0":"swparasites:item/sentient/impaler"
     },
     "display": {
 		"thirdperson_righthand": {
@@ -49,7 +49,7 @@
             "predicate": {
                 "blocking": 1
             },
-            "model": "swparasites:item/components/vile_plate_blocking"
+            "model": "swparasites:item/living/impaler_shield_sentient_blocking"
         }
     ]
 }
