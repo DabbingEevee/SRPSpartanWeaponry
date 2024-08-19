@@ -88,7 +88,8 @@ jar {
 
     manifest.attributes(
             'ForceLoadAsMod': 'true',
-            'FMLCorePluginContainsFMLMod': 'false'
+            'FMLCorePluginContainsFMLMod': 'false',
+            'FMLAT': 'accesstransformer.cfg'
     )
 }
 
