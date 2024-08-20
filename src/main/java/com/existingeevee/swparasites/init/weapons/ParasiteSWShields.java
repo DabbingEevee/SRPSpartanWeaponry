@@ -31,10 +31,10 @@ public class ParasiteSWShields {
 		bucklerShieldSentient = new ItemBucklerShield("buckler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 1);
 		items.add(bucklerShieldSentient);
 		
-		impalerShieldLiving = new ItemImpalerShield("impaler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 1);
+		impalerShieldLiving = new ItemImpalerShield("impaler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 1, 1, 1);
 		items.add(impalerShieldLiving);
 
-		impalerShieldSentient = new ItemImpalerShield("impaler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 2);
+		impalerShieldSentient = new ItemImpalerShield("impaler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 2, 1.5f, 1.5f);
 		items.add(impalerShieldSentient);
 		
 		return items;

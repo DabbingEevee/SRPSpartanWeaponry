@@ -6,7 +6,9 @@ import com.oblivioussp.spartanshields.item.ItemShieldBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
@@ -21,13 +23,16 @@ public class ItemImpalerShield extends ItemShieldBase {
 
 	float attackDamage = 15;
 	float falloffPerBlock = 3; // radians
-	double maxRange = 3;
+	double maxRange = 5;
 	double maxDeltaAngle = Math.PI / 4; // radians
+	float power = 1;
 
-	public ItemImpalerShield(String unlocName, int maxDurability, float damageLevel) {
+	public ItemImpalerShield(String unlocName, int maxDurability, float damageLevel, float powerLevel, float rangeLevel) {
 		super(unlocName);
 
-		this.attackDamage = damageLevel;
+		this.attackDamage = attackDamage * damageLevel;
+		this.power = power * powerLevel;
+		this.maxRange = maxRange * rangeLevel;
 		this.setMaxDamage(maxDurability);
 
 		MinecraftForge.EVENT_BUS.register(this);
@@ -36,43 +41,46 @@ public class ItemImpalerShield extends ItemShieldBase {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack item = playerIn.getHeldItem(handIn);
-		if (!playerIn.isSneaking()) {
+		if (!playerIn.isSneaking() || !playerIn.onGround) {
 			return super.onItemRightClick(worldIn, playerIn, handIn);
 		}
 
 		Vec3d vec = playerIn.getLookVec();
 
-		playerIn.motionX += vec.x * 1.5;
-		playerIn.motionY += vec.y * 1.5;
-		playerIn.motionZ += vec.z * 1.5;
+		playerIn.motionX += vec.x * 2.0 * power;
+		playerIn.motionZ += vec.z * 2.0 * power;
 		playerIn.velocityChanged = true;
 
 		AxisAlignedBB box = new AxisAlignedBB(playerIn.posX, playerIn.posY, playerIn.posZ, playerIn.posX, playerIn.posY, playerIn.posZ).grow(maxRange);
-
 		for (Entity entity : worldIn.getEntitiesInAABBexcluding(playerIn, box, e -> isValidTarget(e, playerIn))) {
 			
-			//Deal the proper damage
-			Vec3d eyePos = playerIn.getPositionEyes(0.5f);
-			Vec3d targetCenterPos = Utils.getCenter(entity.getEntityBoundingBox());
-			float distanceTo = (float) eyePos.distanceTo(targetCenterPos);
-			entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), attackDamage - distanceTo * falloffPerBlock);
+				//Deal the proper damage
+				Vec3d eyePos = playerIn.getPositionEyes(0.5f);
+				Vec3d targetCenterPos = Utils.getCenter(entity.getEntityBoundingBox());
+				float distanceTo = (float) eyePos.distanceTo(targetCenterPos);
+				//entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), attackDamage - distanceTo * falloffPerBlock);
+				entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), attackDamage);
 			
-			Vec3d motionVector = new Vec3d(entity.posX - playerIn.posX, 0, entity.posZ - playerIn.posZ).normalize()
-					.scale(1.5) //1.5 m/s of initial push
-					.scale(1 - distanceTo / (maxRange * 2)) //put some falloff on it
-					.add(0, 0.6D, 0); //bit of an upwards push as well bc why not
+				Vec3d motionVector = new Vec3d(entity.posX - playerIn.posX, 0, entity.posZ - playerIn.posZ).normalize()
+						.scale(1.5) //1.5 m/s of initial push
+						.scale(1 - distanceTo / (maxRange * 2)) //put some falloff on it
+						.add(0, 0.6D, 0); //bit of an upwards push as well bc why not
 
 			
-			if (!worldIn.isRemote) {
-				entity.motionX += motionVector.x;
-				entity.motionY += motionVector.y;
-				entity.motionZ += motionVector.z;
-				entity.velocityChanged = true;
+				if (!worldIn.isRemote) {
+					entity.motionX += motionVector.x;
+					entity.motionY += motionVector.y * 0.5;
+					entity.motionZ += motionVector.z;
+					entity.velocityChanged = true;
+				}
+				playerIn.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 20, 4));
+				item.damageItem(2, playerIn);
 			}
+			playerIn.getCooldownTracker().setCooldown(item.getItem(), 50);
+			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
 		}
-		playerIn.getCooldownTracker().setCooldown(item.getItem(), 50);
-		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
-	}
+
+
 
 	private boolean isValidTarget(Entity target, EntityPlayer player) {
 		if (target == null || player == null)

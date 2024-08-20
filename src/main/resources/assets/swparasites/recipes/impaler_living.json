@@ -1,0 +1,30 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " PS",
+    "SHB",
+    "CS "
+  ],
+  "key": {
+    "P": {
+      "item": "swparasites:vile_plate"
+    },
+    "S": {
+      "item": "srparasites:vile_shell"
+    },
+    "H": {
+      "item": "srparasites:hardened_bone_handle"
+    },
+    "C": {
+      "item": "srparasites:living_core"
+    },
+    "B": {
+      "item": "srparasites:srparasites:infectious_blade_fragment"
+    }
+  },
+  "result": {
+    "item": "swparasites:impaler_shield_living",
+    "count": 1
+  }
+}
