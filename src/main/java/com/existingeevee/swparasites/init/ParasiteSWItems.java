@@ -3,6 +3,7 @@ package com.existingeevee.swparasites.init;
 import com.dhanantry.scapeandrunparasites.SRPMain;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.items.ItemLongBlade;
+import com.existingeevee.swparasites.items.ItemVilePlate;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 
 import net.minecraft.item.Item;
@@ -21,7 +22,7 @@ public class ParasiteSWItems {
 	public static void onItemRegisterEvent(RegistryEvent.Register<Item> ev) {
 		infLongBlade = new ItemLongBlade().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("infectious_long_blade_fragment").setRegistryName("infectious_long_blade_fragment");
 		hardbonePole = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole").setRegistryName("hardened_bone_pole");
-		vilePlate = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("vile_plate").setRegistryName("vile_plate");
+		vilePlate = new ItemVilePlate().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("vile_plate").setRegistryName("vile_plate");
 		livingNucleus = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("living_nucleus").setRegistryName("living_nucleus");
 		
 		ev.getRegistry().register(infLongBlade);

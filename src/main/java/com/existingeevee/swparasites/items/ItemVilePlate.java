@@ -1,19 +1,16 @@
 package com.existingeevee.swparasites.items;
 
-import com.oblivioussp.spartanshields.item.ItemShieldBase;
-
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemShield;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class ItemVilePlate extends ItemShieldBase {
+public class ItemVilePlate extends ItemShield {
 
-	public ItemVilePlate(String unlocName, int maxDurability, int potionLevel) {
-		super(unlocName);
-
+	public ItemVilePlate() {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
