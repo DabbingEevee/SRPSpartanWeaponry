@@ -5,9 +5,7 @@ import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.event.EvolutionHandler;
-import com.existingeevee.swparasites.init.ParasiteSWProperties;
 import com.oblivioussp.spartanshields.item.ItemShieldBase;
-import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -67,14 +65,14 @@ public class ItemBucklerShield extends ItemShieldBase {
 	}
 
 	@Override
-	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity,
-			int itemSlot, boolean isSelected) {
-		if (!world.isRemote) {
+    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
+    {
+		if (!worldIn.isRemote) {
 			if (ParasiteSWConfig.sentientScent && level == 1 && SRPConfigSystems.useScent
-					&& world.rand.nextInt(100) == 0 && entity.ticksExisted % 40 == 0) {
-				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
+					&& worldIn.rand.nextInt(100) == 0 && entityIn.ticksExisted % 40 == 0) {
+				((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
 			}
-			if (entity.ticksExisted % 80 == 0) {
+			if (entityIn.ticksExisted % 80 == 0) {
 				int key = 0;
 				final NBTTagCompound compound = stack.getTagCompound();
 				if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
@@ -87,18 +85,18 @@ public class ItemBucklerShield extends ItemShieldBase {
 						if (ParasiteSWConfig.evolutionKeepNBT) {
 							stackW.setTagCompound(compound.copy());
 						}
-						final EntityItem entityitem = new EntityItem(world, entity.posX, entity.posY, entity.posZ,
+						final EntityItem entityitem = new EntityItem(worldIn, entityIn.posX, entityIn.posY, entityIn.posZ,
 								stackW);
 						if (ParasiteSWConfig.evolutionDropOnGround) {
 							entityitem.setDefaultPickupDelay();
 						} else {
 							entityitem.setNoPickupDelay();
 						}
-						world.spawnEntity((Entity) entityitem);
+						worldIn.spawnEntity((Entity) entityitem);
 						stack.shrink(1);
 						if (SRPConfig.thunderEnable) {
-							world.addWeatherEffect((Entity) new EntityLightningBolt(world, entity.posX, entity.posY,
-									entity.posZ, true));
+							worldIn.addWeatherEffect((Entity) new EntityLightningBolt(worldIn, entityIn.posX, entityIn.posY,
+									entityIn.posZ, true));
 						}
 					}
 				}

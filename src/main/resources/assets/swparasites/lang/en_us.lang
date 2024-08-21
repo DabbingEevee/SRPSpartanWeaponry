@@ -71,8 +71,8 @@ item.spartanshields:impaler_shield_living.name=§eLiving Impaler
 item.spartanshields:buckler_shield_living.name=§eLiving Buckler
 item.spartanshields:impaler_shield_sentient.name=§6Sentient Impaler
 item.spartanshields:buckler_shield_sentient.name=§6Sentient Buckler
-item.spartanshields:impaler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\nUnleash a §cpowerful§r dash.\n§9Block and Sneak to Dash
-item.spartanshields:buckler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\nShow them your §cRage§r. 
+item.spartanshields:impaler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\n§fUnleash a §cpowerful§r dash.\n§9Block and Sneak to Dash
+item.spartanshields:buckler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\n§fShow them your §cRage§r. 
 item.spartanshields:impaler_shield_sentient.desc=§fThe ulterior Evolution of the Living Impaler. It has gained a §bMind§f.\n§rUnleash a §cpowerful§r dash.\n§0You can't hide anymore...\n§9Block and Sneak to Dash
 item.spartanshields:buckler_shield_sentient.desc=§fThe ulterior Evolution of the Living Buckler. It has gained a §bMind§f.\n§rShow them your §cRage§r.\n§0You can't hide anymore...
 
