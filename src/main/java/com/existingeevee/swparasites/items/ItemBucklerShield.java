@@ -21,7 +21,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class ItemBucklerShield extends ItemShieldBase {
+public class ItemBucklerShield extends ItemShieldBase implements IHasSRPEvolutionProgress {
 
 	int level = 0;
 

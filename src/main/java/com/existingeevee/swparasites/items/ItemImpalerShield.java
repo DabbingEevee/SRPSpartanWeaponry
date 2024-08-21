@@ -32,21 +32,20 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class ItemImpalerShield extends ItemShieldBase {
+public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutionProgress {
 
 	float attackDamage = 15;
-	float falloffPerBlock = 3; // radians
+	float falloffPerBlock = 3; 
 	double maxRange = 5;
 	double maxDeltaAngle = Math.PI / 4; // radians
 	float power = 1;
 
-	public ItemImpalerShield(String unlocName, int maxDurability, float damageLevel, float powerLevel,
-			float rangeLevel) {
+	public ItemImpalerShield(String unlocName, int maxDurability, float damage, float power, float range) {
 		super(unlocName);
 
-		this.attackDamage = attackDamage * damageLevel;
-		this.power = power * powerLevel;
-		this.maxRange = maxRange * rangeLevel;
+		this.attackDamage = attackDamage * damage;
+		this.power = power * power;
+		this.maxRange = maxRange * range;
 		this.setMaxDamage(maxDurability);
 
 		MinecraftForge.EVENT_BUS.register(this);
