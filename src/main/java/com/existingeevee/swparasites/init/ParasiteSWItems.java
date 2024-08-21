@@ -21,9 +21,9 @@ public class ParasiteSWItems {
 	@SubscribeEvent
 	public static void onItemRegisterEvent(RegistryEvent.Register<Item> ev) {
 		infLongBlade = new ItemLongBlade().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("infectious_long_blade_fragment").setRegistryName("infectious_long_blade_fragment");
-		hardbonePole = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole").setRegistryName("hardened_bone_pole");
+		hardbonePole = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole").setRegistryName("hardened_bone_pole").setMaxStackSize(1);
 		vilePlate = new ItemVilePlate().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("vile_plate").setRegistryName("vile_plate");
-		livingNucleus = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("living_nucleus").setRegistryName("living_nucleus");
+		livingNucleus = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("living_nucleus").setRegistryName("living_nucleus").setMaxStackSize(1);
 		
 		ev.getRegistry().register(infLongBlade);
 		ModelRenderRegistry.addItemToRegistry(infLongBlade, 
