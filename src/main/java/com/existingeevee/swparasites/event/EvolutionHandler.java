@@ -2,6 +2,7 @@ package com.existingeevee.swparasites.event;
 
 import com.existingeevee.swparasites.init.weapons.ParasiteSWLiving;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWSentient;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWShields;
 
 import net.minecraft.item.Item;
 
@@ -63,6 +64,12 @@ public class EvolutionHandler {
 		}
 		if (item == ParasiteSWLiving.warhammerLiving) {
 			return ParasiteSWSentient.warhammerSentient;
+		}
+		if (item == ParasiteSWShields.bucklerShieldLiving) {
+			return ParasiteSWShields.bucklerShieldSentient;
+		}
+		if (item == ParasiteSWShields.impalerShieldLiving) {
+			return ParasiteSWShields.impalerShieldSentient;
 		}
 		return null;
 	}

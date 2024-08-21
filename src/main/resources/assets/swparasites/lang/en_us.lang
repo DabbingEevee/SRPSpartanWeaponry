@@ -46,11 +46,6 @@ item.swparasites:throwing_axe_sentient.desc=§fThe ulterior Evolution of the Liv
 item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the Living Throwing Knife. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.\n§0You can't hide anymore...
 
-item.swparasites:impaler_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.
-item.swparasites:buckler_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.
-item.swparasites:impaler_sentient.desc=§fThe ulterior Evolution of the Living Impaler. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:buckler_sentient.desc=§fThe ulterior Evolution of the Living Buckler. It has gained a §bMind§f.\n§0You can't hide anymore...
-
 item.swparasites:claymore_living.name=§eLiving Claymore
 item.swparasites:claymore_sentient.name=§6Sentient Greatclaymore
 item.swparasites:boomerang_sentient.name=§6Sentient Great-Boomerang
@@ -71,6 +66,15 @@ item.swparasites:spear_sentient.name=§6Sentient Greatspear
 item.swparasites:throwing_axe_sentient.name=§6Sentient Great-Throwing Axe
 item.swparasites:throwing_knife_sentient.name=§6Sentient Great-Throwing Knife
 item.swparasites:warhammer_sentient.name=§6Sentient Greatwarhammer
+
+item.spartanshields:impaler_shield_living.name=§eLiving Impaler
+item.spartanshields:buckler_shield_living.name=§eLiving Buckler
+item.spartanshields:impaler_shield_sentient.name=§6Sentient Impaler
+item.spartanshields:buckler_shield_sentient.name=§6Sentient Buckler
+item.spartanshields:impaler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\nUnleash a §cpowerful§r dash.\n§9Block and Sneak to Dash
+item.spartanshields:buckler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\nShow them your §cRage§r. 
+item.spartanshields:impaler_shield_sentient.desc=§fThe ulterior Evolution of the Living Impaler. It has gained a §bMind§f.\n§rUnleash a §cpowerful§r dash.\n§0You can't hide anymore...\n§9Block and Sneak to Dash
+item.spartanshields:buckler_shield_sentient.desc=§fThe ulterior Evolution of the Living Buckler. It has gained a §bMind§f.\n§rShow them your §cRage§r.\n§0You can't hide anymore...
 
 item.infectious_long_blade_fragment.name=§eInfectious Long Blade Fragment
 item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for §6Weapons§f.
@@ -97,7 +101,7 @@ tooltip.swparasites:immalleable=Immalleable %s
 tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Higher levels of Immalleable crush adaptation more often.
 
 tooltip.swparasites:repulse=Repulse %s
-tooltip.swparasites:repulse.desc=§oMelee blocks will §c§oinfuriate§7§o the user. Higher levels of Repulse enrage you even further.
+tooltip.swparasites:repulse.desc=§oShow them your §c§oRage§7§o. Higher levels of Repulse enrage you even further.
 
 tooltip.swparasites:cloaking=Cloaking %s §9[Sneak]
 tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming. Higher levels of Cloaking make it harder to be detected.
@@ -108,5 +112,3 @@ tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of 
 tooltip.swparasites:uncapped=Uncapped
 tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
 
-tooltip.swparasites:charge=Charge %s §9[Sneak + Block]
-tooltip.swparasites:charge.desc=§oUnleash a §c§opowerful§7§o dash. Higher levels of Charge increase the dash's distance.

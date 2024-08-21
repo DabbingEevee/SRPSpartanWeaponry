@@ -9,6 +9,7 @@ import org.lwjgl.input.Keyboard;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.oblivioussp.spartanshields.item.ItemShieldBase;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 
 import net.minecraft.item.ItemStack;
@@ -62,7 +63,12 @@ public class DisplayTooltips {
 
 				}
 			}
-			String progress = getProgress(stack);
+			String progress = null;
+			if (stack.getItem() instanceof IWeaponPropertyContainer<?>) {
+				progress = getProgress(stack);
+			} else if (stack.getItem() instanceof ItemShieldBase){
+				progress = getShieldProgress(stack);
+			}
 			if (progress != null) {
 				tooltip.add(1, "");
 				tooltip.add(1, progress);
@@ -101,6 +107,18 @@ public class DisplayTooltips {
 
 			if (container.getAllWeaponProperties().stream()
 					.anyMatch(p -> p == ParasiteSWProperties.HEAVY_1 || p == ParasiteSWProperties.HEAVY_2)) {
+				final NBTTagCompound compound = stack.getTagCompound();
+				if (compound != null) {
+					return (TextFormatting.BLUE + "---> " + compound.getInteger("srpkills"));
+				}
+			}
+		}
+		return null;
+	}
+	
+	public static String getShieldProgress(final ItemStack stack) {
+		if (stack.getItem() instanceof ItemShieldBase) {
+			if (stack.getItem().getRegistryName().getNamespace().equals(SRPSpartanWeaponry.MODID)) {
 				final NBTTagCompound compound = stack.getTagCompound();
 				if (compound != null) {
 					return (TextFormatting.BLUE + "---> " + compound.getInteger("srpkills"));
