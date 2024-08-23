@@ -63,12 +63,14 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 
 		Vec3d vec = playerIn.getLookVec();
 
-		playerIn.motionX += vec.x * 2.0 * power;
-		playerIn.motionZ += vec.z * 2.0 * power;
-		playerIn.velocityChanged = true;
+		if (worldIn.isRemote) {
+			playerIn.motionX += vec.x * 2.0 * power;
+			playerIn.motionZ += vec.z * 2.0 * power;
+			playerIn.velocityChanged = true;
+		}
 
-		AxisAlignedBB box = new AxisAlignedBB(playerIn.posX, playerIn.posY, playerIn.posZ, playerIn.posX, playerIn.posY,
-				playerIn.posZ).grow(maxRange);
+		AxisAlignedBB box = new AxisAlignedBB(playerIn.posX, playerIn.posY, playerIn.posZ, playerIn.posX, playerIn.posY, playerIn.posZ).grow(maxRange);
+		boolean hitAny = false;
 		for (Entity entity : worldIn.getEntitiesInAABBexcluding(playerIn, box, e -> isValidTarget(e, playerIn))) {
 
 			// Deal the proper damage
@@ -77,8 +79,10 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 			float distanceTo = (float) eyePos.distanceTo(targetCenterPos);
 			// entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn),
 			// attackDamage - distanceTo * falloffPerBlock);
-			entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), attackDamage);
-
+			boolean wasHit = entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), attackDamage);
+			if (!wasHit) continue;
+			hitAny = true;
+			
 			Vec3d motionVector = new Vec3d(entity.posX - playerIn.posX, 0, entity.posZ - playerIn.posZ).normalize()
 					.scale(1.5) // 1.5 m/s of initial push
 					.scale(1 - distanceTo / (maxRange * 2)) // put some falloff on it
@@ -92,13 +96,16 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 				entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ITEM_SHIELD_BLOCK,
 						SoundCategory.PLAYERS, 0.7F, 1.0F);
 			}
-			playerIn.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 20, 4));
+			
 			item.damageItem(1, playerIn);
 			System.out.println("target hit");
 			if (((EntityLivingBase) entity).getHealth() <= 0.0f) {
 				System.out.println("target dead, increased srpkills");
 				add(item, (int) ((EntityLivingBase) entity).getMaxHealth());
 			}
+		}
+		if (hitAny) {
+			playerIn.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 20, 4));
 		}
 		playerIn.getCooldownTracker().setCooldown(item.getItem(), 50);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
