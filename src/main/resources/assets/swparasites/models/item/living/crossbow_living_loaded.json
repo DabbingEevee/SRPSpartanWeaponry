@@ -1,6 +1,6 @@
 {
     "parent": "swparasites:living/crossbow_living",
     "textures": {
-        "layer0": "swparasites:living/crossbow_living_loaded"
+        "layer0": "swparasites:living/crossbow_loaded"
     }
 }
