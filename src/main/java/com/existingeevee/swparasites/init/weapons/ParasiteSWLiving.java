@@ -8,12 +8,14 @@ import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.oblivioussp.spartanweaponry.api.IWeaponCallback;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
+import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.item.ItemGlaive;
 import com.oblivioussp.spartanweaponry.item.ItemGreatsword;
@@ -63,6 +65,7 @@ public class ParasiteSWLiving {
 	public static ItemThrowingAxe throwingAxeLiving = null;
 	public static ItemThrowingKnife throwingKnifeLiving = null;
 	public static ItemWarhammer warhammerLiving = null;
+	public static ItemCrossbow crossbowLiving = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
 
@@ -129,6 +132,9 @@ public class ParasiteSWLiving {
 
 		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
 		items.add(warhammerLiving);
+		
+		crossbowLiving = (ItemCrossbow) SpartanWeaponryAPI.createCrossbow(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, (IWeaponCallback)null);
+		items.add(crossbowLiving);
 
 		return items;
 	}

@@ -1,0 +1,27 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BTS",
+    "TH ",
+    "S H"
+  ],
+  "key": {
+    "T": {
+      "item": "srparasites:dried_tendons"
+    },
+    "S": {
+      "item": "srparasites:vile_shell"
+    },
+    "H": {
+      "item": "srparasites:hardened_bone_handle"
+    },
+    "B": {
+      "item": "srparasites:weapon_bow"
+    }
+  },
+  "result": {
+    "item": "swparasites:crossbow_living",
+    "count": 1
+  }
+}
