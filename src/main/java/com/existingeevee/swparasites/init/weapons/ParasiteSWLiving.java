@@ -39,6 +39,7 @@ import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -155,17 +156,21 @@ public class ParasiteSWLiving {
 			if (i != null) {
 				reg.register(i);
 
-				if (!(i instanceof IWeaponPropertyContainer)) {
-					continue;
+				ToolMaterialEx mat = livingMaterial; //default to living
+				
+				if (i instanceof IWeaponPropertyContainer) {
+					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
+					container.addWeaponProperty(ParasiteSWProperties.HEAVY_1);
+					if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
+						container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
+					}
+					mat = container.getMaterialEx();
+				} 
+				if (i instanceof ItemCrossbow) {
+					ItemCrossbow crossbow = (ItemCrossbow) i;
+					mat = (ToolMaterialEx) ObfuscationReflectionHelper.getPrivateValue(ItemCrossbow.class, crossbow, "material");
 				}
 
-				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
-
-				container.addWeaponProperty(ParasiteSWProperties.HEAVY_1);
-				if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
-					container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
-				}
-				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();
 
 				if (mat.getPrimaryColour() >= 0 && mat.getSecondaryColour() >= 0) {
