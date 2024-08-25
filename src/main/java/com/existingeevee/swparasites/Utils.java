@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
 import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.Item;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -29,10 +31,12 @@ public class Utils {
 		ObfuscationReflectionHelper.setPrivateValue(Impl.class, impl, GameData.checkPrefix(str, true), "registryName");
 	}
 
-	public static void resetAutogenName(ItemSwordBase impl) {
-		if (impl == null)
-			return;
-		ObfuscationReflectionHelper.setPrivateValue(ItemSwordBase.class, impl, null, "displayName");
+	public static void resetAutogenName(Item impl) {
+		if (impl instanceof ItemSwordBase)
+			ObfuscationReflectionHelper.setPrivateValue(ItemSwordBase.class, (ItemSwordBase) impl, null, "displayName");
+	
+		if (impl instanceof ItemCrossbow)
+			ObfuscationReflectionHelper.setPrivateValue(ItemCrossbow.class, (ItemCrossbow) impl, null, "displayName");
 	}
 
 	public static void executeInNTicks(Runnable executor, int executeIn) {
