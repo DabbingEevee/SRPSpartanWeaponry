@@ -1,4 +1,4 @@
-package com.existingeevee.swparasites.event;
+package com.existingeevee.swparasites.handlers;
 
 import com.existingeevee.swparasites.init.weapons.ParasiteSWLiving;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWSentient;

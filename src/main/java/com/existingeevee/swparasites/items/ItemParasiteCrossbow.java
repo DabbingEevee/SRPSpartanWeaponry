@@ -31,6 +31,8 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 	public static final String NBT_MULTI_ARROW = "multiArrow";
 	public static final String NBT_MULTI_ACC = "multiAcc";
 
+	public static final int TICKS_BETWEEN_SHOTS = 3;
+		
 	int multiAmount = 0;
 
 	public ItemParasiteCrossbow(String unlocName, String externalModId, ToolMaterialEx material, IWeaponCallback weaponCallback) {
@@ -78,8 +80,6 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 					ammoStack = new ItemStack(ItemRegistrySW.bolt);
 				}
 
-				float vel = getBoltSpeed();
-
 				boolean flag1 = entityplayer.capabilities.isCreativeMode || (ammoStack.getItem() instanceof ItemBolt ? ((ItemBolt) ammoStack.getItem()).isInfinite(ammoStack, stack, entityplayer) : false);
 
 				if (!worldIn.isRemote) {
@@ -98,15 +98,13 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 
 					this.attemptFire(stack, ammoStack, itemBolt, worldIn, entityplayer, flag1, inaccuracyModifier);
 					this.initMulti(stack, ammoStack, inaccuracyModifier);
-
+					
 					int damage = ammoStack.getCount() > 1 ? 3 : 1;
 					stack.damageItem(damage, entityplayer);
 
 					NBTHelper.setBoolean(stack, NBT_IS_LOADED, false);
 					NBTHelper.setTagCompound(stack, nbtAmmoStack, new NBTTagCompound());
 				}
-
-				worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundRegistry.CROSSBOW_FIRE, SoundCategory.NEUTRAL, 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + vel * 0.5F);
 
 				entityplayer.addStat(StatList.getObjectUseStats(this));
 			}
@@ -160,7 +158,10 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 			spawnProjectile(stack, itemBolt, ammoStack, worldIn, player, true, inaccuracyModifier, -10.0f);
 			spawnProjectile(stack, itemBolt, ammoStack, worldIn, player, true, inaccuracyModifier, 10.0f);
 		}
-		NBTHelper.setInteger(stack, NBT_MULTI_COOLDOWN, 3);
+		NBTHelper.setInteger(stack, NBT_MULTI_COOLDOWN, TICKS_BETWEEN_SHOTS);
+	
+		float vel = getBoltSpeed();
+		worldIn.playSound(null, player.posX, player.posY, player.posZ, SoundRegistry.CROSSBOW_FIRE, SoundCategory.NEUTRAL, 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + vel * 0.5F);
 	}
 
 	public void initMulti(ItemStack stack, ItemStack ammoStack, float accMod) {
@@ -178,7 +179,7 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		int multiAmount = NBTHelper.getInteger(stack, NBT_MULTI_REMAINING);
-		if (multiAmount > 0 && entityIn instanceof EntityPlayer) {
+		if (multiAmount > 0 && entityIn instanceof EntityPlayer && !worldIn.isRemote) {
 			int cooldown = NBTHelper.getInteger(stack, NBT_MULTI_COOLDOWN);
 			if (cooldown > 0) {
 				NBTHelper.setInteger(stack, NBT_MULTI_COOLDOWN, cooldown - 1);
@@ -189,7 +190,7 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 				NBTTagCompound tag = NBTHelper.getTagCompound(stack, nbtAmmoStack);
 				if (tag != null)
 					ammoStack = new ItemStack(tag);
-				ItemBolt itemBolt = ((ItemBolt) (ammoStack.getItem() instanceof ItemBolt ? ammoStack.getItem() : ItemRegistrySW.bolt));
+				ItemBolt itemBolt = ammoStack.getItem() instanceof ItemBolt ? (ItemBolt) ammoStack.getItem() : ItemRegistrySW.bolt;
 
 				this.attemptFire(stack, ammoStack, itemBolt, worldIn, (EntityPlayer) entityIn, true, accMod);
 				

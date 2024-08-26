@@ -10,7 +10,7 @@ import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
-import com.existingeevee.swparasites.event.EvolutionHandler;
+import com.existingeevee.swparasites.handlers.EvolutionHandler;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;

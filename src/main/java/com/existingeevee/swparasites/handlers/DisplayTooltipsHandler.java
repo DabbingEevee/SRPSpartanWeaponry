@@ -1,4 +1,4 @@
-package com.existingeevee.swparasites.event;
+package com.existingeevee.swparasites.handlers;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +22,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class DisplayTooltips {
+public class DisplayTooltipsHandler {
 
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority = EventPriority.LOWEST)

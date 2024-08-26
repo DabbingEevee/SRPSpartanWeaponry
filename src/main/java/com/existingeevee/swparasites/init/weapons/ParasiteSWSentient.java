@@ -8,6 +8,7 @@ import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.existingeevee.swparasites.items.ItemParasiteCrossbow;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -16,6 +17,7 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
+import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.item.ItemGlaive;
 import com.oblivioussp.spartanweaponry.item.ItemGreatsword;
@@ -67,6 +69,7 @@ public class ParasiteSWSentient {
 	public static ItemThrowingAxe throwingAxeSentient = null;
 	public static ItemThrowingKnife throwingKnifeSentient = null;
 	public static ItemWarhammer warhammerSentient = null;
+	public static ItemCrossbow crossbowSentient = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
 
@@ -148,6 +151,9 @@ public class ParasiteSWSentient {
 		Utils.resetAutogenName(warhammerSentient);
 		items.add(warhammerSentient);
 
+		crossbowSentient = new ItemParasiteCrossbow("crossbow_sentient", SRPSpartanWeaponry.MODID, sentientMaterial).withMultiAmount(3);
+		items.add(crossbowSentient);
+		
 		return items;
 	}
 

@@ -4,7 +4,7 @@ import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
-import com.existingeevee.swparasites.event.EvolutionHandler;
+import com.existingeevee.swparasites.handlers.EvolutionHandler;
 import com.oblivioussp.spartanshields.item.ItemShieldBase;
 
 import net.minecraft.entity.Entity;
