@@ -156,7 +156,7 @@ public class ParasiteSWLiving {
 			if (i != null) {
 				reg.register(i);
 
-				ToolMaterialEx mat = livingMaterial; //default to living
+				ToolMaterialEx mat = getLivingMaterial(); //default to living
 				
 				if (i instanceof IWeaponPropertyContainer) {
 					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;

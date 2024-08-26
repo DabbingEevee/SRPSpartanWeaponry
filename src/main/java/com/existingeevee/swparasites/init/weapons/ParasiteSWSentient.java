@@ -173,28 +173,33 @@ public class ParasiteSWSentient {
 			if (i != null) {
 				reg.register(i);
 
-				if (!(i instanceof IWeaponPropertyContainer)) {
-					continue;
-				}
-
-				IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
-
-				container.addWeaponProperty(ParasiteSWProperties.HEAVY_2);
-				if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
-					container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
-				}
+				ToolMaterialEx mat = getSentientMaterial(); //default to sent
 				
-				if (container.hasWeaponProperty(WeaponProperties.REACH_2)) {
-					tryRemoveProperty(container, WeaponProperties.REACH_2);
-					container.addWeaponProperty(ParasiteSWProperties.REACH_3);
-				} else if (container.hasWeaponProperty(WeaponProperties.REACH_1)) {
-					tryRemoveProperty(container, WeaponProperties.REACH_1);
-					container.addWeaponProperty(WeaponProperties.REACH_2);
-				} else {
-					container.addWeaponProperty(WeaponProperties.REACH_1);
+				if (i instanceof IWeaponPropertyContainer) {
+					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
+
+					container.addWeaponProperty(ParasiteSWProperties.HEAVY_2);
+					if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
+						container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
+					}
+					
+					if (container.hasWeaponProperty(WeaponProperties.REACH_2)) {
+						tryRemoveProperty(container, WeaponProperties.REACH_2);
+						container.addWeaponProperty(ParasiteSWProperties.REACH_3);
+					} else if (container.hasWeaponProperty(WeaponProperties.REACH_1)) {
+						tryRemoveProperty(container, WeaponProperties.REACH_1);
+						container.addWeaponProperty(WeaponProperties.REACH_2);
+					} else {
+						container.addWeaponProperty(WeaponProperties.REACH_1);
+					}
+					
+					mat = container.getMaterialEx();
+				} 
+				if (i instanceof ItemCrossbow) {
+					ItemCrossbow crossbow = (ItemCrossbow) i;
+					mat = (ToolMaterialEx) ObfuscationReflectionHelper.getPrivateValue(ItemCrossbow.class, crossbow, "material");
 				}
 
-				ToolMaterialEx mat = container.getMaterialEx();
 				String modelPath = mat.getUnlocName() + "/" + i.getRegistryName().getPath();
 
 				if (mat.getPrimaryColour() >= 0 && mat.getSecondaryColour() >= 0) {
@@ -205,7 +210,7 @@ public class ParasiteSWSentient {
 			}
 		}
 	}
-
+	
 	public static void tryRemoveProperty(IWeaponPropertyContainer<?> cont, WeaponProperty prop) {
 		if (cont instanceof ItemSwordBase) {
 			List<WeaponProperty> props = ObfuscationReflectionHelper.getPrivateValue(ItemSwordBase.class, (ItemSwordBase) cont, "properties", "field_185051_m");
