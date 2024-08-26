@@ -1,5 +1,6 @@
 package com.existingeevee.swparasites.handlers;
 
+import com.existingeevee.swparasites.Utils;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityBolt;
 
 import net.minecraft.entity.Entity;
@@ -14,7 +15,12 @@ public class CrossbowBoltHandler {
 		
 		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowMultifire")) {
 			e.getEntityLiving().hurtResistantTime = Math.min(1, e.getEntityLiving().maxHurtResistantTime);
+			
+			Utils.executeInNTicks(() -> {
+				if (e.getEntityLiving().getHealth() <= 0) {
+					//vec3d
+				}
+			}, 1);
 		}
 	}
-	
 }

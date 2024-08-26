@@ -135,6 +135,7 @@ public class ParasiteSWLiving {
 		items.add(warhammerLiving);
 		
 		crossbowLiving = new ItemParasiteCrossbow("crossbow_living", SRPSpartanWeaponry.MODID, livingMaterial).withMultiAmount(1);
+		Utils.resetAutogenName(crossbowLiving);
 		items.add(crossbowLiving);
 
 		return items;

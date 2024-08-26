@@ -25,6 +25,7 @@ item.swparasites:spear_living.desc=§fResult of various Parasites body parts res
 item.swparasites:throwing_axe_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.swparasites:throwing_knife_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.swparasites:warhammer_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
+item.swparasites:crossbow_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 
 item.swparasites:claymore_sentient.desc=§fThe ulterior Evolution of the Living Claymore. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:boomerang_sentient.desc=§fThe ulterior Evolution of the Living Boomerang. It has gained a §bMind§f.\n§0You can't hide anymore...
@@ -45,8 +46,10 @@ item.swparasites:spear_sentient.desc=§fThe ulterior Evolution of the Living Spe
 item.swparasites:throwing_axe_sentient.desc=§fThe ulterior Evolution of the Living Throwing Axe. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the Living Throwing Knife. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.\n§0You can't hide anymore...
+item.swparasites:crossbow_sentient.desc=§fThe ulterior Evolution of the Living Crossbow. It has gained a §bMind§f.\n§0You can't hide anymore...
 
 item.swparasites:claymore_living.name=§eLiving Claymore
+item.swparasites:crossbow_living.name=§eLiving Crossbow
 item.swparasites:claymore_sentient.name=§6Sentient Greatclaymore
 item.swparasites:boomerang_sentient.name=§6Sentient Great-Boomerang
 item.swparasites:dagger_sentient.name=§6Sentient Greatdagger
@@ -66,6 +69,7 @@ item.swparasites:spear_sentient.name=§6Sentient Greatspear
 item.swparasites:throwing_axe_sentient.name=§6Sentient Great-Throwing Axe
 item.swparasites:throwing_knife_sentient.name=§6Sentient Great-Throwing Knife
 item.swparasites:warhammer_sentient.name=§6Sentient Greatwarhammer
+item.swparasites:crossbow_sentient.name=§6Sentient Crossbow
 
 item.spartanshields:impaler_shield_living.name=§eLiving Impaler
 item.spartanshields:buckler_shield_living.name=§eLiving Buckler
