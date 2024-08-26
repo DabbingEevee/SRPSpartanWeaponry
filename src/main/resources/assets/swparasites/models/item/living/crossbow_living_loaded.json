@@ -1,5 +1,5 @@
 {
-    "parent": "swparasites:living/crossbow_pulling_0",
+    "parent": "swparasites:item/living/crossbow_living_pulling_0",
     "textures": {
         "layer0": "swparasites:living/crossbow_loaded"
     }

@@ -31,7 +31,7 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 	public static final String NBT_MULTI_ARROW = "multiArrow";
 	public static final String NBT_MULTI_ACC = "multiAcc";
 
-	public static final int TICKS_BETWEEN_SHOTS = 3;
+	public static final int TICKS_BETWEEN_SHOTS = 2;
 		
 	int multiAmount = 0;
 
