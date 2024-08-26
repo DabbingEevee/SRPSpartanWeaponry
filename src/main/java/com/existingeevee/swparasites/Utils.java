@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 
 import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
 import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
+import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -37,6 +38,10 @@ public class Utils {
 	
 		if (impl instanceof ItemCrossbow)
 			ObfuscationReflectionHelper.setPrivateValue(ItemCrossbow.class, (ItemCrossbow) impl, null, "displayName");
+
+		if (impl instanceof ItemThrowingWeapon)
+			ObfuscationReflectionHelper.setPrivateValue(ItemThrowingWeapon.class, (ItemThrowingWeapon) impl, null, "displayName");
+	
 	}
 
 	public static void executeInNTicks(Runnable executor, int executeIn) {
