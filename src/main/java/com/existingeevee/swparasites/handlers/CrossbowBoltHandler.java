@@ -13,7 +13,7 @@ public class CrossbowBoltHandler {
 		Entity immSource = e.getSource().getImmediateSource();
 		
 		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowMultifire")) {
-			e.getEntityLiving().hurtResistantTime = 0;
+			e.getEntityLiving().hurtResistantTime = Math.min(1, e.getEntityLiving().maxHurtResistantTime);
 		}
 	}
 	
