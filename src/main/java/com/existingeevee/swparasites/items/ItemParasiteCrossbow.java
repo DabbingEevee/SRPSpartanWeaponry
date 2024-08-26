@@ -97,6 +97,7 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 					}
 
 					this.attemptFire(stack, ammoStack, itemBolt, worldIn, entityplayer, flag1, inaccuracyModifier);
+					this.initMulti(stack, ammoStack, inaccuracyModifier);
 
 					int damage = ammoStack.getCount() > 1 ? 3 : 1;
 					stack.damageItem(damage, entityplayer);
