@@ -1,0 +1,6 @@
+{
+    "parent": "swparasites:item/sentient/crossbow_sentient",
+    "textures": {
+        "layer0": "swparasites:sentient/crossbow_loaded"
+    }
+}

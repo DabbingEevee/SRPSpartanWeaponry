@@ -2,5 +2,6 @@
     "parent": "swparasites:item/living/crossbow_living",
     "textures": {
         "layer0": "swparasites:living/crossbow_loaded"
-    }
+    },
+    "__comment": "i dont know why but the loaded model is held in the same position as loading the crossbow"
 }

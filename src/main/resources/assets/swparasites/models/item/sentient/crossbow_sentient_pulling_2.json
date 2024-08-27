@@ -1,0 +1,6 @@
+{
+    "parent":"swparasites:item/sentient/crossbow_sentient_pulling_0",
+    "textures": {
+        "layer0":"swparasites:sentient/crossbow_pulling_2"
+    }
+}

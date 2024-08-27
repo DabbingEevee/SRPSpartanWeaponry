@@ -18,7 +18,7 @@ public class CrossbowBoltHandler {
 			
 			Utils.executeInNTicks(() -> {
 				if (e.getEntityLiving().getHealth() <= 0) {
-					//vec3d
+					//vec3d 
 				}
 			}, 1);
 		}
