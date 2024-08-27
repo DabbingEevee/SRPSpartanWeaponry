@@ -4,6 +4,11 @@ import com.existingeevee.swparasites.Utils;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityBolt;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -17,8 +22,22 @@ public class CrossbowBoltHandler {
 			e.getEntityLiving().hurtResistantTime = Math.min(1, e.getEntityLiving().maxHurtResistantTime);
 			
 			Utils.executeInNTicks(() -> {
-				if (e.getEntityLiving().getHealth() <= 0) {
-					//vec3d 
+				Entity shooter = ((EntityBolt) immSource).shootingEntity;
+				if (e.getEntityLiving().getHealth() <= 0 && shooter instanceof EntityPlayer && shooter.world instanceof WorldServer) {
+					Vec3d start = Utils.getCenter(e.getEntityLiving().getEntityBoundingBox());
+					Vec3d end = Utils.getCenter(shooter.getEntityBoundingBox());
+					
+					Vec3d path = end.subtract(start);
+					double pathMagnitudeSq = path.lengthSquared();
+					
+					Vec3d unit = path.normalize();
+					
+					for (Vec3d cur = Vec3d.ZERO; cur.lengthSquared() < pathMagnitudeSq; cur = cur.add(unit.scale(0.1))) {
+						Vec3d curPos = start.add(cur);
+						((WorldServer) shooter.world).spawnParticle(EnumParticleTypes.REDSTONE, curPos.x, curPos.y, curPos.z, 1, 0, 0, 0, 0d);
+					}
+					
+					//add(item, (int) ((EntityLivingBase) entity).getMaxHealth());
 				}
 			}, 1);
 		}

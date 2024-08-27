@@ -123,4 +123,5 @@ public class Utils {
 	public static Vec3d getCenter(AxisAlignedBB box) {
 		return new Vec3d(box.minX + (box.maxX - box.minX) * 0.5D, box.minY + (box.maxY - box.minY) * 0.5D, box.minZ + (box.maxZ - box.minZ) * 0.5D);
 	}
+	
 }

@@ -8,6 +8,9 @@ import net.minecraft.item.Item;
 
 public class EvolutionHandler {
 	public static Item getEvolved(Item item) {
+		if (item == null) {
+			return null;
+		}
 		if (item == ParasiteSWLiving.boomerangLiving) {
 			return ParasiteSWSentient.boomerangSentient;
 		}
@@ -64,6 +67,9 @@ public class EvolutionHandler {
 		}
 		if (item == ParasiteSWLiving.warhammerLiving) {
 			return ParasiteSWSentient.warhammerSentient;
+		}
+		if (item == ParasiteSWLiving.crossbowLiving) {
+			return ParasiteSWSentient.crossbowSentient;
 		}
 		if (item == ParasiteSWShields.bucklerShieldLiving) {
 			return ParasiteSWShields.bucklerShieldSentient;

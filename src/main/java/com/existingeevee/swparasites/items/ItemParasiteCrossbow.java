@@ -1,5 +1,10 @@
 package com.existingeevee.swparasites.items;
 
+import com.dhanantry.scapeandrunparasites.init.SRPPotions;
+import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
+import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
+import com.existingeevee.swparasites.config.ParasiteSWConfig;
+import com.existingeevee.swparasites.handlers.EvolutionHandler;
 import com.oblivioussp.spartanweaponry.api.IWeaponCallback;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityBolt;
@@ -13,11 +18,14 @@ import com.oblivioussp.spartanweaponry.util.Quaternion;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.MathHelper;
@@ -34,6 +42,13 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 	public static final int TICKS_BETWEEN_SHOTS = 2;
 		
 	int multiAmount = 0;
+	
+	boolean living = true;
+
+	public ItemParasiteCrossbow setLiving(boolean living) {
+		this.living = living;
+		return this;
+	}
 
 	public ItemParasiteCrossbow(String unlocName, String externalModId, ToolMaterialEx material, IWeaponCallback weaponCallback) {
 		super(unlocName, externalModId, material, weaponCallback);
@@ -198,6 +213,41 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 			}
 		}
 		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
+		
+		if (!worldIn.isRemote) {
+			if (ParasiteSWConfig.sentientScent && !living && SRPConfigSystems.useScent && worldIn.rand.nextInt(100) == 0 && entityIn.ticksExisted % 40 == 0) {
+				((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
+			}
+			if (entityIn.ticksExisted % 80 == 0) {
+				int key = 0;
+				final NBTTagCompound compound = stack.getTagCompound();
+				if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
+					if (compound.hasKey("srpkills")) {
+						key = compound.getInteger("srpkills");
+					}
+					if (key > SRPConfig.weapon_livingSentient_HP_needed) {
+						compound.setInteger("srpkills", 0);
+						final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
+						if (ParasiteSWConfig.evolutionKeepNBT) {
+							stackW.setTagCompound(compound.copy());
+						}
+						final EntityItem entityitem = new EntityItem(worldIn, entityIn.posX, entityIn.posY, entityIn.posZ,
+								stackW);
+						if (ParasiteSWConfig.evolutionDropOnGround) {
+							entityitem.setDefaultPickupDelay();
+						} else {
+							entityitem.setNoPickupDelay();
+						}
+						worldIn.spawnEntity((Entity) entityitem);
+						stack.shrink(1);
+						if (SRPConfig.thunderEnable) {
+							worldIn.addWeatherEffect((Entity) new EntityLightningBolt(worldIn, entityIn.posX, entityIn.posY,
+									entityIn.posZ, true));
+						}
+					}
+				}
+			}
+		}
 	}
 
 	private Vec3d calculateEntityViewVector(float pitch, float yaw) {

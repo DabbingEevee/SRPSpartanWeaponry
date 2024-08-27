@@ -98,9 +98,7 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 			}
 			
 			item.damageItem(1, playerIn);
-			System.out.println("target hit");
 			if (((EntityLivingBase) entity).getHealth() <= 0.0f) {
-				System.out.println("target dead, increased srpkills");
 				add(item, (int) ((EntityLivingBase) entity).getMaxHealth());
 			}
 		}
@@ -181,15 +179,11 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 	@Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
-		System.out.println("yep, item update works");
 		if (!worldIn.isRemote) {
-			System.out.println("she world on my remote til i :3");
 			if (ParasiteSWConfig.sentientScent && power == 1.5 && SRPConfigSystems.useScent && worldIn.rand.nextInt(100) == 0 && entityIn.ticksExisted % 40 == 0) {
 				((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
-				System.out.println("yep, prey is working");
 			}
 			if (entityIn.ticksExisted % 80 == 0) {
-				System.out.println("an evolution check should have happened");
 				int key = 0;
 				final NBTTagCompound compound = stack.getTagCompound();
 				if (compound != null && EvolutionHandler.getEvolved(stack.getItem()) != null) {
@@ -197,7 +191,6 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 						key = compound.getInteger("srpkills");
 					}
 					if (key > SRPConfig.weapon_livingSentient_HP_needed) {
-						System.out.println("evolution should have happened, if it didnt, code broked :(");
 						compound.setInteger("srpkills", 0);
 						final ItemStack stackW = new ItemStack(EvolutionHandler.getEvolved(stack.getItem()), 1);
 						if (ParasiteSWConfig.evolutionKeepNBT) {

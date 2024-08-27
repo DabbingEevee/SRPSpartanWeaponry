@@ -92,6 +92,9 @@ item.vile_plate.desc=§fAn extremely resilient and tough plate, produced from Pa
 item.living_nucleus.name=§eLiving Nucleus
 item.living_nucleus.desc=§fA more powerful version of the Living Core, the flame of life still has yet to shine. A Component for §6stronger Weapons§f.
 
+item.serrated_spines.name=§eSerrated Spines
+item.serrated_spines.desc=§fVery sharp spikes, made from Parasites body parts. A Component for §6Weapons§f.
+
 tooltip.swparasites:virulent=Virulent %s
 tooltip.swparasites:virulent.desc=§oLashes out §a§ovirulent§7§o strikes. Higher levels of Viral will apply more potent toxin more often.
 

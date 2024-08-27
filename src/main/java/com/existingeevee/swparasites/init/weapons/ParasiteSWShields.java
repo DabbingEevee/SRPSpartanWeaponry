@@ -19,10 +19,10 @@ public class ParasiteSWShields {
 
 	public static ToolMaterialEx livingMaterial;
 
-	public static ItemBucklerShield bucklerShieldLiving = null;
-	public static ItemBucklerShield bucklerShieldSentient = null;
-	public static ItemImpalerShield impalerShieldLiving = null;
-	public static ItemImpalerShield impalerShieldSentient = null;
+	public static Item bucklerShieldLiving = null;
+	public static Item bucklerShieldSentient = null;
+	public static Item impalerShieldLiving = null;
+	public static Item impalerShieldSentient = null;
 	
 	private static List<Item> initalizeItems(List<Item> items) {
 		bucklerShieldLiving = new ItemBucklerShield("buckler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 0);

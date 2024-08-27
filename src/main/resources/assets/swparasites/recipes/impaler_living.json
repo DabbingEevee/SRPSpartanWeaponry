@@ -2,9 +2,9 @@
   "group": "swparasites",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " PS",
-    "SHB",
-    "CS "
+    "CSE",
+    "SHS",
+    "ESP"
   ],
   "key": {
     "P": {
@@ -19,8 +19,8 @@
     "C": {
       "item": "srparasites:living_core"
     },
-    "B": {
-      "item": "srparasites:infectious_blade_fragment"
+    "E": {
+      "item": "swparasites:serrated_spines"
     }
   },
   "result": {

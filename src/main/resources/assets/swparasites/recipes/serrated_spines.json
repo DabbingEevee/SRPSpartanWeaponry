@@ -2,23 +2,19 @@
   "group": "swparasites",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " F ",
-    "ABA",
+    " A ",
     "FAF"
   ],
   "key": {
     "A": {
-      "item": "srparasites:ada_longarms_drop"
-    },
-    "B": {
-      "item": "srparasites:ada_bolster_drop"
+      "item": "srparasites:ada_arachnida_drop"
     },
     "F": {
       "item": "srparasites:assimilated_flesh"
     }
   },
   "result": {
-    "item": "swparasites:vile_plate",
+    "item": "swparasites:serrated_spines",
     "count": 1
   }
 }
