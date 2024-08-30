@@ -82,7 +82,7 @@ public class ItemParasiteCrossbow extends ItemCrossbow implements IHasSRPEvoluti
 	public int getAimTicks(ItemStack stack)
 	{
 		if (stack.getItem() instanceof ItemParasiteCrossbow) {
-			float mult = (float) (1 + (living ? ParasiteSWConfig.weaponSlowness : ParasiteSWConfig.weaponIISlowness));
+			float mult = (float) (1 + (living ? ParasiteSWConfig.weaponSlowness * 1.2 : ParasiteSWConfig.weaponIISlowness * 1.4));
 			return (int) Math.round(super.getAimTicks(stack) * mult);
 		}
 		return super.getAimTicks(stack);

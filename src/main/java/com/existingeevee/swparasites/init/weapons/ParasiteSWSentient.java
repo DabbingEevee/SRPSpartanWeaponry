@@ -151,7 +151,7 @@ public class ParasiteSWSentient {
 		Utils.resetAutogenName(warhammerSentient);
 		items.add(warhammerSentient);
 
-		crossbowSentient = new ItemParasiteCrossbow("crossbow_sentient", SRPSpartanWeaponry.MODID, sentientMaterial).withMultiAmount(3);
+		crossbowSentient = new ItemParasiteCrossbow("crossbow_sentient", SRPSpartanWeaponry.MODID, sentientMaterial).withMultiAmount(3).setLiving(false);;
 		Utils.resetAutogenName(crossbowSentient);
 		items.add(crossbowSentient);
 		
