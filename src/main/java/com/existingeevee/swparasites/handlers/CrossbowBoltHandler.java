@@ -1,11 +1,15 @@
 package com.existingeevee.swparasites.handlers;
 
 import com.existingeevee.swparasites.Utils;
+import com.existingeevee.swparasites.items.ItemParasiteCrossbow;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityBolt;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.WorldServer;
@@ -36,10 +40,28 @@ public class CrossbowBoltHandler {
 						Vec3d curPos = start.add(cur);
 						((WorldServer) shooter.world).spawnParticle(EnumParticleTypes.REDSTONE, curPos.x, curPos.y, curPos.z, 1, 0, 0, 0, 0d);
 					}
-					
-					//add(item, (int) ((EntityLivingBase) entity).getMaxHealth());
+					if (shooter instanceof EntityLivingBase) {
+						EntityLivingBase living = (EntityLivingBase) shooter;
+						if (living.getHeldItemMainhand().getItem() instanceof ItemParasiteCrossbow) {
+							add(living.getHeldItemMainhand(), (int) (e.getEntityLiving().getMaxHealth()));
+						}
+					}
 				}
 			}, 1);
 		}
+	}
+	
+	public static void add(ItemStack stack, int amount) {
+		NBTTagCompound compound = stack.getTagCompound();
+		if (compound == null) {
+			compound = new NBTTagCompound();
+		}
+		if (compound.hasKey("srpkills")) {
+			final int key = (int) (compound.getInteger("srpkills") + amount);
+			compound.setInteger("srpkills", key);
+		} else {
+			compound.setInteger("srpkills", amount);
+		}
+		stack.setTagCompound(compound);
 	}
 }

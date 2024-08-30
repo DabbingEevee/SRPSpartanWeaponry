@@ -5,13 +5,17 @@ import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfigSystems;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.handlers.EvolutionHandler;
+import com.existingeevee.swparasites.items.IHasSRPEvolutionProgress;
 import com.oblivioussp.spartanweaponry.api.IWeaponCallback;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityBolt;
+import com.oblivioussp.spartanweaponry.init.EnchantmentRegistrySW;
 import com.oblivioussp.spartanweaponry.init.ItemRegistrySW;
 import com.oblivioussp.spartanweaponry.init.SoundRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemBolt;
 import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
+import com.oblivioussp.spartanweaponry.util.ConfigHandler;
+import com.oblivioussp.spartanweaponry.util.Defaults;
 import com.oblivioussp.spartanweaponry.util.NBTHelper;
 import com.oblivioussp.spartanweaponry.util.Quaternion;
 
@@ -32,7 +36,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class ItemParasiteCrossbow extends ItemCrossbow {
+public class ItemParasiteCrossbow extends ItemCrossbow implements IHasSRPEvolutionProgress  {
 
 	public static final String NBT_MULTI_REMAINING = "multiRemaining";
 	public static final String NBT_MULTI_COOLDOWN = "multiCooldown";
@@ -72,6 +76,16 @@ public class ItemParasiteCrossbow extends ItemCrossbow {
 		if (NBTHelper.getInteger(stack, NBT_MULTI_REMAINING) <= 0)
 			return super.onItemUseFinish(stack, worldIn, entityLiving);
 		return stack;
+	}
+	
+	@Override
+	public int getAimTicks(ItemStack stack)
+	{
+		if (stack.getItem() instanceof ItemParasiteCrossbow) {
+			float mult = (float) (1 + (living ? ParasiteSWConfig.weaponSlowness : ParasiteSWConfig.weaponIISlowness));
+			return (int) Math.round(super.getAimTicks(stack) * mult);
+		}
+		return super.getAimTicks(stack);
 	}
 
 	@Override
