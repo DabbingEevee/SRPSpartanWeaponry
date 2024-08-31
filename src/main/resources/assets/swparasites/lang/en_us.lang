@@ -107,7 +107,7 @@ tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over ti
 tooltip.swparasites:immalleable=Immalleable %s
 tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Higher levels of Immalleable crush adaptation more often.
 
-tooltip.swparasites:repulse=Repulse %s
+tooltip.swparasites:repulse=Repulse %s §9[Block]
 tooltip.swparasites:repulse.desc=§oShow them your §c§oRage§7§o. Higher levels of Repulse enrage you even further.
 
 tooltip.swparasites:cloaking=Cloaking %s §9[Sneak]

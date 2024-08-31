@@ -88,6 +88,7 @@ public class ParasiteSWSentient {
 		items.add(daggerSentient);
 		
 		boomerangSentient = (ItemBoomerang) CustomWeaponCreator.addBoomerang(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
+		Utils.resetAutogenName(boomerangSentient);
 		items.add(boomerangSentient);
 
 		glaiveSentient = (ItemGlaive) SpartanWeaponryAPI.createGlaive(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
@@ -103,6 +104,7 @@ public class ParasiteSWSentient {
 		items.add(hammerSentient);
 
 		javelinSentient = (ItemJavelin) CustomWeaponCreator.addJavelin(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
+		Utils.resetAutogenName(javelinSentient);
 		items.add(javelinSentient);
 
 		katanaSentient = (ItemKatana) SpartanWeaponryAPI.createKatana(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
@@ -142,9 +144,11 @@ public class ParasiteSWSentient {
 		items.add(spearSentient);
 
 		throwingAxeSentient = (ItemThrowingAxe) CustomWeaponCreator.addThrowingAxe(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
+		Utils.resetAutogenName(throwingAxeSentient);
 		items.add(throwingAxeSentient);
 
 		throwingKnifeSentient = (ItemThrowingKnife) CustomWeaponCreator.addThrowingKnife(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
+		Utils.resetAutogenName(throwingKnifeSentient);
 		items.add(throwingKnifeSentient);
 
 		warhammerSentient = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);

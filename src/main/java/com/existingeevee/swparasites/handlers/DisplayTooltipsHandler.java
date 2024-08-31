@@ -40,9 +40,7 @@ public class DisplayTooltipsHandler {
 			String key = stack.getItem().getTranslationKey() + ".desc";
 
 			if (ParasiteSWConfig.easterEgg) {
-				if (Keyboard.isKeyDown(Keyboard.KEY_T)) {
-					key = "easter_egg.swparasites:nerdvirus.desc";
-				} else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
+				if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
 					key = "easter_egg.swparasites:sweebozo.desc";
 				} else if (Keyboard.isKeyDown(Keyboard.KEY_X)) {
 					key = "easter_egg.swparasites:ev.desc";
