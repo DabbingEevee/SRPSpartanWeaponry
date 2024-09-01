@@ -1,10 +1,24 @@
-material.swparasites:living=§eLiving
-material.swparasites:sentient=§6Sentient
-
-easter_egg.swparasites:nerdvirus.desc=§6TreeVirus §f(highly intelligent specimen) is a huge §cNERRRRRDDDDD§f. :3
-easter_egg.swparasites:sweebozo.desc=§6Swee §fis §cbozo
-easter_egg.swparasites:ev.desc=§6ExistingEevee §fwas here §c:3
-easter_egg.swparasites:light.desc=§6Light §fI §cHATE §fyou.
+//living weapons
+item.swparasites:claymore_living.name=§eLiving Claymore
+item.swparasites:boomerang_living.name=§eLiving Boomerang
+item.swparasites:dagger_living.name=§eLiving Dagger
+item.swparasites:glaive_living.name=§eLiving Glaive
+item.swparasites:halberd_living.name=§eLiving Halberd
+item.swparasites:hammer_living.name=§eLiving Hammer
+item.swparasites:javelin_living.name=§eLiving Javelin
+item.swparasites:katana_living.name=§eLiving Katana
+item.swparasites:longsword_living.name=§eLiving Longsword
+item.swparasites:mace_living.name=§eLiving Mace
+item.swparasites:parrying_dagger_living.name=§eLiving Parrying Dagger
+item.swparasites:pike_living.name=§eLiving Pike
+item.swparasites:saber_living.name=§eLiving Saber
+item.swparasites:staff_living.name=§eLiving Quarterstaff
+item.swparasites:rapier_living.name=§eLiving Rapier
+item.swparasites:spear_living.name=§eLiving Spear
+item.swparasites:throwing_axe_living.name=§eLiving Throwing Axe
+item.swparasites:throwing_knife_living.name=§eLiving Throwing Knife
+item.swparasites:warhammer_living.name=§eLiving Warhammer
+item.swparasites:spartanweaponry:crossbow_living.name=§eLiving Crossbow
 
 item.swparasites:claymore_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.swparasites:boomerang_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
@@ -27,6 +41,7 @@ item.swparasites:throwing_knife_living.desc=§fResult of various Parasites body 
 item.swparasites:warhammer_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.swparasites:spartanweaponry:crossbow_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.\n§cStock up some extra bolts
 
+//sentient weapons
 item.swparasites:claymore_sentient.desc=§fThe ulterior Evolution of the Living Claymore. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:boomerang_sentient.desc=§fThe ulterior Evolution of the Living Boomerang. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:dagger_sentient.desc=§fThe ulterior Evolution of the Living Dagger. It has gained a §bMind§f.\n§0You can't hide anymore...
@@ -48,8 +63,6 @@ item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the L
 item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.\n§0You can't hide anymore...
 item.swparasites:spartanweaponry:crossbow_sentient.desc=§fThe ulterior Evolution of the Living Crossbow. It has gained a §bMind§f.\n§cStock up some extra bolts\n§0You can't hide anymore...
 
-item.swparasites:claymore_living.name=§eLiving Claymore
-item.swparasites:spartanweaponry:crossbow_living.name=§eLiving Crossbow
 item.swparasites:claymore_sentient.name=§6Sentient Greatclaymore
 item.swparasites:boomerang_sentient.name=§6Sentient Great-Boomerang
 item.swparasites:dagger_sentient.name=§6Sentient Greatdagger
@@ -71,6 +84,7 @@ item.swparasites:throwing_knife_sentient.name=§6Sentient Great-Throwing Knife
 item.swparasites:warhammer_sentient.name=§6Sentient Greatwarhammer
 item.swparasites:spartanweaponry:crossbow_sentient.name=§6Sentient Crossbow
 
+//shields
 item.spartanshields:impaler_shield_living.name=§eLiving Impaler
 item.spartanshields:buckler_shield_living.name=§eLiving Buckler
 item.spartanshields:impaler_shield_sentient.name=§6Sentient Impaler
@@ -80,42 +94,40 @@ item.spartanshields:buckler_shield_living.desc=§fResult of various Parasites bo
 item.spartanshields:impaler_shield_sentient.desc=§fThe ulterior Evolution of the Living Impaler. It has gained a §bMind§f.\n§rUnleash a §cpowerful§r dash.\n§0You can't hide anymore...\n§9Block and Sneak to Dash
 item.spartanshields:buckler_shield_sentient.desc=§fThe ulterior Evolution of the Living Buckler. It has gained a §bMind§f.\n§rShow them your §cRage§r.\n§0You can't hide anymore...
 
+//components
 item.infectious_long_blade_fragment.name=§eInfectious Long Blade Fragment
 item.infectious_long_blade_fragment.desc=§fA piece of a quite long blade, produced from Parasite body parts. Although dangerous, it seems large enough to be used as a weapon by itself. A Component for §6Weapons§f.
-
 item.hardened_bone_pole.name=§eHardened Bone Pole
 item.hardened_bone_pole.desc=§fA particularly thick pole, composed of bones, produced from Parasites body parts. A Component for §6Weapons§f.
-
 item.vile_plate.name=§eVile Plate
 item.vile_plate.desc=§fAn extremely resilient and tough plate, produced from Parasites body parts. Although unwieldly, it seems large enough to be used as a shield by itself. A Component for §6Shields§f.
-
 item.living_nucleus.name=§eLiving Nucleus
 item.living_nucleus.desc=§fA more powerful version of the Living Core, the flame of life still has yet to shine. A Component for §6stronger Weapons§f.
-
 item.serrated_spines.name=§eSerrated Spines
 item.serrated_spines.desc=§fVery sharp spikes, made from Parasites body parts. A Component for §6Weapons§f.
 
+//abilities
 tooltip.swparasites:virulent=Virulent %s
 tooltip.swparasites:virulent.desc=§oLashes out §a§ovirulent§7§o strikes. Higher levels of Viral will apply more potent toxin more often.
-
 tooltip.swparasites:bleeding=Bleeding %s
 tooltip.swparasites:bleeding.desc=§oInflicts §c§olife-threatening§7§o injuries. Higher levels of Bleeding will apply more a potent bleed more often.
-
 tooltip.swparasites:corrosion=Corrosion %s
 tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher levels of Corrosion will apply more potent acid more often.
-
 tooltip.swparasites:immalleable=Immalleable %s
 tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Higher levels of Immalleable crush adaptation more often.
-
 tooltip.swparasites:repulse=Repulse %s §9[Block]
 tooltip.swparasites:repulse.desc=§oShow them your §c§oRage§7§o. Higher levels of Repulse enrage you even further.
-
 tooltip.swparasites:cloaking=Cloaking %s §9[Sneak]
 tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming. Higher levels of Cloaking make it harder to be detected.
-
 tooltip.swparasites:heavy=Heavy %s
 tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of Parasite parts.
-
 tooltip.swparasites:uncapped=Uncapped
 tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
 
+//misc
+easter_egg.swparasites:sweebozo.desc=§6Swee §fis §cbozo
+easter_egg.swparasites:ev.desc=§6ExistingEevee §fwas here §c:3
+easter_egg.swparasites:light.desc=§6Light §fI §cHATE §fyou.
+
+material.swparasites:living=§eLiving
+material.swparasites:sentient=§6Sentient
