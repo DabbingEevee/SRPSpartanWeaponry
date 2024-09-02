@@ -70,6 +70,16 @@ public class ParasiteSWConfig {
 	@RequiresMcRestart
 	public static boolean evolutionDropOnGround = false;
 	
+	@Name("Living Crossbow Multishot")
+	@Comment("How many extra bolts should the Living Crossbow shoot? (default: 1)")
+	@RequiresMcRestart
+	public static int livingMultishot = 1;
+	
+	@Name("Sentient Crossbow Multishot")
+	@Comment("How many extra bolts should the Sentient Crossbow shoot? (default: 3)")
+	@RequiresMcRestart
+	public static int sentientMultishot = 3;
+	
 	@Name("Sentient Prey")
 	@Comment("Should the player get the Prey status effect while holding a Sentient weapon? (default: true)")
 	@RequiresMcRestart

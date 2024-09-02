@@ -134,7 +134,7 @@ public class ParasiteSWLiving {
 		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
 		items.add(warhammerLiving);
 		
-		crossbowLiving = new ItemParasiteCrossbow("crossbow_living", SRPSpartanWeaponry.MODID, livingMaterial).withMultiAmount(1);
+		crossbowLiving = new ItemParasiteCrossbow("crossbow_living", SRPSpartanWeaponry.MODID, livingMaterial).withMultiAmount(ParasiteSWConfig.livingMultishot);
 		Utils.resetAutogenName(crossbowLiving);
 		items.add(crossbowLiving);
 
