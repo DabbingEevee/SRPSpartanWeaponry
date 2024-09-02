@@ -162,6 +162,8 @@ public class ParasiteSWLiving {
 				if (i instanceof IWeaponPropertyContainer) {
 					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 					container.addWeaponProperty(ParasiteSWProperties.HEAVY_1);
+					Utils.resetAutogenName(i);
+					
 					if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
 						container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
 					}

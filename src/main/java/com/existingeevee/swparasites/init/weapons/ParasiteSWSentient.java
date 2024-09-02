@@ -79,84 +79,64 @@ public class ParasiteSWSentient {
 		if (claymoreSentient != null) {
 			claymoreSentient.setTranslationKey("claymore_sentient");
 			Utils.forceSetRegistryName(claymoreSentient, "claymore_sentient");
-			Utils.resetAutogenName(claymoreSentient);
 		}
 		items.add(claymoreSentient);
 
 		daggerSentient = (ItemDagger) CustomWeaponCreator.addDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_2);
-		Utils.resetAutogenName(daggerSentient);
 		items.add(daggerSentient);
 		
 		boomerangSentient = (ItemBoomerang) CustomWeaponCreator.addBoomerang(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
-		Utils.resetAutogenName(boomerangSentient);
 		items.add(boomerangSentient);
 
 		glaiveSentient = (ItemGlaive) SpartanWeaponryAPI.createGlaive(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
-		Utils.resetAutogenName(glaiveSentient);
 		items.add(glaiveSentient);
 
 		halberdSentient = (ItemHalberd) SpartanWeaponryAPI.createHalberd(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
-		Utils.resetAutogenName(halberdSentient);
 		items.add(halberdSentient);
 
 		hammerSentient = (ItemHammer) SpartanWeaponryAPI.createHammer(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
-		Utils.resetAutogenName(hammerSentient);
 		items.add(hammerSentient);
 
 		javelinSentient = (ItemJavelin) CustomWeaponCreator.addJavelin(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
-		Utils.resetAutogenName(javelinSentient);
 		items.add(javelinSentient);
 
 		katanaSentient = (ItemKatana) SpartanWeaponryAPI.createKatana(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
-		Utils.resetAutogenName(katanaSentient);
 		items.add(katanaSentient);
 
 		longswordSentient = (ItemLongsword) SpartanWeaponryAPI.createLongsword(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_3);
-		Utils.resetAutogenName(longswordSentient);
 		items.add(longswordSentient);
 
 		maceSentient = (ItemMace) SpartanWeaponryAPI.createMace(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_3);
-		Utils.resetAutogenName(maceSentient);
 		items.add(maceSentient);
 
 		parryDaggerSentient = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.REPULSE_3);
-		Utils.resetAutogenName(parryDaggerSentient);
 		items.add(parryDaggerSentient);
 
 		pikeSentient = (ItemPike) SpartanWeaponryAPI.createPike(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
-		Utils.resetAutogenName(pikeSentient);
 		items.add(pikeSentient);
 
 		saberSentient = (ItemSaber) SpartanWeaponryAPI.createSaber(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_3);
-		Utils.resetAutogenName(saberSentient);
 		items.add(saberSentient);
 
 		quarterstaffSentient = (ItemQuarterstaff) SpartanWeaponryAPI.createQuarterstaff(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
-		Utils.resetAutogenName(quarterstaffSentient);
 		items.add(quarterstaffSentient);
 
 		rapierSentient = (ItemRapier) SpartanWeaponryAPI.createRapier(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
-		Utils.resetAutogenName(rapierSentient);
 		items.add(rapierSentient);
 
 		spearSentient = (ItemSpear) SpartanWeaponryAPI.createSpear(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
-		Utils.resetAutogenName(spearSentient);
 		items.add(spearSentient);
 
 		throwingAxeSentient = (ItemThrowingAxe) CustomWeaponCreator.addThrowingAxe(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
-		Utils.resetAutogenName(throwingAxeSentient);
 		items.add(throwingAxeSentient);
 
 		throwingKnifeSentient = (ItemThrowingKnife) CustomWeaponCreator.addThrowingKnife(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
-		Utils.resetAutogenName(throwingKnifeSentient);
 		items.add(throwingKnifeSentient);
 
 		warhammerSentient = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_2);
-		Utils.resetAutogenName(warhammerSentient);
 		items.add(warhammerSentient);
 
 		crossbowSentient = new ItemParasiteCrossbow("crossbow_sentient", SRPSpartanWeaponry.MODID, sentientMaterial).withMultiAmount(3).setLiving(false);;
-		Utils.resetAutogenName(crossbowSentient);
 		items.add(crossbowSentient);
 		
 		return items;
@@ -184,6 +164,7 @@ public class ParasiteSWSentient {
 					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
 
 					container.addWeaponProperty(ParasiteSWProperties.HEAVY_2);
+					Utils.resetAutogenName(i);
 					if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
 						container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
 					}

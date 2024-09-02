@@ -1,0 +1,133 @@
+//living weapons
+item.swparasites:claymore_living.name=§eLivin BEEG knife
+item.swparasites:boomerang_living.name=§eLivin bent stick
+item.swparasites:dagger_living.name=§eLivin smol knife
+item.swparasites:glaive_living.name=§eLivin BEEG longe aks
+item.swparasites:halberd_living.name=§eLivin BEEG aks
+item.swparasites:hammer_living.name=§eLivin HAMMAA
+item.swparasites:javelin_living.name=§eLivin throabl seer
+item.swparasites:katana_living.name=§eLivin anime knife
+item.swparasites:longsword_living.name=§eLivin longe knife
+item.swparasites:mace_living.name=§eLivin oucher
+item.swparasites:parrying_dagger_living.name=§eLivin complicat knife
+item.swparasites:pike_living.name=§eLivin BEEG seer
+item.swparasites:saber_living.name=§eLivin pirate swor
+item.swparasites:staff_living.name=§eLivin stick
+item.swparasites:rapier_living.name=§eLivin thin knife
+item.swparasites:spear_living.name=§eLivin seer
+item.swparasites:throwing_axe_living.name=§eLivin throabl aks
+item.swparasites:throwing_knife_living.name=§eLivin throabl knife
+item.swparasites:warhammer_living.name=§eLivin BEEG HAMAA
+item.swparasites:spartanweaponry:crossbow_living.name=§eLivin BEEG Bowz
+
+item.swparasites:claymore_living.desc=§fWeponz :D
+item.swparasites:boomerang_living.desc=§fWeponz :D
+item.swparasites:dagger_living.desc=§fWeponz :D
+item.swparasites:glaive_living.desc=§fWeponz :D
+item.swparasites:halberd_living.desc=§fWeponz :D
+item.swparasites:hammer_living.desc=§fWeponz :D
+item.swparasites:javelin_living.desc=§fWeponz :D
+item.swparasites:katana_living.desc=§fWeponz :D
+item.swparasites:longsword_living.desc=§fWeponz :D
+item.swparasites:mace_living.desc=§fWeponz :D
+item.swparasites:parrying_dagger_living.desc=§fWeponz :D
+item.swparasites:pike_living.desc=§fWeponz :D
+item.swparasites:saber_living.desc=§fWeponz :D
+item.swparasites:staff_living.desc=§fWeponz :D
+item.swparasites:rapier_living.desc=§fWeponz :D
+item.swparasites:spear_living.desc=§fWeponz :D
+item.swparasites:throwing_axe_living.desc=§fWeponz :D
+item.swparasites:throwing_knife_living.desc=§fWeponz :D
+item.swparasites:warhammer_living.desc=§fWeponz :D
+item.swparasites:spartanweaponry:crossbow_living.desc=§fWeponz :D\n§cgeet som moar boltz
+
+//sentient weapons
+item.swparasites:claymore_sentient.desc=§fBetter scery BEEG knife. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:boomerang_sentient.desc=§fBetter scery bent stick. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:dagger_sentient.desc=§fBetter scery smol knife. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:glaive_sentient.desc=§fBetter scery BEEG longe aks. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:halberd_sentient.desc=§fBetter scery BEEG aks. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:hammer_sentient.desc=§fBetter scery HAMMAA. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:javelin_sentient.desc=§fBetter scery. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:katana_sentient.desc=§fBetter scery anime knife. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:longsword_sentient.desc=§fBetter scery longe knife. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:mace_sentient.desc=§fBetter scery oucher. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:parrying_dagger_sentient.desc=§fBetter scery complicat knife. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:pike_sentient.desc=§fBetter scery BEEG seer. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:saber_sentient.desc=§fBetter scery pirate swor. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:staff_sentient.desc=§fBetter scery stick. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:rapier_sentient.desc=§fBetter scery thin knife. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:spear_sentient.desc=§fBetter scery seer. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:throwing_axe_sentient.desc=§fBetter Livin scery throabl aks. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:throwing_knife_sentient.desc=§fBetter Livin scery throabl knif. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:warhammer_sentient.desc=§fBetter scery BEEG HAMMAA. §bSmort§f.\n§0You cant hid anymoe...
+item.swparasites:spartanweaponry:crossbow_sentient.desc=§fBetter scery beeg bowz. §bSmort§f.\n§cStock up some extra bolts\n§0You cant hid anymoe...
+
+item.swparasites:claymore_sentient.name=§6Intelleggonn BEEG knife
+item.swparasites:boomerang_sentient.name=§6Intelleggonn bent stick
+item.swparasites:dagger_sentient.name=§6Intelleggonn smol knife
+item.swparasites:glaive_sentient.name=§6Intelleggonn BEEG longe aks
+item.swparasites:halberd_sentient.name=§6Intelleggonn BEEG aks
+item.swparasites:hammer_sentient.name=§6Intelleggonn HAMMA
+item.swparasites:javelin_sentient.name=§6Intelleggonn throabl seer
+item.swparasites:katana_sentient.name=§6Intelleggonn anime knife
+item.swparasites:longsword_sentient.name=§6Intelleggonn longe knife
+item.swparasites:mace_sentient.name=§6Intelleggonn oucher
+item.swparasites:parrying_dagger_sentient.name=§6Intelleggonn conplicat knife
+item.swparasites:pike_sentient.name=§6Intelleggonn BEEG seer
+item.swparasites:saber_sentient.name=§6Intelleggonn pirate swor
+item.swparasites:staff_sentient.name=§6Intelleggonn stick
+item.swparasites:rapier_sentient.name=§6Intelleggonn thin knife
+item.swparasites:spear_sentient.name=§6Intelleggonn seer
+item.swparasites:throwing_axe_sentient.name=§6Intelleggonn throabl aks
+item.swparasites:throwing_knife_sentient.name=§6Intelleggonn throabl knife
+item.swparasites:warhammer_sentient.name=§6Intelleggonn BEEG HAMMAA
+item.swparasites:spartanweaponry:crossbow_sentient.name=§6Intelleggonn BEEG bowz
+
+//shields
+item.spartanshields:impaler_shield_living.name=§eLivin plat with mouf!!
+item.spartanshields:buckler_shield_living.name=§eLivin plate
+item.spartanshields:impaler_shield_sentient.name=§6Intelleggonn plat with mouf!!!
+item.spartanshields:buckler_shield_sentient.name=§6Intelleggonn plate
+item.spartanshields:impaler_shield_living.desc=§fprotecshun!! :D.\n§fgo a §cfast§r sped.\n§9protec and stealt to SPEED
+item.spartanshields:buckler_shield_living.desc=§fprotecshun!! :D.\n§fbe §cangy >:3§r. 
+item.spartanshields:impaler_shield_sentient.desc=§fBetter scery plat with mouf. §bSmort§f.\n§fgo a §cfast§r sped.\n§0You cant hid anymoe...\n§9protec and stealt to SPEED
+item.spartanshields:buckler_shield_sentient.desc=§fBetter Living scery plate. §bSmort§f.\n§fbe §cangy >:3§r.\n§0You cant hid anymoe...
+
+//components
+item.infectious_long_blade_fragment.name=§eNO NO NO NO touchy blad
+item.infectious_long_blade_fragment.desc=§flarg scratcher. Wepon thingz
+item.hardened_bone_pole.name=§elonge hard bon. STILL NOT EDIBL >:(
+item.hardened_bone_pole.desc=§fwhy no noms. Wepon thingz
+item.vile_plate.name=§ebroken platz
+item.vile_plate.desc=§fi coul mayb nom off dis... Wepon thingz
+item.living_nucleus.name=§erip and tear furtha byond!!!! >:D
+item.living_nucleus.desc=§fhumongus lifw thing. strong wepon thing
+item.serrated_spines.name=§esharp clahw
+item.serrated_spines.desc=§fnot from cat, stil sharpz. wepon thingz
+
+//abilities
+tooltip.swparasites:virulent=Kapow %s
+tooltip.swparasites:virulent.desc=§oLashez out da §a§okapow§7§o.
+tooltip.swparasites:bleeding=Ouch %s
+tooltip.swparasites:bleeding.desc=§oInflicts da §c§oouch§7§o.
+tooltip.swparasites:corrosion=no amor %s
+tooltip.swparasites:corrosion.desc=§oNO §c§oARMUR§7§o 4 u!!
+tooltip.swparasites:immalleable=stay %s
+tooltip.swparasites:immalleable.desc=§oSTAY LIK §c§oDIS§7§o FOREVAAAA!
+tooltip.swparasites:repulse=reveng %s §9[protecc]
+tooltip.swparasites:repulse.desc=§obe §c§oangy >:3§7§o.
+tooltip.swparasites:cloaking=hide!! %s §9[stealt]
+tooltip.swparasites:cloaking.desc=§onutin can §c§osee§7§o me :).
+tooltip.swparasites:heavy=so heavyz... %s
+tooltip.swparasites:heavy.desc=§othiz thing iz $s heavy...
+tooltip.swparasites:uncapped=rule breaker!!
+tooltip.swparasites:uncapped.desc=§obreak da §c§orules§7§o >:D
+
+//misc
+easter_egg.swparasites:sweebozo.desc=§6Swee §fis §cbozo
+easter_egg.swparasites:ev.desc=§6ExistingEevee §fwas here §c:3
+easter_egg.swparasites:light.desc=§6Light §fI §cHATE §fyou.
+
+material.swparasites:living=§eLivin
+material.swparasites:sentient=§6Intelleggonn
