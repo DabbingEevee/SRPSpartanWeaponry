@@ -97,11 +97,8 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 	@Override
 	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target,
 			EntityLivingBase attacker, Entity projectile) {
-		System.out.println("target hit");
 		if (projectile instanceof EntityThrownWeapon) {
-			System.out.println("throwing weapon detected");
 			if (!(attacker instanceof EntityPlayer)) {
-				System.out.println("attacker detected as non-player, returning");
 				return;
 			}
 			EntityThrownWeapon projThrown = (EntityThrownWeapon) projectile;
@@ -113,24 +110,19 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 				if (target.getHealth() <= 0.0f) {
 					// Find any stack that might fit this item.
 					for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
-						System.out.println("checking player inventory slot " + i);
 						ItemStack slotStack = player.inventory.getStackInSlot(i);
 						if (ItemStack.areItemsEqualIgnoreDurability(slotStack, weapon) && weapon.hasTagCompound()
 								&& slotStack.hasTagCompound()
 								&& weapon.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID)
 										.equals(slotStack.getTagCompound().getUniqueId(ItemThrowingWeapon.NBT_UUID))
 								&& weapon.getItem() instanceof ItemThrowingWeapon) {
-							System.out.println("throwing weapon increased srpkills");
 							add(slotStack, (int) target.getMaxHealth());
 						}
 					}
 				}
-				System.out.println("finished checking player inventory");
 			}, 1);
 		} else {
 			if (target.getHealth() <= 0.0f) {
-				System.out.println("target dead");
-				System.out.println("non-throwing weapon detected, increased srpkills");
 				add(stack, (int) target.getMaxHealth());
 			}
 		}
