@@ -25,11 +25,8 @@ public class ImmalleableWeaponProperty extends WeaponPropertyWithCallback {
 		if (!attacker.world.isRemote) {
 			double chance = this.getMagnitude() / 8;
 			ItemStack tool = ((EntityPlayer) attacker).getHeldItemMainhand();
-			int cooldown = (int) ((EntityPlayer) attacker).getCooldownTracker().getCooldown(tool.getItem(), 0);
 			
-			System.out.println("cooldown: " + cooldown); 
-			
-			if (attacker instanceof EntityPlayer && cooldown > 0) {
+			if (attacker instanceof EntityPlayer && ((EntityPlayer) attacker).getCooldownTracker().hasCooldown(tool.getItem())) {
 				return;
 			}
 			if (attacker.world.rand.nextDouble() < chance) {
