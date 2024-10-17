@@ -5,6 +5,7 @@ import com.existingeevee.swparasites.init.weapons.ParasiteSWSentient;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWShields;
 
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.Loader;
 
 public class EvolutionHandler {
 	public static Item getEvolved(Item item) {
@@ -71,11 +72,14 @@ public class EvolutionHandler {
 		if (item == ParasiteSWLiving.crossbowLiving) {
 			return ParasiteSWSentient.crossbowSentient;
 		}
-		if (item == ParasiteSWShields.bucklerShieldLiving) {
-			return ParasiteSWShields.bucklerShieldSentient;
-		}
-		if (item == ParasiteSWShields.impalerShieldLiving) {
-			return ParasiteSWShields.impalerShieldSentient;
+		if (Loader.isModLoaded("spartanshields")) {
+			
+			if (item == ParasiteSWShields.bucklerShieldLiving) {
+				return ParasiteSWShields.bucklerShieldSentient;
+			}
+			if (item == ParasiteSWShields.impalerShieldLiving) {
+				return ParasiteSWShields.impalerShieldSentient;
+			}
 		}
 		return null;
 	}
