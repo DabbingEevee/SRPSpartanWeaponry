@@ -9,44 +9,52 @@ import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ParasiteSWItems {
-	
+
 	public static Item infLongBlade = null;
 	public static Item hardbonePole = null;
 	public static Item vilePlate = null;
 	public static Item livingNucleus = null;
 	public static Item serratedSpines = null;
-	
+
 	@SubscribeEvent
 	public static void onItemRegisterEvent(RegistryEvent.Register<Item> ev) {
-		infLongBlade = new ItemLongBlade().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("infectious_long_blade_fragment").setRegistryName("infectious_long_blade_fragment");
-		hardbonePole = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole").setRegistryName("hardened_bone_pole").setMaxStackSize(1);
-		vilePlate = new ItemVilePlate().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("vile_plate").setRegistryName("vile_plate");
-		livingNucleus = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("living_nucleus").setRegistryName("living_nucleus").setMaxStackSize(1);
-		serratedSpines = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("serrated_spines").setRegistryName("serrated_spines").setMaxStackSize(1);
-		
+		infLongBlade = new ItemLongBlade().setCreativeTab(SRPMain.SRP_CREATIVETAB)
+				.setTranslationKey("infectious_long_blade_fragment").setRegistryName("infectious_long_blade_fragment");
+		hardbonePole = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("hardened_bone_pole")
+				.setRegistryName("hardened_bone_pole").setMaxStackSize(1);
+		vilePlate = new ItemVilePlate().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("vile_plate")
+				.setRegistryName("vile_plate");
+		livingNucleus = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("living_nucleus")
+				.setRegistryName("living_nucleus").setMaxStackSize(1);
+		serratedSpines = new Item().setCreativeTab(SRPMain.SRP_CREATIVETAB).setTranslationKey("serrated_spines")
+				.setRegistryName("serrated_spines").setMaxStackSize(1);
+
 		ev.getRegistry().register(infLongBlade);
-		ModelRenderRegistry.addItemToRegistry(infLongBlade, 
-				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + infLongBlade.getRegistryName().getPath()));
+		ModelRenderRegistry.addItemToRegistry(infLongBlade, new ResourceLocation(SRPSpartanWeaponry.MODID,
+				"components/" + infLongBlade.getRegistryName().getPath()));
 
 		ev.getRegistry().register(hardbonePole);
-		ModelRenderRegistry.addItemToRegistry(hardbonePole, 
-				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + hardbonePole.getRegistryName().getPath()));
-		
-		ev.getRegistry().register(vilePlate);
-		ModelRenderRegistry.addItemToRegistry(vilePlate, 
-				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + vilePlate.getRegistryName().getPath()));
-		
-		ev.getRegistry().register(livingNucleus);
-		ModelRenderRegistry.addItemToRegistry(livingNucleus, 
-				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + livingNucleus.getRegistryName().getPath()));
-		
-		ev.getRegistry().register(serratedSpines);
-		ModelRenderRegistry.addItemToRegistry(serratedSpines, 
-				new ResourceLocation(SRPSpartanWeaponry.MODID, "components/" + serratedSpines.getRegistryName().getPath()));
+		ModelRenderRegistry.addItemToRegistry(hardbonePole, new ResourceLocation(SRPSpartanWeaponry.MODID,
+				"components/" + hardbonePole.getRegistryName().getPath()));
 
-	} 
-	
+		ev.getRegistry().register(livingNucleus);
+		ModelRenderRegistry.addItemToRegistry(livingNucleus, new ResourceLocation(SRPSpartanWeaponry.MODID,
+				"components/" + livingNucleus.getRegistryName().getPath()));
+
+		ev.getRegistry().register(serratedSpines);
+		ModelRenderRegistry.addItemToRegistry(serratedSpines, new ResourceLocation(SRPSpartanWeaponry.MODID,
+				"components/" + serratedSpines.getRegistryName().getPath()));
+
+		if (Loader.isModLoaded("spartanshields")) {
+			ev.getRegistry().register(vilePlate);
+			ModelRenderRegistry.addItemToRegistry(vilePlate, new ResourceLocation(SRPSpartanWeaponry.MODID,
+					"components/" + vilePlate.getRegistryName().getPath()));
+		}
+
+	}
+
 }
