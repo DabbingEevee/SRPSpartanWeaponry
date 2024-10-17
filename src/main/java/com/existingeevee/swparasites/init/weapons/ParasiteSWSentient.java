@@ -137,6 +137,7 @@ public class ParasiteSWSentient {
 		items.add(warhammerSentient);
 
 		crossbowSentient = new ItemParasiteCrossbow("crossbow_sentient", SRPSpartanWeaponry.MODID, sentientMaterial).withMultiAmount(ParasiteSWConfig.sentientMultishot).setLiving(false);;
+		crossbowSentient.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		items.add(crossbowSentient);
 		
 		return items;

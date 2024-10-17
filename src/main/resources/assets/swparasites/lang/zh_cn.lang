@@ -1,0 +1,143 @@
+﻿//living weapons
+item.swparasites:claymore_living.name=§e活体阔剑
+item.swparasites:boomerang_living.name=§e活体回旋镖
+item.swparasites:dagger_living.name=§e活体匕首
+item.swparasites:glaive_living.name=§e活体长戈
+item.swparasites:halberd_living.name=§e活体戟
+item.swparasites:hammer_living.name=§e活体大锤
+item.swparasites:javelin_living.name=§e活体投枪
+item.swparasites:katana_living.name=§e活体武士刀
+item.swparasites:longsword_living.name=§e活体长剑
+item.swparasites:mace_living.name=§e活体凸缘钉头锤
+item.swparasites:parrying_dagger_living.name=§e活体格挡匕首
+item.swparasites:pike_living.name=§e活体长矛
+item.swparasites:saber_living.name=§e活体军刀
+item.swparasites:staff_living.name=§e活体锤头棍
+item.swparasites:rapier_living.name=§e活体西洋剑
+item.swparasites:spear_living.name=§e活体长枪
+item.swparasites:throwing_axe_living.name=§e活体飞斧
+item.swparasites:throwing_knife_living.name=§e活体飞刀
+item.swparasites:warhammer_living.name=§e活体战锤
+item.swparasites:spartanweaponry:crossbow_living.name=§e活体-强化十字弩
+
+item.swparasites:claymore_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:boomerang_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:dagger_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:glaive_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:halberd_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:hammer_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:javelin_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:katana_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:longsword_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:mace_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:parrying_dagger_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:pike_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:saber_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:staff_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:rapier_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:spear_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:throwing_axe_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:throwing_knife_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:warhammer_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器
+item.swparasites:spartanweaponry:crossbow_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器\n§c蓄力后可额外发射箭矢
+
+//sentient weapons
+item.swparasites:claymore_sentient.desc=§f悄无声息之间，活体阔剑§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:boomerang_sentient.desc=§f悄无声息之间，活体回旋镖§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:dagger_sentient.desc=§f悄无声息之间，活体匕首§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:glaive_sentient.desc=§f悄无声息之间，活体长戈§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:halberd_sentient.desc=§f悄无声息之间，活体戟§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:hammer_sentient.desc=§f悄无声息之间，活体大锤§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:javelin_sentient.desc=§f悄无声息之间，活体投枪§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:katana_sentient.desc=§f悄无声息之间，活体武士刀§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:longsword_sentient.desc=§f悄无声息之间，活体长剑§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:mace_sentient.desc=§f悄无声息之间，活体钉头锤§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:parrying_dagger_sentient.desc=§f悄无声息之间，活体格挡匕首§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:pike_sentient.desc=§f悄无声息之间，活体长矛§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:saber_sentient.desc=§f悄无声息之间，活体军刀§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:staff_sentient.desc=§f悄无声息之间，活体锤头棍§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:rapier_sentient.desc=§f悄无声息之间，活体西洋剑§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:spear_sentient.desc=§f悄无声息之间，活体长枪§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:throwing_axe_sentient.desc=§f悄无声息之间，活体飞斧§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:throwing_knife_sentient.desc=§f悄无声息之间，活体飞刀§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:warhammer_sentient.desc=§f悄无声息之间，活体战锤§b灵智已开§f，完成了进化\n§0你逃不掉的……
+item.swparasites:spartanweaponry:crossbow_sentient.desc=§f悄无声息之间，活体-强化十字弩§b灵智已开§f，完成了进化。\n§c蓄力后可额外发射箭矢\n§0你逃不掉的……
+
+item.swparasites:claymore_sentient.name=§6觉知阔剑
+item.swparasites:boomerang_sentient.name=§6觉知回旋镖
+item.swparasites:dagger_sentient.name=§6觉知匕首
+item.swparasites:glaive_sentient.name=§6觉知长戈
+item.swparasites:halberd_sentient.name=§6觉知长戟
+item.swparasites:hammer_sentient.name=§6觉知大锤
+item.swparasites:javelin_sentient.name=§6觉知投枪
+item.swparasites:katana_sentient.name=§6觉知武士刀
+item.swparasites:longsword_sentient.name=§6觉知长剑
+item.swparasites:mace_sentient.name=§6觉知钉头锤
+item.swparasites:parrying_dagger_sentient.name=§6觉知格挡匕首
+item.swparasites:pike_sentient.name=§6觉知长矛
+item.swparasites:saber_sentient.name=§6觉知军刀
+item.swparasites:staff_sentient.name=§6觉知锤头棍
+item.swparasites:rapier_sentient.name=§6觉知西洋剑
+item.swparasites:spear_sentient.name=§6觉知长枪
+item.swparasites:throwing_axe_sentient.name=§6觉知飞斧
+item.swparasites:throwing_knife_sentient.name=§6觉知飞刀
+item.swparasites:warhammer_sentient.name=§6觉知战锤
+item.swparasites:spartanweaponry:crossbow_sentient.name=§6觉知-强化十字弩
+
+//shields
+item.spartanshields:impaler_shield_living.name=§e活体刺盾
+item.spartanshields:buckler_shield_living.name=§e活体圆盾
+item.spartanshields:impaler_shield_sentient.name=§6觉知刺盾
+item.spartanshields:buckler_shield_sentient.name=§6觉知圆盾
+item.spartanshields:impaler_shield_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器。其核心内命火灼灼，光华闪耀\n§f可发动§c极强的§r冲刺。\n§9举起盾牌以在潜行时冲刺
+item.spartanshields:buckler_shield_living.desc=§f重塑寄生体的各身体部位，最终得到了这把武器。其核心内命火灼灼，光华闪耀\n§f向它们展示出你的§c怒火§r
+item.spartanshields:impaler_shield_sentient.desc=§f悄无声息之间，活体刺盾§b灵智已开§f，完成了进化\n§r可发动§极强的§r冲刺\n§0你逃不掉的……\n§9举起盾牌以在潜行时冲刺
+item.spartanshields:buckler_shield_sentient.desc=§f悄无声息之间，活体圆盾§b灵智已开§f，完成了进化\n§r向它们展示出你的§c怒火§r\n§0你逃不掉的……
+
+//components
+item.infectious_long_blade_fragment.name=§e感染的长刃碎片
+item.infectious_long_blade_fragment.desc=§f一块相当长的刀片，由寄生体的躯体制成。极其危险，但它大小足够，可单独用作武器  §6武器§f的组件
+
+item.hardened_bone_pole.name=§e硬骨手柄
+item.hardened_bone_pole.desc=§f一种极粗的杆状物，由寄生体的骨头制成  §6武器§f的组件
+
+item.vile_plate.name=§e肮脏壳板
+item.vile_plate.desc=§f一块弹性与韧性极佳的板子，由寄生体的躯体制成，略微笨重，但它大小足够，可单独用作盾牌  §6武器§f的组件
+item.living_nucleus.name=§e活体凝核
+item.living_nucleus.desc=§f活体核心的进化体，但生命之火还未在其中闪烁  §6武器§f的组件
+
+item.serrated_spines.name=§e锯刃棘刺
+item.serrated_spines.desc=§f极其锋利的棘刺，由寄生体的躯体制成  §6武器§f的组件
+
+//abilities
+tooltip.swparasites:virulent=瘟疫 %s
+tooltip.swparasites:virulent.desc=§o攻击散播§a§o致命的瘟疫§7§o效果。等级越高，疫病愈烈
+
+tooltip.swparasites:bleeding=流血 %s
+tooltip.swparasites:bleeding.desc=§o攻击造成§c§o危及生命§7§o的伤害。等级越高，攻击愈猛
+
+tooltip.swparasites:corrosion=腐蚀 %s
+tooltip.swparasites:corrosion.desc=§o使护甲逐渐§c§o丧失§7§o保护作用。等级越高，丧失愈疾
+
+tooltip.swparasites:immalleable=抑灵 %s
+tooltip.swparasites:immalleable.desc=§o攻击§f会使得§7§o寄生体适应性§c§o无效化
+
+tooltip.swparasites:repulse=暴怒 %s §9[格挡]
+tooltip.swparasites:repulse.desc=§o向它们展示出你的§c§o怒火§7§o。等级越高，怒火愈盛
+
+tooltip.swparasites:cloaking=隐形 %s §9[潜行]
+tooltip.swparasites:cloaking.desc=§7§o你的到来§o将无人§c§o知晓
+
+tooltip.swparasites:heavy=沉重 %s
+tooltip.swparasites:heavy.desc=§o武器由寄生体身体部件重塑而制成，因此武器攻速减缓$s
+
+tooltip.swparasites:uncapped=破限
+tooltip.swparasites:uncapped.desc=§o你的伤害§c§o不会§7§o受限
+
+//misc
+easter_egg.swparasites:sweebozo.desc=§6Swee §f是个 §c蠢货
+easter_egg.swparasites:ev.desc=§6ExistingEevee §f在这里 §c:3
+easter_egg.swparasites:light.desc=§6Light §f我 §c恨 §f你
+
+material.swparasites:living=§e活体
+material.swparasites:sentient=§6觉知
