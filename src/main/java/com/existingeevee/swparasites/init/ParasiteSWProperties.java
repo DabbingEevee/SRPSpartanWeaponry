@@ -1,11 +1,15 @@
 package com.existingeevee.swparasites.init;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
+import com.existingeevee.swparasites.properties.AtrophyWeaponProperty;
 import com.existingeevee.swparasites.properties.BleedingWeaponProperty;
 import com.existingeevee.swparasites.properties.CloakingWeaponProperty;
 import com.existingeevee.swparasites.properties.CorrosionWeaponProperty;
+import com.existingeevee.swparasites.properties.DevourWeaponProperty;
 import com.existingeevee.swparasites.properties.HeavyWeaponProperty;
+import com.existingeevee.swparasites.properties.IgniteWeaponProperty;
 import com.existingeevee.swparasites.properties.ImmalleableWeaponProperty;
+import com.existingeevee.swparasites.properties.PlagueWeaponProperty;
 import com.existingeevee.swparasites.properties.RepulseWeaponProperty;
 import com.existingeevee.swparasites.properties.ViralWeaponProperty;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
@@ -43,4 +47,14 @@ public class ParasiteSWProperties {
 	
 	public static final WeaponProperty UNCAPPED = new WeaponProperty("uncapped", SRPSpartanWeaponry.MODID, 0, 0);
 
+	public static final AtrophyWeaponProperty ATROPHY_1 = new AtrophyWeaponProperty(1);
+	public static final AtrophyWeaponProperty ATROPHY_2 = new AtrophyWeaponProperty(2);
+	
+	public static final PlagueWeaponProperty PLAGUE_1 = new PlagueWeaponProperty(1);
+	public static final PlagueWeaponProperty PLAGUE_2 = new PlagueWeaponProperty(2);
+	
+	public static final DevourWeaponProperty DEVOUR = new DevourWeaponProperty(1);
+	
+	public static final IgniteWeaponProperty IGNITE_1 = new IgniteWeaponProperty(1);
+	public static final IgniteWeaponProperty IGNITE_2 = new IgniteWeaponProperty(2);
 }

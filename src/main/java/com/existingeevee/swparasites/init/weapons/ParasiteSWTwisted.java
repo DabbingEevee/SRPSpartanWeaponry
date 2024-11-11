@@ -5,10 +5,8 @@ import java.util.List;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
-import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
-import com.existingeevee.swparasites.items.ItemParasiteCrossbow;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -23,6 +21,7 @@ import com.oblivioussp.spartanweaponry.item.ItemHalberd;
 import com.oblivioussp.spartanweaponry.item.ItemHammer;
 import com.oblivioussp.spartanweaponry.item.ItemJavelin;
 import com.oblivioussp.spartanweaponry.item.ItemKatana;
+import com.oblivioussp.spartanweaponry.item.ItemLance;
 import com.oblivioussp.spartanweaponry.item.ItemLongsword;
 import com.oblivioussp.spartanweaponry.item.ItemMace;
 import com.oblivioussp.spartanweaponry.item.ItemParryingDagger;
@@ -33,7 +32,6 @@ import com.oblivioussp.spartanweaponry.item.ItemSaber;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
-import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 
 import net.minecraft.item.Item;
@@ -66,85 +64,82 @@ public class ParasiteSWTwisted {
 	public static ItemThrowingAxe throwingAxeTwisted = null;
 	public static ItemThrowingKnife throwingKnifeTwisted = null;
 	public static ItemWarhammer warhammerTwisted = null;
+	public static ItemLance lanceTwisted = null;
+//	public static ItemScythe scytheTwisted= null;
 	public static ItemCrossbow crossbowTwisted = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
 
 		twistedMaterial = getTwistedMaterial();
 
-		claymoreLiving = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
-		if (claymoreLiving != null) {
-			claymoreLiving.setTranslationKey("claymore_living");
-			Utils.forceSetRegistryName(claymoreLiving, "claymore_living");
-			Utils.resetAutogenName(claymoreLiving);
-		}
-		items.add(claymoreLiving);
+		greatswordTwisted = (ItemGreatsword) SpartanWeaponryAPI.createGreatsword(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(greatswordTwisted);
 
-		daggerLiving = (ItemDagger) CustomWeaponCreator.addDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CLOAKING_1);
-		items.add(daggerLiving);
+		boomerangTwisted = (ItemBoomerang) CustomWeaponCreator.addBoomerang(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(boomerangTwisted);
 
-		boomerangLiving = (ItemBoomerang) CustomWeaponCreator.addBoomerang(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
-		items.add(boomerangLiving);
+		glaiveTwisted = (ItemGlaive) SpartanWeaponryAPI.createGlaive(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_2);
+		items.add(glaiveTwisted); 
 
-		glaiveLiving = (ItemGlaive) SpartanWeaponryAPI.createGlaive(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
-		items.add(glaiveLiving); 
+		halberdTwisted = (ItemHalberd) SpartanWeaponryAPI.createHalberd(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(halberdTwisted);
 
-		halberdLiving = (ItemHalberd) SpartanWeaponryAPI.createHalberd(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_1);
-		items.add(halberdLiving);
+		javelinTwisted = (ItemJavelin) CustomWeaponCreator.addJavelin(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_2);
+		items.add(javelinTwisted);
 
-		hammerLiving = (ItemHammer) SpartanWeaponryAPI.createHammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
-		items.add(hammerLiving);
+		katanaTwisted = (ItemKatana) SpartanWeaponryAPI.createKatana(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(katanaTwisted);
 
-		javelinLiving = (ItemJavelin) CustomWeaponCreator.addJavelin(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
-		items.add(javelinLiving);
+		longswordTwisted = (ItemLongsword) SpartanWeaponryAPI.createLongsword(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(longswordTwisted);
 
-		katanaLiving = (ItemKatana) SpartanWeaponryAPI.createKatana(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
-		items.add(katanaLiving);
+		maceTwisted = (ItemMace) SpartanWeaponryAPI.createMace(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_2);
+		items.add(maceTwisted);
 
-		longswordLiving = (ItemLongsword) SpartanWeaponryAPI.createLongsword(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_2);
-		items.add(longswordLiving);
+		parryDaggerTwisted = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(parryDaggerTwisted);
 
-		maceLiving = (ItemMace) SpartanWeaponryAPI.createMace(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_2);
-		items.add(maceLiving);
+		pikeTwisted = (ItemPike) SpartanWeaponryAPI.createPike(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(pikeTwisted);
 
-		parryDaggerLiving = (ItemParryingDagger) SpartanWeaponryAPI.createParryingDagger(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.REPULSE_2);
-		items.add(parryDaggerLiving);
+		saberTwisted = (ItemSaber) SpartanWeaponryAPI.createSaber(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(saberTwisted);
 
-		pikeLiving = (ItemPike) SpartanWeaponryAPI.createPike(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
-		items.add(pikeLiving);
+		quarterstaffTwisted = (ItemQuarterstaff) SpartanWeaponryAPI.createQuarterstaff(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_2);
+		items.add(quarterstaffTwisted);
 
-		saberLiving = (ItemSaber) SpartanWeaponryAPI.createSaber(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
-		items.add(saberLiving);
+		rapierTwisted = (ItemRapier) SpartanWeaponryAPI.createRapier(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(rapierTwisted);
 
-		quarterstaffLiving = (ItemQuarterstaff) SpartanWeaponryAPI.createQuarterstaff(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
-		items.add(quarterstaffLiving);
+		spearTwisted = (ItemSpear) SpartanWeaponryAPI.createSpear(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(spearTwisted);
 
-		rapierLiving = (ItemRapier) SpartanWeaponryAPI.createRapier(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_1);
-		items.add(rapierLiving);
+		throwingAxeTwisted = (ItemThrowingAxe) CustomWeaponCreator.addThrowingAxe(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(throwingAxeTwisted);
 
-		spearLiving = (ItemSpear) SpartanWeaponryAPI.createSpear(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_1);
-		items.add(spearLiving);
+		throwingKnifeTwisted = (ItemThrowingKnife) CustomWeaponCreator.addThrowingKnife(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(throwingKnifeTwisted);
 
-		throwingAxeLiving = (ItemThrowingAxe) CustomWeaponCreator.addThrowingAxe(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.CORROSION_1);
-		items.add(throwingAxeLiving);
-
-		throwingKnifeLiving = (ItemThrowingKnife) CustomWeaponCreator.addThrowingKnife(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.VIRAL_1);
-		items.add(throwingKnifeLiving);
-
-		warhammerLiving = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IMMALLEABLE_1);
-		items.add(warhammerLiving);
+		warhammerTwisted = (ItemWarhammer) SpartanWeaponryAPI.createWarhammer(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(warhammerTwisted);
 		
-		crossbowLiving = new ItemParasiteCrossbow("crossbow_living", SRPSpartanWeaponry.MODID, livingMaterial).withMultiAmount(ParasiteSWConfig.livingMultishot);
-		crossbowLiving.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
-		Utils.resetAutogenName(crossbowLiving);
-		items.add(crossbowLiving);
+		lanceTwisted = (ItemLance) SpartanWeaponryAPI.createLance(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_2);
+		items.add(lanceTwisted);
+		
+//		scytheTwisted = (ItemScythe) SpartanWeaponryAPI.createScythe(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+//		items.add(scytheTwisted);
+		
+		crossbowTwisted = new ItemCrossbow("crossbow_twisted", SRPSpartanWeaponry.MODID, twistedMaterial);
+		crossbowTwisted.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
+		Utils.resetAutogenName(crossbowTwisted);
+		items.add(crossbowTwisted);
 
 		return items;
 	}
 	
 	public static ToolMaterialEx getTwistedMaterial() {
 		if (twistedMaterial == null) {
-			twistedMaterial = new ToolMaterialEx("twisted", "$nothing", SRPSpartanWeaponry.MODID, -1, -1, 4, ParasiteSWConfig.maxLivingDamage, 7.5f, ParasiteSWConfig.livingBaseDmg, 18);
+			twistedMaterial = new ToolMaterialEx("twisted", "$nothing", SRPSpartanWeaponry.MODID, 0xb00b69, 0x69b00b, 3, 800, 7.5f, 3, 18);
 		}
 		return twistedMaterial;
 	}
@@ -158,16 +153,12 @@ public class ParasiteSWTwisted {
 			if (i != null) {
 				reg.register(i);
 
-				ToolMaterialEx mat = getLivingMaterial(); //default to living
+				ToolMaterialEx mat = getTwistedMaterial(); //default to twisted
 				
 				if (i instanceof IWeaponPropertyContainer) {
 					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) i;
-					container.addWeaponProperty(ParasiteSWProperties.HEAVY_1);
 					Utils.resetAutogenName(i);
 					
-					if (!(i instanceof ItemThrowingWeapon)) { //throwing weapons dont work with uncapped atm, sorgy
-						container.addWeaponProperty(ParasiteSWProperties.UNCAPPED);
-					}
 					mat = container.getMaterialEx();
 				} 
 				if (i instanceof ItemCrossbow) {

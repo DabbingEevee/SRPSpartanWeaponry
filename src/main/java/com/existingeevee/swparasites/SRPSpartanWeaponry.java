@@ -9,9 +9,13 @@ import com.existingeevee.swparasites.handlers.CrossbowBoltHandler;
 import com.existingeevee.swparasites.handlers.DisplayTooltipsHandler;
 import com.existingeevee.swparasites.init.ParasiteSWItems;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWEvolution;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWGore;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWLiving;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWPestilent;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWSentient;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWShields;
+import com.existingeevee.swparasites.init.weapons.ParasiteSWTwisted;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 
 import net.minecraft.item.Item;
@@ -42,6 +46,13 @@ public class SRPSpartanWeaponry {
 		
 		if (Loader.isModLoaded("spartanshields")) { //Haha loader. me when the rain is being risked twice
 			MinecraftForge.EVENT_BUS.register(ParasiteSWShields.class);
+		}
+		
+		if(Loader.isModLoaded("nocubessrparmory")) {
+			MinecraftForge.EVENT_BUS.register(ParasiteSWTwisted.class);
+			MinecraftForge.EVENT_BUS.register(ParasiteSWPestilent.class);
+			MinecraftForge.EVENT_BUS.register(ParasiteSWGore.class);
+			MinecraftForge.EVENT_BUS.register(ParasiteSWEvolution.class);
 		}
 	}
 
