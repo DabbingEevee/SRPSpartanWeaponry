@@ -1,6 +1,0 @@
-{
-    "parent":"swparasites:item/twisted/crossbow_twisted_pulling_0",
-    "textures": {
-        "layer0":"swparasites:twisted/crossbow_loaded"
-    }
-}

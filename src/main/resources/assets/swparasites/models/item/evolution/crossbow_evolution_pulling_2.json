@@ -1,0 +1,6 @@
+{
+    "parent":"swparasites:item/evolution/crossbow_evolution_pulling_0",
+    "textures": {
+        "layer0":"swparasites:evolution/crossbow_pulling_2"
+    }
+}

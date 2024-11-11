@@ -1,0 +1,7 @@
+{
+    "parent": "swparasites:item/evolution/crossbow_evolution",
+    "textures": {
+        "layer0": "swparasites:evolution/crossbow_loaded"
+    },
+    "__comment": "i dont know why but the loaded model is held in the same position as loading the crossbow"
+}

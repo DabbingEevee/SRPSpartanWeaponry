@@ -1,7 +1,0 @@
-{
-    "parent": "swparasites:item/twisted/crossbow_twisted",
-    "textures": {
-        "layer0": "swparasites:twisted/crossbow_loaded"
-    },
-    "__comment": "i dont know why but the loaded model is held in the same position as loading the crossbow"
-}
