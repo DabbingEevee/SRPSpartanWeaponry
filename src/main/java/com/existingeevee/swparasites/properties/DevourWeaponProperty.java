@@ -16,8 +16,5 @@ public class DevourWeaponProperty extends WeaponPropertyWithCallback {
 		super("devour", SRPSpartanWeaponry.MODID, propLevel, propLevel);
 	}
 
-	@Override
-	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target, EntityLivingBase attacker, Entity projectile) {
-		target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 100, (int) (1 + getMagnitude()), false, false));
-	}
+	
 }

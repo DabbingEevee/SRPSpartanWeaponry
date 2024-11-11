@@ -165,6 +165,7 @@ item.swparasites:spear_pestilent.name=Pestilent Spear
 item.swparasites:throwing_axe_pestilent.name=Pestilent Throwing Axe
 item.swparasites:throwing_knife_pestilent.name=Pestilent Throwing Knife
 item.swparasites:scythe_pestilent.name=Pestilent Scythe
+item.swparasites:battleaxe_pestilent.name=Pestilent Battleaxe
 item.swparasites:warhammer_pestilent.name=Pestilent Warhammer
 item.swparasites:spartanweaponry:crossbow_pestilent.name=Pestilent Crossbow
 
@@ -172,6 +173,7 @@ item.swparasites:greatsword_gore.name=Gore Greatsword
 item.swparasites:boomerang_gore.name=Gore Boomerang
 item.swparasites:hammer_gore.name=Gore Hammer
 item.swparasites:glaive_gore.name=Gore Glaive
+item.swparasites:dagger_gore.name=Gore Dagger
 item.swparasites:halberd_gore.name=Gore Halberd
 item.swparasites:javelin_gore.name=Gore Javelin
 item.swparasites:katana_gore.name=Gore Katana
