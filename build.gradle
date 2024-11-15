@@ -55,10 +55,11 @@ dependencies {
 
     implementation ("mezz.jei:jei_1.12.2:4.11.0.202:api")
 
-    //Note: SRParasites-1.12.2v1.9.21.jar MUST be placed within the libs folder for this to build :nerdvirus:
+    //Note: SRParasites-1.12.2v1.9.21.jar MUST be placed within the libs folder for this to build
     implementation ("curse.maven:spartan-weaponry-278141:4467344")
     implementation ("localjars:SRParasites:1.12.2v1.9.21")
     implementation ("curse.maven:spartan-shields-252239:3567495")
+    implementation ("localjars:NoCubes_SRP_Combat_Addon_3.0.0:1")
 }
 
 processResources {
