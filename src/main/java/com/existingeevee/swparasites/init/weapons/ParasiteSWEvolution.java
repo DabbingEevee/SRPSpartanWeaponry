@@ -29,6 +29,7 @@ import com.oblivioussp.spartanweaponry.item.ItemPike;
 import com.oblivioussp.spartanweaponry.item.ItemQuarterstaff;
 import com.oblivioussp.spartanweaponry.item.ItemRapier;
 import com.oblivioussp.spartanweaponry.item.ItemSaber;
+import com.oblivioussp.spartanweaponry.item.ItemScythe;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
@@ -65,7 +66,6 @@ public class ParasiteSWEvolution {
 	public static ItemThrowingKnife throwingKnifeEvolution = null;
 	public static ItemWarhammer warhammerEvolution = null;
 	public static ItemLance lanceEvolution = null;
-//	public static ItemScythe scytheEvolution = null;
 	public static ItemCrossbow crossbowEvolution = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
@@ -128,9 +128,6 @@ public class ParasiteSWEvolution {
 		
 		lanceEvolution = (ItemLance) SpartanWeaponryAPI.createLance(evolutionMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IGNITE_1);
 		items.add(lanceEvolution);
-		
-//		scytheEvolution = (ItemScythe) SpartanWeaponryAPI.createScythe(evolutionMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IGNITE_1);
-//		items.add(scytheEvolution);
 		
 		crossbowEvolution = new ItemCrossbow("crossbow_evolution", SRPSpartanWeaponry.MODID, evolutionMaterial);
 		crossbowEvolution.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);

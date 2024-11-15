@@ -29,6 +29,7 @@ import com.oblivioussp.spartanweaponry.item.ItemPike;
 import com.oblivioussp.spartanweaponry.item.ItemQuarterstaff;
 import com.oblivioussp.spartanweaponry.item.ItemRapier;
 import com.oblivioussp.spartanweaponry.item.ItemSaber;
+import com.oblivioussp.spartanweaponry.item.ItemScythe;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
@@ -65,7 +66,7 @@ public class ParasiteSWGore {
 	public static ItemThrowingKnife throwingKnifeGore = null;
 	public static ItemWarhammer warhammerGore = null;
 	public static ItemLance lanceGore = null;
-//	public static ItemScythe scytheGore = null;
+	public static ItemScythe scytheGore = null;
 	public static ItemCrossbow crossbowGore = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
@@ -129,8 +130,8 @@ public class ParasiteSWGore {
 		lanceGore = (ItemLance) SpartanWeaponryAPI.createLance(goreMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.DEVOUR);
 		items.add(lanceGore);
 		
-//		scytheGore = (ItemScythe) SpartanWeaponryAPI.createScythe(goreMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.DEVOUR);
-//		items.add(scytheGore);
+		scytheGore = (ItemScythe) SpartanWeaponryAPI.createScythe(goreMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.DEVOUR);
+		items.add(scytheGore);
 		
 		crossbowGore = new ItemCrossbow("crossbow_gore", SRPSpartanWeaponry.MODID, goreMaterial);
 		crossbowGore.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);

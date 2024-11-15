@@ -67,7 +67,6 @@ public class ParasiteSWPestilent {
 	public static ItemWarhammer warhammerPestilent = null;
 	public static ItemBattleaxe battleaxePestilent = null;
 	public static ItemLance lancePestilent = null;
-//	public static ItemScythe scythePestilent = null;
 	public static ItemCrossbow crossbowPestilent = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
@@ -133,9 +132,6 @@ public class ParasiteSWPestilent {
 		
 		lancePestilent = (ItemLance) SpartanWeaponryAPI.createLance(pestilentMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.PLAGUE_1);
 		items.add(lancePestilent);
-		
-//		scythePestilent = (ItemScythe) SpartanWeaponryAPI.createScythe(pestilentMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.PLAGUE_1);
-//		items.add(scythePestilent);
 		
 		crossbowPestilent = new ItemCrossbow("crossbow_pestilent", SRPSpartanWeaponry.MODID, pestilentMaterial);
 		crossbowPestilent.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);

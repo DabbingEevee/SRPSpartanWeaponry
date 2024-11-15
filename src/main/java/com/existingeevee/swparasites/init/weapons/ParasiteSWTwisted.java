@@ -29,6 +29,7 @@ import com.oblivioussp.spartanweaponry.item.ItemPike;
 import com.oblivioussp.spartanweaponry.item.ItemQuarterstaff;
 import com.oblivioussp.spartanweaponry.item.ItemRapier;
 import com.oblivioussp.spartanweaponry.item.ItemSaber;
+import com.oblivioussp.spartanweaponry.item.ItemScythe;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
@@ -65,7 +66,7 @@ public class ParasiteSWTwisted {
 	public static ItemThrowingKnife throwingKnifeTwisted = null;
 	public static ItemWarhammer warhammerTwisted = null;
 	public static ItemLance lanceTwisted = null;
-//	public static ItemScythe scytheTwisted= null;
+	public static ItemScythe scytheTwisted= null;
 	public static ItemCrossbow crossbowTwisted = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
@@ -126,8 +127,8 @@ public class ParasiteSWTwisted {
 		lanceTwisted = (ItemLance) SpartanWeaponryAPI.createLance(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_2);
 		items.add(lanceTwisted);
 		
-//		scytheTwisted = (ItemScythe) SpartanWeaponryAPI.createScythe(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
-//		items.add(scytheTwisted);
+		scytheTwisted = (ItemScythe) SpartanWeaponryAPI.createScythe(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
+		items.add(scytheTwisted);
 		
 		crossbowTwisted = new ItemCrossbow("crossbow_twisted", SRPSpartanWeaponry.MODID, twistedMaterial);
 		crossbowTwisted.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
