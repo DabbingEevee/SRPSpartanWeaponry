@@ -94,4 +94,9 @@ public class ParasiteSWConfig {
 	@Comment("Should easter eggs when holding down specific keys on an item show a funny little message? (default: true)")
 	@RequiresMcRestart
 	public static boolean easterEgg = true;
+	
+	@Name("Nocube Compatibility")
+	@Comment("Enable compatibility with Nocube's Weapon addon? (default: true)")
+	@RequiresMcRestart
+	public static boolean nocubeCompat = true;
 }

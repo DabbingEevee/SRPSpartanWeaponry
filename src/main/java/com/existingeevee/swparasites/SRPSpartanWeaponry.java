@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
+import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.handlers.CrossbowBoltHandler;
 import com.existingeevee.swparasites.handlers.DisplayTooltipsHandler;
 import com.existingeevee.swparasites.init.ParasiteSWItems;
@@ -44,11 +45,11 @@ public class SRPSpartanWeaponry {
 		MinecraftForge.EVENT_BUS.register(ParasiteSWLiving.class);
 		MinecraftForge.EVENT_BUS.register(ParasiteSWSentient.class);
 		
-		if (Loader.isModLoaded("spartanshields")) { //Haha loader. me when the rain is being risked twice
+		if (Loader.isModLoaded("spartanshields") && ParasiteSWConfig.enableShields) { //Haha loader. me when the rain is being risked twice
 			MinecraftForge.EVENT_BUS.register(ParasiteSWShields.class);
 		}
 		
-		if(Loader.isModLoaded("nocubessrparmory")) {
+		if(Loader.isModLoaded("nocubessrparmory") && ParasiteSWConfig.nocubeCompat) {
 			MinecraftForge.EVENT_BUS.register(ParasiteSWTwisted.class);
 			MinecraftForge.EVENT_BUS.register(ParasiteSWPestilent.class);
 			MinecraftForge.EVENT_BUS.register(ParasiteSWGore.class);
