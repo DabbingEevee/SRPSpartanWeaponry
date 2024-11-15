@@ -1,0 +1,6 @@
+{
+    "parent":"swparasites:item/gore/crossbow_gore_pulling_0",
+    "textures": {
+        "layer0":"swparasites:gore/crossbow_pulling_1"
+    }
+}

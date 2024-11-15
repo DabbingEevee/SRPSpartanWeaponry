@@ -1,0 +1,6 @@
+{
+    "parent":"swparasites:item/pestilent/crossbow_pestilent_pulling_0",
+    "textures": {
+        "layer0":"swparasites:pestilent/crossbow_pulling_1"
+    }
+}
