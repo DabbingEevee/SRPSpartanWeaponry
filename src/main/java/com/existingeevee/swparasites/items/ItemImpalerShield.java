@@ -34,8 +34,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutionProgress {
 
-	float attackDamage = 15;
-	float falloffPerBlock = 3; 
+	float attackDamage = 21;
+	float falloffPerBlock = 3;
 	double maxRange = 5;
 	double maxDeltaAngle = Math.PI / 4; // radians
 	float power = 1;
@@ -58,7 +58,13 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 			return super.onItemRightClick(worldIn, playerIn, handIn);
 		}
 		if (!worldIn.isRemote) {
-			playerIn.world.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.PLAYERS, 0.7F, power == 1 ? 1.25f : 0.75f); // ev dont you dare say it
+			playerIn.world.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ,
+					SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.PLAYERS, 0.7F, power == 1 ? 1.25f : 0.75f); // ev
+																														// dont
+																														// you
+																														// dare
+																														// say
+																														// it
 		}
 
 		Vec3d vec = playerIn.getLookVec();
@@ -69,7 +75,8 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 			playerIn.velocityChanged = true;
 		}
 
-		AxisAlignedBB box = new AxisAlignedBB(playerIn.posX, playerIn.posY, playerIn.posZ, playerIn.posX, playerIn.posY, playerIn.posZ).grow(maxRange);
+		AxisAlignedBB box = new AxisAlignedBB(playerIn.posX, playerIn.posY, playerIn.posZ, playerIn.posX, playerIn.posY,
+				playerIn.posZ).grow(maxRange);
 		boolean hitAny = false;
 		for (Entity entity : worldIn.getEntitiesInAABBexcluding(playerIn, box, e -> isValidTarget(e, playerIn))) {
 
@@ -80,23 +87,24 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 			// entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn),
 			// attackDamage - distanceTo * falloffPerBlock);
 			boolean wasHit = entity.attackEntityFrom(DamageSource.causePlayerDamage(playerIn), attackDamage);
-			if (!wasHit) continue;
+			if (!wasHit)
+				continue;
 			hitAny = true;
-			
+
 			Vec3d motionVector = new Vec3d(entity.posX - playerIn.posX, 0, entity.posZ - playerIn.posZ).normalize()
 					.scale(1.5) // 1.5 m/s of initial push
 					.scale(1 - distanceTo / (maxRange * 2)) // put some falloff on it
 					.add(0, 0.6D, 0); // bit of an upwards push as well bc why not
 
 			if (!worldIn.isRemote) {
-				entity.motionX += motionVector.x;
+				entity.motionX += motionVector.x + 0.25 * power;
 				entity.motionY += motionVector.y * 0.5;
-				entity.motionZ += motionVector.z;
+				entity.motionZ += motionVector.z + 0.25* power;
 				entity.velocityChanged = true;
 				entity.world.playSound(null, entity.posX, entity.posY, entity.posZ, SoundEvents.ITEM_SHIELD_BLOCK,
 						SoundCategory.PLAYERS, 0.7F, 1.0F);
 			}
-			
+
 			item.damageItem(1, playerIn);
 			if (((EntityLivingBase) entity).getHealth() <= 0.0f) {
 				add(item, (int) ((EntityLivingBase) entity).getMaxHealth());
@@ -105,7 +113,7 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 		if (hitAny) {
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 20, 4));
 		}
-		playerIn.getCooldownTracker().setCooldown(item.getItem(), 50);
+		playerIn.getCooldownTracker().setCooldown(item.getItem(), playerIn.isPotionActive(SRPPotions.RAGE_E) ? 25 : 50);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
 	}
 
@@ -127,12 +135,21 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 	public void attackEvent(LivingAttackEvent ev) {
 		if (ev.getEntityLiving() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) ev.getEntityLiving();
+			Entity entity = ev.getSource().getTrueSource();
 
 			if (player.isHandActive() && !player.getActiveItemStack().isEmpty()) {
 				ItemStack activeStack = player.getActiveItemStack();
 
 				if (activeStack.getItem() == this && player.canBlockDamageSource(ev.getSource())) {
 					// Yaya woo we blocked it
+
+					if (entity != null) { // Blocking deals dmg back to the attacker
+						entity.attackEntityFrom(DamageSource.causePlayerDamage(player), attackDamage / 2);
+						if (((EntityLivingBase) entity).getHealth() <= 0.0f) { // If the thorns kills attacker, also add points
+							add(activeStack, (int) ((EntityLivingBase) entity).getMaxHealth());
+						}
+					}
+
 					if (power == 1) {
 						NBTTagCompound compound = activeStack.getTagCompound();
 						if (compound == null) {
@@ -142,7 +159,7 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 							final int key = (int) (compound.getInteger("srpkills") + ev.getAmount());
 							compound.setInteger("srpkills", key);
 						} else {
-							compound.setInteger("srpkills", (int) ev.getAmount() / 2); // Blocking dmg still builds kills, but less than the buckler
+							compound.setInteger("srpkills", (int) ev.getAmount() / 2); // Blocking dmg still builds points, but less than the buckler
 						}
 						activeStack.setTagCompound(compound);
 
@@ -175,13 +192,14 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 
 		return target instanceof EntityLivingBase; // they have to be living smhhh
 	}
-	
+
 	@Override
-    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
-    {
+	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if (!worldIn.isRemote) {
-			if (ParasiteSWConfig.sentientScent && power == 1.5 && SRPConfigSystems.useScent && worldIn.rand.nextInt(100) == 0 && entityIn.ticksExisted % 40 == 0) {
-				((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
+			if (ParasiteSWConfig.sentientScent && power == 1.5 && SRPConfigSystems.useScent
+					&& worldIn.rand.nextInt(100) == 0 && entityIn.ticksExisted % 40 == 0) {
+				((EntityLivingBase) entityIn)
+						.addPotionEffect(new PotionEffect(SRPPotions.PREY_E, 1200, 0, false, false));
 			}
 			if (entityIn.ticksExisted % 80 == 0) {
 				int key = 0;
@@ -196,8 +214,8 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 						if (ParasiteSWConfig.evolutionKeepNBT) {
 							stackW.setTagCompound(compound.copy());
 						}
-						final EntityItem entityitem = new EntityItem(worldIn, entityIn.posX, entityIn.posY, entityIn.posZ,
-								stackW);
+						final EntityItem entityitem = new EntityItem(worldIn, entityIn.posX, entityIn.posY,
+								entityIn.posZ, stackW);
 						if (ParasiteSWConfig.evolutionDropOnGround) {
 							entityitem.setDefaultPickupDelay();
 						} else {
@@ -206,8 +224,8 @@ public class ItemImpalerShield extends ItemShieldBase implements IHasSRPEvolutio
 						worldIn.spawnEntity((Entity) entityitem);
 						stack.shrink(1);
 						if (SRPConfig.thunderEnable) {
-							worldIn.addWeatherEffect((Entity) new EntityLightningBolt(worldIn, entityIn.posX, entityIn.posY,
-									entityIn.posZ, true));
+							worldIn.addWeatherEffect((Entity) new EntityLightningBolt(worldIn, entityIn.posX,
+									entityIn.posY, entityIn.posZ, true));
 						}
 					}
 				}

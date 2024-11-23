@@ -1,6 +1,8 @@
 package com.existingeevee.swparasites.properties;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
+import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithCallback;
 
 // meow
@@ -24,9 +26,13 @@ public class DevourWeaponProperty extends WeaponPropertyWithCallback {
 	@SubscribeEvent
     public void onItemRightClick(PlayerInteractEvent.RightClickItem ev) {
 		EntityPlayer playerIn = ev.getEntityPlayer();
-		if (!playerIn.isSneaking() || playerIn.isPotionActive(MobEffects.STRENGTH)) {
+		
+		boolean hasGoreWeapon = playerIn.getHeldItemMainhand().getItem() instanceof IWeaponPropertyContainer<?> && ((IWeaponPropertyContainer<?>) playerIn.getHeldItemMainhand().getItem()).hasWeaponProperty(ParasiteSWProperties.DEVOUR);
+		
+		if (!playerIn.isSneaking() || playerIn.isPotionActive(MobEffects.STRENGTH) || !hasGoreWeapon ){
 			return;
 		}
+		
 		for (int i = 0; i < playerIn.inventory.getSizeInventory(); i++) {
 			ItemStack slotStack = playerIn.inventory.getStackInSlot(i);
 			if (slotStack.getItem().getRegistryName().toString().equals("nocubessrparmory:gorepart")) {
