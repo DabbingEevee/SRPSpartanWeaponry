@@ -5,6 +5,7 @@ import com.existingeevee.swparasites.items.ItemParasiteDagger;
 import com.existingeevee.swparasites.items.ItemParasiteJavelin;
 import com.existingeevee.swparasites.items.ItemParasiteThrowingAxe;
 import com.existingeevee.swparasites.items.ItemParasiteThrowingKnife;
+import com.existingeevee.swparasites.items.ItemParasiteGauntlet;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
@@ -12,6 +13,7 @@ import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.item.ItemJavelin;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
+import com.oblivioussp.spartanweaponry.item.ItemCaestus;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -82,5 +84,18 @@ public class CustomWeaponCreator {
 			dagger.addWeaponProperty(prop);
 		}
 		return dagger;
+	}
+	
+	public static Item addCaestus(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) {
+		if (ConfigHandler.disableCaestus)
+			return null;
+
+		ItemCaestus caestus = new ItemParasiteGauntlet("gauntlet_" + material.getUnlocName(), material);
+		caestus.setCreativeTab(tab);
+
+		for (WeaponProperty prop : properties) {
+			caestus.addWeaponProperty(prop);
+		}
+		return caestus;
 	}
 }

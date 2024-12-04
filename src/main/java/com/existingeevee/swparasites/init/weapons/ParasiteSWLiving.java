@@ -15,6 +15,7 @@ import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
+import com.oblivioussp.spartanweaponry.item.ItemCaestus;
 import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.item.ItemGlaive;
@@ -67,6 +68,7 @@ public class ParasiteSWLiving {
 	public static ItemThrowingKnife throwingKnifeLiving = null;
 	public static ItemWarhammer warhammerLiving = null;
 	public static ItemCrossbow crossbowLiving = null;
+	public static ItemCaestus gauntletLiving = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
 
@@ -138,6 +140,9 @@ public class ParasiteSWLiving {
 		crossbowLiving.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		Utils.resetAutogenName(crossbowLiving);
 		items.add(crossbowLiving);
+		
+		gauntletLiving = (ItemCaestus) CustomWeaponCreator.addCaestus(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
+		items.add(gauntletLiving);
 
 		return items;
 	}

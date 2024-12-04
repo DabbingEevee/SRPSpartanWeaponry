@@ -72,6 +72,9 @@ public class EvolutionHandler {
 		if (item == ParasiteSWLiving.crossbowLiving) {
 			return ParasiteSWSentient.crossbowSentient;
 		}
+		if (item == ParasiteSWLiving.gauntletLiving) {
+			return ParasiteSWSentient.gauntletSentient;
+		}
 		if (Loader.isModLoaded("spartanshields")) {
 			
 			if (item == ParasiteSWShields.bucklerShieldLiving) {

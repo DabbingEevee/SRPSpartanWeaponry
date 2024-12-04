@@ -11,6 +11,7 @@ import com.existingeevee.swparasites.properties.IgniteWeaponProperty;
 import com.existingeevee.swparasites.properties.ImmalleableWeaponProperty;
 import com.existingeevee.swparasites.properties.PlagueWeaponProperty;
 import com.existingeevee.swparasites.properties.RepulseWeaponProperty;
+import com.existingeevee.swparasites.properties.ShockwaveWeaponProperty;
 import com.existingeevee.swparasites.properties.ViralWeaponProperty;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.WeaponProperties;
@@ -46,6 +47,9 @@ public class ParasiteSWProperties {
 	public static final WeaponProperty REACH_3 = new WeaponProperty(WeaponProperties.PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 3, 8.0f);
 	
 	public static final WeaponProperty UNCAPPED = new WeaponProperty("uncapped", SRPSpartanWeaponry.MODID, 0, 0);
+	
+	public static final ShockwaveWeaponProperty SHOCKWAVE_1 = new ShockwaveWeaponProperty(1);
+	public static final ShockwaveWeaponProperty SHOCKWAVE_2 = new ShockwaveWeaponProperty(2);
 
 	public static final AtrophyWeaponProperty ATROPHY_1 = new AtrophyWeaponProperty(1);
 	public static final AtrophyWeaponProperty ATROPHY_2 = new AtrophyWeaponProperty(2);

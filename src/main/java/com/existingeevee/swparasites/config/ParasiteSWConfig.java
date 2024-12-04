@@ -99,4 +99,9 @@ public class ParasiteSWConfig {
 	@Comment("Enable compatibility with Nocube's Weapon addon? (default: true)")
 	@RequiresMcRestart
 	public static boolean nocubeCompat = true;
+	
+	@Name("Weapon Textures")
+	@Comment("What texture style should be used for the weapons? 0 - Modern, 1 - Alternate, 2 - Legacy (1.9.2 to 1.9.18) (default: 0)")
+	@RequiresMcRestart
+	public static int weaponTexturesType = 0;
 }

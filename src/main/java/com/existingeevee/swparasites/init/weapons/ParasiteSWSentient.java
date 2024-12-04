@@ -17,6 +17,7 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemBoomerang;
+import com.oblivioussp.spartanweaponry.item.ItemCaestus;
 import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
 import com.oblivioussp.spartanweaponry.item.ItemDagger;
 import com.oblivioussp.spartanweaponry.item.ItemGlaive;
@@ -70,6 +71,7 @@ public class ParasiteSWSentient {
 	public static ItemThrowingKnife throwingKnifeSentient = null;
 	public static ItemWarhammer warhammerSentient = null;
 	public static ItemCrossbow crossbowSentient = null;
+	public static ItemCaestus gauntletSentient = null;
 
 	private static List<Item> initalizeItems(List<Item> items) {
 
@@ -139,6 +141,9 @@ public class ParasiteSWSentient {
 		crossbowSentient = new ItemParasiteCrossbow("crossbow_sentient", SRPSpartanWeaponry.MODID, sentientMaterial).withMultiAmount(ParasiteSWConfig.sentientMultishot).setLiving(false);;
 		crossbowSentient.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		items.add(crossbowSentient);
+		
+		gauntletSentient = (ItemCaestus) CustomWeaponCreator.addCaestus(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
+		items.add(gauntletSentient);
 		
 		return items;
 	}
