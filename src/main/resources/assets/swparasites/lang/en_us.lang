@@ -19,7 +19,7 @@ item.swparasites:throwing_axe_living.name=§eLiving Throwing Axe
 item.swparasites:throwing_knife_living.name=§eLiving Throwing Knife
 item.swparasites:warhammer_living.name=§eLiving Warhammer
 item.swparasites:spartanweaponry:crossbow_living.name=§eLiving Crossbow
-item.swparasites:spartanweaponry:gauntlet_living.name=§eLiving Gauntlets
+item.swparasites:gauntlet_living.name=§eLiving Gauntlets
 
 item.swparasites:claymore_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 item.swparasites:boomerang_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
@@ -86,7 +86,7 @@ item.swparasites:throwing_axe_sentient.name=§6Sentient Great-Throwing Axe
 item.swparasites:throwing_knife_sentient.name=§6Sentient Great-Throwing Knife
 item.swparasites:warhammer_sentient.name=§6Sentient Greatwarhammer
 item.swparasites:spartanweaponry:crossbow_sentient.name=§6Sentient Crossbow
-item.swparasites:spartanweaponry:gauntlet_sentient.name=§eSentient Gauntlets
+item.spartanweaponry:gauntlet_sentient.name=§eSentient Gauntlets
 
 //shields
 item.spartanshields:impaler_shield_living.name=§eLiving Impaler
@@ -127,7 +127,7 @@ tooltip.swparasites:heavy=Heavy %s
 tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of Parasite parts.
 tooltip.swparasites:uncapped=Uncapped
 tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
-tooltip.swparasites:shockwave=Shockwave §9[Use Item]
+tooltip.swparasites:shockwave=Shockwave %s §9[Use Item]
 tooltip.swparasites:shockwave.desc=§oThe earth itself §c§oshakes§7§o beneath your fists.
 
 //nocubes combat

@@ -141,7 +141,7 @@ public class ParasiteSWLiving {
 		Utils.resetAutogenName(crossbowLiving);
 		items.add(crossbowLiving);
 		
-		gauntletLiving = (ItemCaestus) CustomWeaponCreator.addCaestus(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
+		gauntletLiving = (ItemCaestus) CustomWeaponCreator.addCaestus(livingMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.SHOCKWAVE_1);
 		items.add(gauntletLiving);
 
 		return items;

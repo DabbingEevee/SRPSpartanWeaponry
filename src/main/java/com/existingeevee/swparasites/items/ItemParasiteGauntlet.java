@@ -2,10 +2,10 @@ package com.existingeevee.swparasites.items;
 
 import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.item.ItemCaestus;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -14,15 +14,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutionProgress {
-
-	private ToolMaterialEx material;
 	
 	public ItemParasiteGauntlet(String unlocName, ToolMaterialEx material) {
 		super(unlocName, material);
-		this.material = material;
+		setNoRepair();
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -33,19 +30,29 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 		if (!playerIn.onGround) {
 			return super.onItemRightClick(worldIn, playerIn, handIn);
 		}
-		if (!worldIn.isRemote) {
+		
+		WeaponProperty shockwave = this.getFirstWeaponPropertyWithType("shockwave");
+		
+
+		boolean lvl2 = shockwave.getLevel() != 1;
+		if (shockwave != null) {
+			if (!worldIn.isRemote) {
 			playerIn.world.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ,
-					SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 0.7F, material.getUnlocName().equals("living") ? 1.5f : 0.5f);
+					SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 0.7F, lvl2 ? 0.5f : 1.5f);
+			}
 		}
 		
-		playerIn.getCooldownTracker().setCooldown(item.getItem(), playerIn.isPotionActive(SRPPotions.RAGE_E) ? 25 : 50);
+		
+		playerIn.getCooldownTracker().setCooldown(item.getItem(), playerIn.isPotionActive(SRPPotions.RAGE_E) ? 50 : 100);
+		
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+		
 	}
 	
 	
 	@Override
 	public ItemStack getRepairItemStack()
     {
-		return new ItemStack(Items.LEATHER, 1, OreDictionary.WILDCARD_VALUE);
+		return ItemStack.EMPTY;
     }
 }

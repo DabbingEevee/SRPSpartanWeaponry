@@ -142,7 +142,7 @@ public class ParasiteSWSentient {
 		crossbowSentient.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		items.add(crossbowSentient);
 		
-		gauntletSentient = (ItemCaestus) CustomWeaponCreator.addCaestus(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.BLEEDING_2);
+		gauntletSentient = (ItemCaestus) CustomWeaponCreator.addCaestus(sentientMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.SHOCKWAVE_2);
 		items.add(gauntletSentient);
 		
 		return items;
