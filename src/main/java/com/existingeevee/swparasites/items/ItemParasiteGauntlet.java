@@ -1,12 +1,15 @@
 package com.existingeevee.swparasites.items;
 
 import com.dhanantry.scapeandrunparasites.init.SRPPotions;
+import com.existingeevee.swparasites.Utils;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.item.ItemCaestus;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -19,11 +22,44 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 	
 	public ItemParasiteGauntlet(String unlocName, ToolMaterialEx material) {
 		super(unlocName, material);
+		modId = "swparasites";
 		setNoRepair();
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	@Override
+    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
+		System.out.println("let me also test if this works: " + Utils.getOrCreateTag(stack).getBoolean("PunchOffhand"));
+		Item item = attacker.getHeldItem(EnumHand.OFF_HAND).getItem();
+		
+		if (!(item == this)) {
+			System.out.println("gauntlet not detected, getting the hell out");
+			return false;
+		}
+		System.out.println("gauntlet detected, continuing");
+		
+		boolean punchOffhand = Utils.getOrCreateTag(stack).getBoolean("PunchOffhand");
+		
+		System.out.println("offhand punch?" + punchOffhand);
+		
+		if (punchOffhand) {
+			System.out.println("offhand punch should have happened here");
+			attacker.setActiveHand(EnumHand.OFF_HAND);
+			attacker.swingArm(EnumHand.OFF_HAND);
+		}
+		else {
+			System.out.println("mainhand punch should have happened here");
+			attacker.swingArm(EnumHand.MAIN_HAND);
+		}
+		
+		Utils.getOrCreateTag(stack).setBoolean("PunchOffhand", !punchOffhand);
+		
+		System.out.println("also here too: " + Utils.getOrCreateTag(stack).getBoolean("PunchOffhand"));
+		
+    	return false;
+	}
+	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack item = playerIn.getHeldItem(handIn);
@@ -45,8 +81,9 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 		
 		playerIn.getCooldownTracker().setCooldown(item.getItem(), playerIn.isPotionActive(SRPPotions.RAGE_E) ? 50 : 100);
 		
-		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+		playerIn.swingArm(handIn);
 		
+		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
 	}
 	
 	

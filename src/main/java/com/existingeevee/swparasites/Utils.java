@@ -11,6 +11,8 @@ import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -124,4 +126,17 @@ public class Utils {
 		return new Vec3d(box.minX + (box.maxX - box.minX) * 0.5D, box.minY + (box.maxY - box.minY) * 0.5D, box.minZ + (box.maxZ - box.minZ) * 0.5D);
 	}
 	
+	public static NBTTagCompound getOrCreateTag(ItemStack stack) {
+        if (!stack.hasTagCompound()) {
+            stack.setTagCompound(new NBTTagCompound());
+        }
+        return stack.getTagCompound();
+    }
+
+    public static NBTTagCompound getOrEmptyTag(ItemStack stack) {
+        if (!stack.hasTagCompound()) {
+            return new NBTTagCompound();
+        }
+        return stack.getTagCompound();
+    }
 }

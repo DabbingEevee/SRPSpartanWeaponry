@@ -1,0 +1,27 @@
+{
+  "group": "swparasites",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    "S S",
+    "TCT"
+  ],
+  "key": {
+    "S": {
+      "item": "srparasites:vile_shell"
+    },
+    "T": {
+      "item": "srparasites:dried_tendons"
+    },
+    "C": {
+      "item": "srparasites:living_core"
+    },
+    "E": {
+      "item": "swparasites:serrated_spines"
+    }
+  },
+  "result": {
+    "item": "swparasites:gauntlet_living",
+    "count": 1
+  }
+}
