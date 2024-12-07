@@ -11,6 +11,7 @@ import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.handlers.EvolutionHandler;
+import com.existingeevee.swparasites.items.ItemParasiteGauntlet;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -154,6 +155,14 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 			if (container.getAllWeaponProperties().stream().anyMatch(p -> p == this)) {
 				shouldHaveSlowing = true;
 			}
+			if (container instanceof ItemParasiteGauntlet) {
+				ItemParasiteGauntlet gauntlet = (ItemParasiteGauntlet) container;
+
+				if (gauntlet.usingBothGauntlets((EntityPlayer) event.getEntityLiving())) {
+					shouldHaveSlowing = false;
+				}
+			}
+
 		}
 
 		IAttributeInstance attr = event.getEntityLiving().getAttributeMap()

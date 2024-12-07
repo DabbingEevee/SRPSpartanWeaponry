@@ -20,6 +20,8 @@ import net.minecraftforge.common.MinecraftForge;
 
 public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutionProgress {
 	
+	private boolean toggle = false;
+	
 	public ItemParasiteGauntlet(String unlocName, ToolMaterialEx material) {
 		super(unlocName, material);
 		modId = "swparasites";
@@ -29,14 +31,19 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 	}
 
 	@Override
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
+	public boolean onEntitySwing(EntityLivingBase attacker, ItemStack stack) {
 		System.out.println("let me also test if this works: " + Utils.getOrCreateTag(stack).getBoolean("PunchOffhand"));
-		Item item = attacker.getHeldItem(EnumHand.OFF_HAND).getItem();
 		
-		if (!(item == this)) {
+		if (!usingBothGauntlets((EntityPlayer) attacker)) {
 			System.out.println("gauntlet not detected, getting the hell out");
-			return false;
+			return true;
 		}
+		
+		if (toggle) {
+			toggle = false;
+			return true;
+		}
+		
 		System.out.println("gauntlet detected, continuing");
 		
 		boolean punchOffhand = Utils.getOrCreateTag(stack).getBoolean("PunchOffhand");
@@ -45,11 +52,13 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 		
 		if (punchOffhand) {
 			System.out.println("offhand punch should have happened here");
-			attacker.setActiveHand(EnumHand.OFF_HAND);
+			toggle = true;
 			attacker.swingArm(EnumHand.OFF_HAND);
 		}
+		
 		else {
 			System.out.println("mainhand punch should have happened here");
+			toggle = true;
 			attacker.swingArm(EnumHand.MAIN_HAND);
 		}
 		
@@ -57,7 +66,7 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 		
 		System.out.println("also here too: " + Utils.getOrCreateTag(stack).getBoolean("PunchOffhand"));
 		
-    	return false;
+    	return true;
 	}
 	
 	@Override
@@ -92,4 +101,13 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
     {
 		return ItemStack.EMPTY;
     }
+	
+	public boolean usingBothGauntlets(EntityPlayer player) {
+		Item itemOff = player.getHeldItem(EnumHand.OFF_HAND).getItem();
+		
+		if (itemOff == this) {
+			return true;
+		}
+		return false;
+	}
 }
