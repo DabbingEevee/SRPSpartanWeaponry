@@ -1,5 +1,5 @@
 {
-	"credit": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/) - Modified by Sweebow",
+	"credit": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "swparasites:sentient/gauntlet",
@@ -20,6 +20,76 @@
 			}
 		},
 		{
+			"name": "VeinTopLeft",
+			"from": [6.2, 8.8, 9],
+			"to": [7.2, 9.8, 12.97],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 3, 5]},
+			"faces": {
+				"north": {"uv": [2.25, 5.5, 2.5, 5.75], "texture": "#0"},
+				"east": {"uv": [0, 5.5, 1, 5.75], "texture": "#0"},
+				"south": {"uv": [1, 5.5, 1.25, 5.75], "texture": "#0"},
+				"west": {"uv": [1.25, 5.5, 2.25, 5.75], "texture": "#0"},
+				"up": {"uv": [1.5, 5.5, 1.25, 4.5], "texture": "#0"},
+				"down": {"uv": [1.25, 4.5, 1, 5.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "VeinLoop",
+			"from": [6.21, 6.21, 12],
+			"to": [9.79, 9.79, 12.99],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 5]},
+			"faces": {
+				"north": {"uv": [0, 7.25, 1, 8.25], "texture": "#0"},
+				"east": {"uv": [0.5, 7, 0.75, 7.25], "texture": "#0"},
+				"south": {"uv": [1, 7.25, 2, 8.25], "texture": "#0"},
+				"west": {"uv": [0.25, 7, 0.5, 7.25], "texture": "#0"},
+				"up": {"uv": [0.25, 7.25, 0, 7], "texture": "#0"},
+				"down": {"uv": [1, 7, 0.75, 7.25], "texture": "#0"}
+			}
+		},
+		{
+			"name": "VeinTopRight",
+			"from": [8.8, 8.8, 9],
+			"to": [9.8, 9.8, 12.97],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 3, 5]},
+			"faces": {
+				"north": {"uv": [2.25, 5.5, 2.5, 5.75], "texture": "#0"},
+				"east": {"uv": [0, 5.5, 1, 5.75], "texture": "#0"},
+				"south": {"uv": [1, 5.5, 1.25, 5.75], "texture": "#0"},
+				"west": {"uv": [1.25, 5.5, 2.25, 5.75], "texture": "#0"},
+				"up": {"uv": [1.5, 5.5, 1.25, 4.5], "texture": "#0"},
+				"down": {"uv": [1.25, 4.5, 1, 5.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "VeinBottomRight",
+			"from": [8.8, 6.2, 9],
+			"to": [9.8, 7.2, 12.97],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 5]},
+			"faces": {
+				"north": {"uv": [2.25, 5.5, 2.5, 5.75], "texture": "#0"},
+				"east": {"uv": [0, 5.5, 1, 5.75], "texture": "#0"},
+				"south": {"uv": [1, 5.5, 1.25, 5.75], "texture": "#0"},
+				"west": {"uv": [1.25, 5.5, 2.25, 5.75], "texture": "#0"},
+				"up": {"uv": [1.5, 5.5, 1.25, 4.5], "texture": "#0"},
+				"down": {"uv": [1.25, 4.5, 1, 5.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "VeinBottomLeft",
+			"from": [6.2, 6.2, 9],
+			"to": [7.2, 7.2, 12.97],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 5]},
+			"faces": {
+				"north": {"uv": [2.25, 5.5, 2.5, 5.75], "texture": "#0"},
+				"east": {"uv": [0, 5.5, 1, 5.75], "texture": "#0"},
+				"south": {"uv": [1, 5.5, 1.25, 5.75], "texture": "#0"},
+				"west": {"uv": [1.25, 5.5, 2.25, 5.75], "texture": "#0"},
+				"up": {"uv": [1.5, 5.5, 1.25, 4.5], "texture": "#0"},
+				"down": {"uv": [1.25, 4.5, 1, 5.5], "texture": "#0"}
+			}
+		},
+		{
 			"name": "Knux",
 			"from": [5.5, 9.5, 3.5],
 			"to": [10.5, 10.5, 7.5],
@@ -30,47 +100,6 @@
 				"west": {"uv": [2.25, 3.25, 3.25, 3.5], "texture": "#0"},
 				"up": {"uv": [2.25, 3.25, 1, 2.25], "texture": "#0"},
 				"down": {"uv": [3.5, 2.25, 2.25, 3.25], "texture": "#0"}
-			}
-		},
-		{
-			"name": "Strap1",
-			"from": [5.99, 6, 9.7],
-			"to": [9.99, 10, 10.2],
-			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 8, 10]},
-			"faces": {
-				"north": {"uv": [0, 5, 2, 7], "texture": "#0"},
-				"east": {"uv": [0, 5, 0.25, 7], "texture": "#0"},
-				"south": {"uv": [2, 5, 4, 7], "texture": "#0"},
-				"west": {"uv": [2, 5, 2.25, 7], "texture": "#0"},
-				"up": {"uv": [2, 5, 0, 5], "texture": "#0"},
-				"down": {"uv": [4, 5, 2, 5], "texture": "#0"}
-			}
-		},
-		{
-			"name": "Strap2",
-			"from": [6, 6, 12],
-			"to": [10, 10, 12.5],
-			"faces": {
-				"north": {"uv": [0, 5, 2, 7], "texture": "#0"},
-				"east": {"uv": [0, 5, 0.25, 7], "texture": "#0"},
-				"south": {"uv": [2, 5, 4, 7], "texture": "#0"},
-				"west": {"uv": [2, 5, 2.25, 7], "texture": "#0"},
-				"up": {"uv": [2, 5, 0, 5], "texture": "#0"},
-				"down": {"uv": [4, 5, 2, 5], "texture": "#0"}
-			}
-		},
-		{
-			"name": "Strap3",
-			"from": [6.01, 6, 11.2],
-			"to": [10.01, 10, 11.7],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 8, 11.5]},
-			"faces": {
-				"north": {"uv": [0, 5, 2, 7], "texture": "#0"},
-				"east": {"uv": [0, 5, 0.25, 7], "texture": "#0"},
-				"south": {"uv": [2, 5, 4, 7], "texture": "#0"},
-				"west": {"uv": [2, 5, 2.25, 7], "texture": "#0"},
-				"up": {"uv": [2, 5, 0, 5], "texture": "#0"},
-				"down": {"uv": [4, 5, 2, 5], "texture": "#0"}
 			}
 		},
 		{
@@ -96,7 +125,7 @@
 				"east": {"uv": [3.25, 3.75, 4.5, 4.5], "texture": "#0"},
 				"south": {"uv": [3, 3.75, 3.25, 4.5], "texture": "#0"},
 				"west": {"uv": [4.5, 3.75, 3.25, 4.5], "texture": "#0"},
-				"up": {"uv": [4.75, 3.75, 3.5, 3.5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [4.75, 3.75, 3.5, 3.5], "rotation": 90, "texture": "#missing"},
 				"down": {"uv": [3, 3.5, 1.75, 3.75], "rotation": 270, "texture": "#0"}
 			}
 		},

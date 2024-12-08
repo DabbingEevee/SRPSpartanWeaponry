@@ -39,11 +39,6 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 			return true;
 		}
 		
-		if (toggle) {
-			toggle = false;
-			return true;
-		}
-		
 		System.out.println("gauntlet detected, continuing");
 		
 		boolean punchOffhand = Utils.getOrCreateTag(stack).getBoolean("PunchOffhand");
@@ -52,14 +47,12 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 		
 		if (punchOffhand) {
 			System.out.println("offhand punch should have happened here");
-			toggle = true;
-			attacker.swingArm(EnumHand.OFF_HAND);
+//			attacker.swingArm(EnumHand.OFF_HAND); disabled until ev finds solution
 		}
 		
 		else {
 			System.out.println("mainhand punch should have happened here");
-			toggle = true;
-			attacker.swingArm(EnumHand.MAIN_HAND);
+//			attacker.swingArm(EnumHand.MAIN_HAND); disabled until ev finds solution
 		}
 		
 		Utils.getOrCreateTag(stack).setBoolean("PunchOffhand", !punchOffhand);
