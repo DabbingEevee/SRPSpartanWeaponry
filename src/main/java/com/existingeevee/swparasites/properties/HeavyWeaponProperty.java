@@ -97,7 +97,7 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 
 	@Override
 	public void onHitEntity(ToolMaterialEx material, ItemStack stack, EntityLivingBase target,
-			EntityLivingBase attacker, Entity projectile) {
+			EntityLivingBase attacker, Entity projectile) {		
 		if (projectile instanceof EntityThrownWeapon) {
 			if (!(attacker instanceof EntityPlayer)) {
 				return;

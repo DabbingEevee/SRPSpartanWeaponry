@@ -1,5 +1,6 @@
 package com.existingeevee.swparasites;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -10,16 +11,23 @@ import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.play.server.SPacketEntityEquipment;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -139,4 +147,80 @@ public class Utils {
         }
         return stack.getTagCompound();
     }
+    
+	private static final Field ticksSinceLastAtt = ObfuscationReflectionHelper.findField(EntityLivingBase.class, "field_184617_aD");
+	private static final Field handInventory = ObfuscationReflectionHelper.findField(EntityLivingBase.class, "field_184630_bs");
+	private static final Field armorArray = ObfuscationReflectionHelper.findField(EntityLivingBase.class, "field_184631_bt");
+
+	@SuppressWarnings("unchecked")
+	public static void refreshAttributes(EntityLivingBase entity) {
+		if (entity.world.isRemote)
+			return;
+		try {
+			for (EntityEquipmentSlot entityequipmentslot : EntityEquipmentSlot.values()) {
+				ItemStack itemstack;
+
+				switch (entityequipmentslot.getSlotType()) {
+				case HAND:
+					itemstack = ((NonNullList<ItemStack>) handInventory.get(entity)).get(entityequipmentslot.getIndex());
+					break;
+				case ARMOR:
+					itemstack = ((NonNullList<ItemStack>) armorArray.get(entity)).get(entityequipmentslot.getIndex());
+					break;
+				default:
+					continue;
+				}
+
+				ItemStack itemstack1 = entity.getItemStackFromSlot(entityequipmentslot);
+
+				if (!ItemStack.areItemStacksEqual(itemstack1, itemstack)) {
+					if (!ItemStack.areItemStacksEqualUsingNBTShareTag(itemstack1, itemstack))
+						((WorldServer) entity.world).getEntityTracker().sendToTracking(entity, new SPacketEntityEquipment(entity.getEntityId(), entityequipmentslot, itemstack1));
+					MinecraftForge.EVENT_BUS.post(new LivingEquipmentChangeEvent(entity, entityequipmentslot, itemstack, itemstack1));
+
+					if (!itemstack.isEmpty()) {
+						entity.getAttributeMap().removeAttributeModifiers(itemstack.getAttributeModifiers(entityequipmentslot));
+					}
+
+					if (!itemstack1.isEmpty()) {
+						entity.getAttributeMap().applyAttributeModifiers(itemstack1.getAttributeModifiers(entityequipmentslot));
+					}
+
+					switch (entityequipmentslot.getSlotType()) {
+					case HAND:
+						((NonNullList<ItemStack>) handInventory.get(entity)).set(entityequipmentslot.getIndex(), itemstack1.isEmpty() ? ItemStack.EMPTY : itemstack1.copy());
+						break;
+					case ARMOR:
+						((NonNullList<ItemStack>) armorArray.get(entity)).set(entityequipmentslot.getIndex(), itemstack1.isEmpty() ? ItemStack.EMPTY : itemstack1.copy());
+					}
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void attackAsPlayerWithItem(EntityPlayer player, Entity target, ItemStack stack) {
+		try {
+			//Get some of the original states that might get messed up
+			ItemStack currentHandSlot = player.getHeldItemMainhand();
+			int orig = ticksSinceLastAtt.getInt(player);
+
+			//change some states
+			player.setHeldItem(EnumHand.MAIN_HAND, stack);
+			ticksSinceLastAtt.set(player, orig);
+			refreshAttributes(player);
+			
+			player.attackTargetEntityWithCurrentItem(target);
+			
+			//changing it back
+			player.setHeldItem(EnumHand.MAIN_HAND, currentHandSlot);
+			refreshAttributes(player);
+			
+			//setting this to 0 because we did attack
+			ticksSinceLastAtt.set(player, 0);
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+	}
 }
