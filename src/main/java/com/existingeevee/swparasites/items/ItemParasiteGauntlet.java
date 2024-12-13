@@ -27,12 +27,20 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 				Utils.attackAsPlayerWithItem(playerIn, target, stack);
 				playerIn.setHeldItem(hand, stack);
 			}
-			playerIn.resetCooldown();
+//			playerIn.resetCooldown();
 			playerIn.swingArm(hand);
+			
+			playerIn.addTag("offhand_last_punched");
+			updateCombo(playerIn);
+			playerIn.removeTag("offhand_last_punched");
+			target.getTags().contains("offhand_last_punched");
+			
 	        return true;
 		}
 		return false;
     }
+	
+	
 	
 //	@Override
 //	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
@@ -75,4 +83,8 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 		return false;
 	}
 
+	public int updateCombo(EntityPlayer playerIn) {
+		
+		return 0;
+	}
 }
