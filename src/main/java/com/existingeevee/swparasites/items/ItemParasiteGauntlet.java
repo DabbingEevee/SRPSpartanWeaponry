@@ -24,51 +24,25 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 	public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer playerIn, EntityLivingBase target, EnumHand hand) {
 		if (hand == EnumHand.OFF_HAND) {
 			if (!target.world.isRemote) {
+				playerIn.addTag("offhand_last_punched");
 				Utils.attackAsPlayerWithItem(playerIn, target, stack);
 				playerIn.setHeldItem(hand, stack);
 			}
-//			playerIn.resetCooldown();
 			playerIn.swingArm(hand);
 			
-			playerIn.addTag("offhand_last_punched");
-			updateCombo(playerIn);
-			playerIn.removeTag("offhand_last_punched");
-			target.getTags().contains("offhand_last_punched");
+			//playerIn.removeTag("offhand_last_punched");
+			//target.getTags().contains("offhand_last_punched");
 			
 	        return true;
 		}
 		return false;
     }
 	
-	
-	
-//	@Override
-//	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-//		ItemStack item = playerIn.getHeldItem(handIn);
-//
-//		if (playerIn.onGround && playerIn.isSneaking()) {
-//			WeaponProperty shockwave = this.getFirstWeaponPropertyWithType("shockwave");
-//			
-//
-//			boolean lvl2 = shockwave.getLevel() != 1;
-//			if (shockwave != null) {
-//				if (!worldIn.isRemote) {
-//				playerIn.world.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ,
-//						SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 0.7F, lvl2 ? 0.5f : 1.5f);
-//				}
-//			}
-//			
-//			
-//			playerIn.getCooldownTracker().setCooldown(item.getItem(), playerIn.isPotionActive(SRPPotions.RAGE_E) ? 50 : 100);
-//			
-//			playerIn.swingArm(handIn);
-//			
-//			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
-//		}
-//		
-//		return super.onItemRightClick(worldIn, playerIn, handIn);
-//	}
-	
+	@Override
+    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
+		updateCombo((EntityPlayer)attacker);
+		return true;
+	}
 	
 	@Override
 	public ItemStack getRepairItemStack()
@@ -83,8 +57,8 @@ public class ItemParasiteGauntlet extends ItemCaestus implements IHasSRPEvolutio
 		return false;
 	}
 
-	public int updateCombo(EntityPlayer playerIn) {
+	public void updateCombo(EntityPlayer playerIn) {
 		
-		return 0;
+		return;
 	}
 }
