@@ -156,9 +156,8 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 				shouldHaveSlowing = true;
 			}
 			if (container instanceof ItemParasiteGauntlet) {
-				ItemParasiteGauntlet gauntlet = (ItemParasiteGauntlet) container;
 
-				if (gauntlet.usingBothGauntlets((EntityPlayer) event.getEntityLiving())) {
+				if (ItemParasiteGauntlet.usingBothGauntlets(event.getEntityLiving())) {
 					shouldHaveSlowing = false;
 				}
 			}

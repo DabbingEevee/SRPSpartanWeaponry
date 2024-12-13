@@ -11,6 +11,7 @@ import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.MultiPartEntityPart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -211,6 +212,7 @@ public class Utils {
 			ticksSinceLastAtt.set(player, orig);
 			refreshAttributes(player);
 			
+			System.out.println(target);
 			player.attackTargetEntityWithCurrentItem(target);
 			
 			//changing it back
