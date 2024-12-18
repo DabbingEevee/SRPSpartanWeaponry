@@ -904,31 +904,31 @@
 	],
 	"overrides": [
 		{
-            "predicate": {
-                "blocking": 1
-            },
-            "model": "swparasites:item/sentient/impaler_shield_sentient_blocking"
-        }
+			"predicate": {
+				"blocking": 1
+			}, 
+			"model": "swparasites:item/sentient/impaler_shield_sentient_blocking"
+		}
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [60, -40, 0],
-			"translation": [0.5, 1, 0],
+			"rotation": [40, -30, 0],
+			"translation": [0, 0, -1],
 			"scale": [1.5, 1.5, 1.5]
 		},
 		"thirdperson_lefthand": {
-			"rotation": [60, -40, 0],
-			"translation": [0.5, 1, 0],
+			"rotation": [40, -30, 0],
+			"translation": [0, 0, -1],
 			"scale": [1.5, 1.5, 1.5]
 		},
 		"firstperson_righthand": {
-			"rotation": [0, 0, 0],
-			"translation": [1, -2, 0],
+			"rotation": [0, 0, 20],
+			"translation": [-1, 2, 0],
 			"scale": [1.2, 1.2, 1.2]
 		},
 		"firstperson_lefthand": {
-			"rotation": [0, 0, 0],
-			"translation": [1, -2, 0],
+			"rotation": [0, 0, 20],
+			"translation": [-1, 2, 0],
 			"scale": [1.2, 1.2, 1.2]
 		},
 		"gui": {

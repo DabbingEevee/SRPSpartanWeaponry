@@ -300,7 +300,12 @@
 		}
 	],
 	"overrides": [
-		{"predicate": {"blocking": 1}, "model": "swparasites:item/living/impaler_shield_living_blocking"}
+		{
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "swparasites:item/living/impaler_shield_living_blocking"
+        }
 	],
 	"display": {
 		"thirdperson_righthand": {
