@@ -1,7 +1,7 @@
 {
-    "parent":"spartanweaponry:item/lance_wood",
+    "parent":"item/handheld",
     "textures": {
-        "layer0":"spartanweaponry:items/custom/lance_layer_0"
+        "layer0":"swparasites:gore/scythe"
     },
     "display": {
         "thirdperson_righthand": {

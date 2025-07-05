@@ -7,9 +7,11 @@ import com.oblivioussp.spartanweaponry.entity.projectile.EntityBolt;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.WorldServer;
@@ -48,6 +50,22 @@ public class CrossbowBoltHandler {
 					}
 				}
 			}, 1);
+		}
+		
+		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowTwisted")) {
+			e.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 100, 0, false, false));
+		}
+		
+		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowPestilent")) {
+			e.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.POISON, 100, 0, false, false));
+		}
+		
+		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowGore")) {
+			e.getEntityLiving().addPotionEffect(new PotionEffect(MobEffects.WITHER, 100, 0, false, false));
+		}
+		
+		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowEvolution")) {
+			e.getEntityLiving().setFire(10);
 		}
 	}
 	

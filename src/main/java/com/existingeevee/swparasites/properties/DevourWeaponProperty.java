@@ -39,10 +39,10 @@ public class DevourWeaponProperty extends WeaponPropertyWithCallback {
 				slotStack.setCount(slotStack.getCount()-1);
 				
 				playerIn.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 400, 1, false, false));
-				playerIn.world.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.7F, 0.75F);
+				playerIn.world.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_HORSE_EAT, SoundCategory.PLAYERS, 0.7F, 1.0F);
 				
 				break;
 			}
 		}
     }
-}
+}	

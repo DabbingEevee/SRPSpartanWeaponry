@@ -128,7 +128,7 @@ tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of 
 tooltip.swparasites:uncapped=Uncapped
 tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
 tooltip.swparasites:shockwave=Shockwave %s §9[Use Item]
-tooltip.swparasites:shockwave.desc=§oPower grows with a §c§osecond§7§o gauntlet.
+tooltip.swparasites:shockwave.desc=§oCreate a §c§odevastating§7§o shockwave.
 
 //nocubes combat
 item.swparasites:greatsword_twisted.name=Twisted Greatsword
@@ -225,12 +225,12 @@ tooltip.swparasites:atrophy.desc=Inflict Slowness on your foes.
 tooltip.swparasites:plague=Plague %s
 tooltip.swparasites:plague.desc=Inflict Poison on your foes.
 tooltip.swparasites:devour=Devour §9[Use Item + Sneak]
-tooltip.swparasites:devour.desc=Consume a Gore Piece to gain Strength.
+tooltip.swparasites:devour.desc=Consume Gore Pieces to gain Strength.
 tooltip.swparasites:ignite=Ignite %s
 tooltip.swparasites:ignite.desc=Lights your foes on fire.
 
 //misc
-easter_egg.swparasites:sweebozo.desc=§6Swee §fis §cbozo
+easter_egg.swparasites:sweebozo.desc=§6Sweeping
 easter_egg.swparasites:ev.desc=§6ExistingEevee §fwas here §c:3
 easter_egg.swparasites:light.desc=§6Light §fI §cHATE §fyou.
 

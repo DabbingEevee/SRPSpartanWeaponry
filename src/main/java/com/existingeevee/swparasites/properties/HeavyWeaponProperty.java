@@ -155,12 +155,6 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 			if (container.getAllWeaponProperties().stream().anyMatch(p -> p == this)) {
 				shouldHaveSlowing = true;
 			}
-			if (container instanceof ItemParasiteGauntlet) {
-
-				if (ItemParasiteGauntlet.usingBothGauntlets(event.getEntityLiving())) {
-					shouldHaveSlowing = false;
-				}
-			}
 
 		}
 

@@ -7,6 +7,7 @@ import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.existingeevee.swparasites.items.ItemParasiteCrossbowNocube;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -29,7 +30,6 @@ import com.oblivioussp.spartanweaponry.item.ItemPike;
 import com.oblivioussp.spartanweaponry.item.ItemQuarterstaff;
 import com.oblivioussp.spartanweaponry.item.ItemRapier;
 import com.oblivioussp.spartanweaponry.item.ItemSaber;
-import com.oblivioussp.spartanweaponry.item.ItemScythe;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
@@ -129,7 +129,7 @@ public class ParasiteSWEvolution {
 		lanceEvolution = (ItemLance) SpartanWeaponryAPI.createLance(evolutionMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.IGNITE_1);
 		items.add(lanceEvolution);
 		
-		crossbowEvolution = new ItemCrossbow("crossbow_evolution", SRPSpartanWeaponry.MODID, evolutionMaterial);
+		crossbowEvolution = new ItemParasiteCrossbowNocube("crossbow_evolution", SRPSpartanWeaponry.MODID, evolutionMaterial);
 		crossbowEvolution.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		Utils.resetAutogenName(crossbowEvolution);
 		items.add(crossbowEvolution);

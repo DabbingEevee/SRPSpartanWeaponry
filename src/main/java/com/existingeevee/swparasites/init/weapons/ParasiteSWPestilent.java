@@ -7,6 +7,7 @@ import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.existingeevee.swparasites.items.ItemParasiteCrossbowNocube;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -133,7 +134,7 @@ public class ParasiteSWPestilent {
 		lancePestilent = (ItemLance) SpartanWeaponryAPI.createLance(pestilentMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.PLAGUE_1);
 		items.add(lancePestilent);
 		
-		crossbowPestilent = new ItemCrossbow("crossbow_pestilent", SRPSpartanWeaponry.MODID, pestilentMaterial);
+		crossbowPestilent = new ItemParasiteCrossbowNocube("crossbow_pestilent", SRPSpartanWeaponry.MODID, pestilentMaterial);
 		crossbowPestilent.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		Utils.resetAutogenName(crossbowPestilent);
 		items.add(crossbowPestilent);

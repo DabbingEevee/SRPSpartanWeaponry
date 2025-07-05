@@ -7,6 +7,7 @@ import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.existingeevee.swparasites.items.ItemParasiteCrossbowNocube;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -130,7 +131,7 @@ public class ParasiteSWTwisted {
 		scytheTwisted = (ItemScythe) SpartanWeaponryAPI.createScythe(twistedMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.ATROPHY_1);
 		items.add(scytheTwisted);
 		
-		crossbowTwisted = new ItemCrossbow("crossbow_twisted", SRPSpartanWeaponry.MODID, twistedMaterial);
+		crossbowTwisted = new ItemParasiteCrossbowNocube("crossbow_twisted", SRPSpartanWeaponry.MODID, twistedMaterial);
 		crossbowTwisted.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		Utils.resetAutogenName(crossbowTwisted);
 		items.add(crossbowTwisted);

@@ -7,6 +7,7 @@ import com.existingeevee.swparasites.SRPSpartanWeaponry;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
+import com.existingeevee.swparasites.items.ItemParasiteCrossbowNocube;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -133,7 +134,7 @@ public class ParasiteSWGore {
 		scytheGore = (ItemScythe) SpartanWeaponryAPI.createScythe(goreMaterial, SRPSpartanWeaponry.MODID, CreativeTabsSW.TAB_SW_MOD, ParasiteSWProperties.DEVOUR);
 		items.add(scytheGore);
 		
-		crossbowGore = new ItemCrossbow("crossbow_gore", SRPSpartanWeaponry.MODID, goreMaterial);
+		crossbowGore = new ItemParasiteCrossbowNocube("crossbow_gore", SRPSpartanWeaponry.MODID, goreMaterial);
 		crossbowGore.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		Utils.resetAutogenName(crossbowGore);
 		items.add(crossbowGore);

@@ -100,7 +100,10 @@ public class Utils {
 	public static RayTraceResult rayTrace(Vec3d start, Vec3d direction, World world, double maxRange, Predicate<Entity> exclude, boolean affectedByBlocks, boolean ignoreNoBounding) {
 		Vec3d end = start.add(direction.scale(maxRange));
 		RayTraceResult firstTrace = affectedByBlocks ? world.rayTraceBlocks(start, end, false, ignoreNoBounding, true) : null;
-		AxisAlignedBB area = new AxisAlignedBB(start, firstTrace != null ? firstTrace.hitVec : end);
+		Vec3d endTrace = firstTrace != null ? firstTrace.hitVec : end;
+		
+		AxisAlignedBB area = new AxisAlignedBB(start.x, start.y, start.z, endTrace.x, endTrace.y, endTrace.z);
+		
 		List<Entity> entities = world.getEntitiesWithinAABBExcludingEntity(null, area);
 
 		Entity closestValid = null;

@@ -1,7 +1,7 @@
 {
     "parent":"item/handheld",
     "textures": {
-        "layer0":"swparasites:evolution/lance"
+        "layer0":"swparasites:pestilent/lance"
     },
     "display": {
         "thirdperson_righthand": {

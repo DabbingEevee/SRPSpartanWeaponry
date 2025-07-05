@@ -96,12 +96,12 @@ public class ParasiteSWConfig {
 	public static boolean easterEgg = true;
 	
 	@Name("Nocube Compatibility")
-	@Comment("Enable compatibility with Nocube's Weapon addon? (default: true)")
+	@Comment("Enable compatibility with Nocube's Weapon addon? NOTE: WEAPONS ARE FUNCTIONAL AND HAVE ABILITIES, BUT MOST ARE MISSING TEXTURES (THIS SETTING IS NOT RECOMMENDED) (default: false)")
 	@RequiresMcRestart
-	public static boolean nocubeCompat = true;
+	public static boolean nocubeCompat = false;
 	
-	@Name("Weapon Textures")
-	@Comment("What texture style should be used for the weapons? 0 - Modern, 1 - Alternate, 2 - Legacy (1.9.2 to 1.9.18) (default: 0)")
-	@RequiresMcRestart
-	public static int weaponTexturesType = 0;
+//	@Name("Weapon Textures")
+//	@Comment("What texture style should be used for the weapons? 0 - Modern, 1 - Alternate, 2 - Legacy (1.9.2 to 1.9.18) (default: 0)")
+//	@RequiresMcRestart
+//	public static int weaponTexturesType = 0;
 }
