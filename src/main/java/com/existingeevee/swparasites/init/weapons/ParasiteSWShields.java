@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.existingeevee.swparasites.SRPSpartanWeaponry;
+import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.items.ItemBucklerShield;
 import com.existingeevee.swparasites.items.ItemImpalerShield;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -25,16 +26,19 @@ public class ParasiteSWShields {
 	public static Item impalerShieldSentient = null;
 	
 	private static List<Item> initalizeItems(List<Item> items) {
+		float livingDamageScalar = ParasiteSWConfig.livingBaseDmg / 15;
+		float sentDamageScalar = ParasiteSWConfig.sentientBaseDmg / 34;
+		
 		bucklerShieldLiving = new ItemBucklerShield("buckler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 0);
 		items.add(bucklerShieldLiving);
 
 		bucklerShieldSentient = new ItemBucklerShield("buckler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 1);
 		items.add(bucklerShieldSentient);
 		
-		impalerShieldLiving = new ItemImpalerShield("impaler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), 1, 1, 1);
+		impalerShieldLiving = new ItemImpalerShield("impaler_shield_living", ParasiteSWLiving.getLivingMaterial().getMaxUses(), livingDamageScalar, 1, 1);
 		items.add(impalerShieldLiving);
 
-		impalerShieldSentient = new ItemImpalerShield("impaler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), 2, 1.5f, 1.5f);
+		impalerShieldSentient = new ItemImpalerShield("impaler_shield_sentient", ParasiteSWSentient.getSentientMaterial().getMaxUses(), sentDamageScalar * 2, 1.5f, 1.5f);
 		items.add(impalerShieldSentient);
 		
 		return items;
