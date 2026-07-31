@@ -1,3 +1,4 @@
+
 package com.existingeevee.swparasites.properties;
 
 import java.text.DecimalFormat;
@@ -185,6 +186,8 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) {
 		String percent = FORMATTER
 				.format((lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness) * 100);
+		
+		System.out.println("GOD DAMNIT");
 
 		tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler
 				.translateString(type + ".desc", "tooltip", modId).replace("$s", percent + "%"));

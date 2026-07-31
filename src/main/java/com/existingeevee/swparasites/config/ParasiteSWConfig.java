@@ -11,7 +11,7 @@ import net.minecraftforge.common.config.Config.RequiresMcRestart;
 public class ParasiteSWConfig {
 
 	@Name("Long Blade Damage")
-	@Comment("What should the base damage value for Long Blade be? (default: 4.5)")
+	@Comment("What should the base damage value for Long Blade be? (Note: due to mojank the actual damage is this number +4) (default: 4.5)")
 	@RequiresMcRestart
 	public static float longBladeDmg = 4.5f;
 
@@ -24,6 +24,11 @@ public class ParasiteSWConfig {
 	@Comment("What should the base durability value for the sentient weapons added be? (default: 1000)")
 	@RequiresMcRestart
 	public static int maxSentientDamage = 1000;
+	
+	@Name("Hijacked Iron Weapon Base Durability")
+	@Comment("What should the base durability value for the hijacked iron weapons added be? (default: 1561)")
+	@RequiresMcRestart
+	public static int maxHijackedIronDamage = 1561;
 
 	@Name("Living Weapon Base Damage")
 	@Comment("What should the base damage value for the living weapons added be? (default: 15.0)")
@@ -34,6 +39,11 @@ public class ParasiteSWConfig {
 	@Comment("What should the base damage value for the sentient weapons added be? (default: 34.0)")
 	@RequiresMcRestart
 	public static float sentientBaseDmg = 34.0f;
+	
+	@Name("Hijacked Iron Weapon Base Damage")
+	@Comment("What should the base damage value for the hijacked iron weapons added be? (default: 2.5)")
+	@RequiresMcRestart
+	public static float hijackedIronBaseDmg = 2.5f;
 
 	@Name("Living Weapon Slowness")
 	@Comment("How much slower should living weapons be in terms of swinging? (Note: The weapons have low atk speed in trade for high dmg, keep this in mind) (default: 0.33)")

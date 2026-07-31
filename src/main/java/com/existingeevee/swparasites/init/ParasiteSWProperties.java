@@ -9,6 +9,8 @@ import com.existingeevee.swparasites.properties.DevourWeaponProperty;
 import com.existingeevee.swparasites.properties.HeavyWeaponProperty;
 import com.existingeevee.swparasites.properties.IgniteWeaponProperty;
 import com.existingeevee.swparasites.properties.ImmalleableWeaponProperty;
+import com.existingeevee.swparasites.properties.MalignantParryWeaponProperty;
+import com.existingeevee.swparasites.properties.MalignantWeaponProperty;
 import com.existingeevee.swparasites.properties.PlagueWeaponProperty;
 import com.existingeevee.swparasites.properties.RepulseWeaponProperty;
 import com.existingeevee.swparasites.properties.ShockwaveWeaponProperty;
@@ -33,6 +35,7 @@ public class ParasiteSWProperties {
 
 	public static final ImmalleableWeaponProperty IMMALLEABLE_1 = new ImmalleableWeaponProperty(1);
 	public static final ImmalleableWeaponProperty IMMALLEABLE_2 = new ImmalleableWeaponProperty(2);
+	public static final ImmalleableWeaponProperty IMMALLEABLE_3 = new ImmalleableWeaponProperty(3);
 	
 	public static final CloakingWeaponProperty CLOAKING_1 = new CloakingWeaponProperty(false);
 	public static final CloakingWeaponProperty CLOAKING_2 = new CloakingWeaponProperty(true);
@@ -58,6 +61,11 @@ public class ParasiteSWProperties {
 	public static final PlagueWeaponProperty PLAGUE_2 = new PlagueWeaponProperty(2);
 	
 	public static final DevourWeaponProperty DEVOUR = new DevourWeaponProperty(1);
+	
+	public static final MalignantWeaponProperty MALIGNANT = new MalignantWeaponProperty();
+	
+	public static final MalignantParryWeaponProperty MALIGNANT_PARRY_1 = new MalignantParryWeaponProperty(1);
+	public static final MalignantParryWeaponProperty MALIGNANT_PARRY_2 = new MalignantParryWeaponProperty(2);
 	
 	public static final IgniteWeaponProperty IGNITE_1 = new IgniteWeaponProperty(1);
 	public static final IgniteWeaponProperty IGNITE_2 = new IgniteWeaponProperty(2);

@@ -44,27 +44,27 @@ item.swparasites:spartanweaponry:crossbow_living.desc=§fResult of various Paras
 item.swparasites:gauntlet_living.desc=§fResult of various Parasites body parts reshaped to form a Weapon. The flame of life shines inside it.
 
 //sentient weapons
-item.swparasites:claymore_sentient.desc=§fThe ulterior Evolution of the Living Claymore. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:boomerang_sentient.desc=§fThe ulterior Evolution of the Living Boomerang. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:dagger_sentient.desc=§fThe ulterior Evolution of the Living Dagger. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:glaive_sentient.desc=§fThe ulterior Evolution of the Living Glaive. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:halberd_sentient.desc=§fThe ulterior Evolution of the Living Halberd. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:hammer_sentient.desc=§fThe ulterior Evolution of the Living Hammer. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:javelin_sentient.desc=§fThe ulterior Evolution of the Living Javelin. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:katana_sentient.desc=§fThe ulterior Evolution of the Living Katana. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:longsword_sentient.desc=§fThe ulterior Evolution of the Living Longsword. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:mace_sentient.desc=§fThe ulterior Evolution of the Living Mace. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:parrying_dagger_sentient.desc=§fThe ulterior Evolution of the Living Parrying Dagger. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:pike_sentient.desc=§fThe ulterior Evolution of the Living Pike. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:saber_sentient.desc=§fThe ulterior Evolution of the Living Saber. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:staff_sentient.desc=§fThe ulterior Evolution of the Living Quarterstaff. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:rapier_sentient.desc=§fThe ulterior Evolution of the Living Rapier. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:spear_sentient.desc=§fThe ulterior Evolution of the Living Spear. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:throwing_axe_sentient.desc=§fThe ulterior Evolution of the Living Throwing Axe. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the Living Throwing Knife. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.\n§0You can't hide anymore...
-item.swparasites:spartanweaponry:crossbow_sentient.desc=§fThe ulterior Evolution of the Living Crossbow. It has gained a §bMind§f.\n§cStock up some extra bolts\n§0You can't hide anymore...
-item.swparasites:gauntlet_sentient.desc=§fThe ulterior Evolution of the Living Gauntlet. It has gained a §bMind§f.\n§0You can't hide anymore...
+item.swparasites:claymore_sentient.desc=§fThe ulterior Evolution of the Living Claymore. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:boomerang_sentient.desc=§fThe ulterior Evolution of the Living Boomerang. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:dagger_sentient.desc=§fThe ulterior Evolution of the Living Dagger. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:glaive_sentient.desc=§fThe ulterior Evolution of the Living Glaive. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:halberd_sentient.desc=§fThe ulterior Evolution of the Living Halberd. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:hammer_sentient.desc=§fThe ulterior Evolution of the Living Hammer. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:javelin_sentient.desc=§fThe ulterior Evolution of the Living Javelin. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:katana_sentient.desc=§fThe ulterior Evolution of the Living Katana. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:longsword_sentient.desc=§fThe ulterior Evolution of the Living Longsword. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:mace_sentient.desc=§fThe ulterior Evolution of the Living Mace. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:parrying_dagger_sentient.desc=§fThe ulterior Evolution of the Living Parrying Dagger. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:pike_sentient.desc=§fThe ulterior Evolution of the Living Pike. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:saber_sentient.desc=§fThe ulterior Evolution of the Living Saber. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:staff_sentient.desc=§fThe ulterior Evolution of the Living Quarterstaff. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:rapier_sentient.desc=§fThe ulterior Evolution of the Living Rapier. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:spear_sentient.desc=§fThe ulterior Evolution of the Living Spear. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:throwing_axe_sentient.desc=§fThe ulterior Evolution of the Living Throwing Axe. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:throwing_knife_sentient.desc=§fThe ulterior Evolution of the Living Throwing Knife. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:warhammer_sentient.desc=§fThe ulterior Evolution of the Living Warhammer. It has gained a §bMind§f.\n§0? ? ?
+item.swparasites:spartanweaponry:crossbow_sentient.desc=§fThe ulterior Evolution of the Living Crossbow. It has gained a §bMind§f.\n§cStock up some extra bolts\n§0? ? ?
+item.swparasites:gauntlet_sentient.desc=§fThe ulterior Evolution of the Living Gauntlet. It has gained a §bMind§f.\n§0? ? ?
 
 item.swparasites:claymore_sentient.name=§6Sentient Greatclaymore
 item.swparasites:boomerang_sentient.name=§6Sentient Great-Boomerang
@@ -88,6 +88,32 @@ item.swparasites:warhammer_sentient.name=§6Sentient Greatwarhammer
 item.swparasites:spartanweaponry:crossbow_sentient.name=§6Sentient Crossbow
 item.swparasites:gauntlet_sentient.name=§6Sentient Gauntlet
 
+//hijacked iron weapons
+material.swparasites:hijacked_iron=§cHijacked Iron
+item.swparasites:greatsword_hijacked_iron.name=§cHijacked Iron Greatsword
+item.swparasites:boomerang_hijacked_iron.name=§cHijacked Iron Boomerang
+item.swparasites:battleaxe_hijacked_iron.name=§cHijacked Iron Battleaxe
+item.swparasites:dagger_hijacked_iron.name=§cHijacked Iron Dagger
+item.swparasites:lance_hijacked_iron.name=§cHijacked Iron Lance
+item.swparasites:scythe_hijacked_iron.name=§cHijacked Iron Scythe
+item.swparasites:glaive_hijacked_iron.name=§cHijacked Iron Glaive
+item.swparasites:halberd_hijacked_iron.name=§cHijacked Iron Halberd
+item.swparasites:hammer_hijacked_iron.name=§cHijacked Iron Hammer
+item.swparasites:javelin_hijacked_iron.name=§cHijacked Iron Javelin
+item.swparasites:katana_hijacked_iron.name=§cHijacked Iron Katana
+item.swparasites:longsword_hijacked_iron.name=§cHijacked Iron Longsword
+item.swparasites:mace_hijacked_iron.name=§cHijacked Iron Mace
+item.swparasites:parrying_dagger_hijacked_iron.name=§cHijacked Iron Parrying Dagger
+item.swparasites:pike_hijacked_iron.name=§cHijacked Iron Pike
+item.swparasites:saber_hijacked_iron.name=§cHijacked Iron Saber
+item.swparasites:staff_hijacked_iron.name=§cHijacked Iron Quarterstaff
+item.swparasites:rapier_hijacked_iron.name=§cHijacked Iron Rapier
+item.swparasites:spear_hijacked_iron.name=§cHijacked Iron Spear
+item.swparasites:throwing_axe_hijacked_iron.name=§cHijacked Iron Throwing Axe
+item.swparasites:throwing_knife_hijacked_iron.name=§cHijacked Iron Throwing Knife
+item.swparasites:warhammer_hijacked_iron.name=§cHijacked Iron Warhammer
+item.swparasites:spartanweaponry:crossbow_hijacked_iron.name=§cHijacked Iron-Strengthened Crossbow
+
 //shields
 item.spartanshields:impaler_shield_living.name=§eLiving Impaler
 item.spartanshields:buckler_shield_living.name=§eLiving Buckler
@@ -95,8 +121,8 @@ item.spartanshields:impaler_shield_sentient.name=§6Sentient Impaler
 item.spartanshields:buckler_shield_sentient.name=§6Sentient Buckler
 item.spartanshields:impaler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\n§fUnleash a §cpowerful§r dash.\n§9Block and Sneak to Dash
 item.spartanshields:buckler_shield_living.desc=§fResult of various Parasites body parts reshaped to form a Shield. The flame of life shines inside it.\n§fShow them your §cRage§r. 
-item.spartanshields:impaler_shield_sentient.desc=§fThe ulterior Evolution of the Living Impaler. It has gained a §bMind§f.\n§rUnleash a §cpowerful§r dash.\n§0You can't hide anymore...\n§9Block and Sneak to Dash
-item.spartanshields:buckler_shield_sentient.desc=§fThe ulterior Evolution of the Living Buckler. It has gained a §bMind§f.\n§rShow them your §cRage§r.\n§0You can't hide anymore...
+item.spartanshields:impaler_shield_sentient.desc=§fThe ulterior Evolution of the Living Impaler. It has gained a §bMind§f.\n§rUnleash a §cpowerful§r dash.\n§0? ? ?\n§9Block and Sneak to Dash
+item.spartanshields:buckler_shield_sentient.desc=§fThe ulterior Evolution of the Living Buckler. It has gained a §bMind§f.\n§rShow them your §cRage§r.\n§0? ? ?
 
 //components
 item.infectious_long_blade_fragment.name=§eInfectious Long Blade Fragment
@@ -108,9 +134,14 @@ item.vile_plate.desc=§fAn extremely resilient and tough plate, produced from Pa
 item.living_nucleus.name=§eLiving Nucleus
 item.living_nucleus.desc=§fA more powerful version of the Living Core, the flame of life still has yet to shine. A Component for §6stronger Weapons§f.
 item.serrated_spines.name=§eSerrated Spines
-item.serrated_spines.desc=§fVery sharp spikes, made from Parasites body parts. A Component for §6Weapons§f.
+item.serrated_spines.desc=§fVery sharp spikes, produced from Parasites body parts. A Component for §6Weapons§f.
 
 //abilities
+tooltip.swparasites:uncapped=Uncapped
+tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
+tooltip.swparasites:heavy=Heavy %s
+tooltip.swparasites:heavy.desc=§oThis weapon is §c§o$s slower§7§o due to being made of Parasite parts.
+
 tooltip.swparasites:virulent=Virulent %s
 tooltip.swparasites:virulent.desc=§oLashes out §a§ovirulent§7§o strikes. Higher levels of Viral will apply more potent toxin more often.
 tooltip.swparasites:bleeding=Bleeding %s
@@ -118,17 +149,19 @@ tooltip.swparasites:bleeding.desc=§oInflicts §c§olife-threatening§7§o injur
 tooltip.swparasites:corrosion=Corrosion %s
 tooltip.swparasites:corrosion.desc=§oRenders armour §c§ouseless§7§o over time. Higher levels of Corrosion will apply more potent acid more often.
 tooltip.swparasites:immalleable=Immalleable %s
-tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Higher levels of Immalleable crush adaptation more often.
+tooltip.swparasites:immalleable.desc=§oSwings §c§onullify§7§o parasitic adaptation. Goes on cooldown after activating. Higher levels of Immalleable crush adaptation more often. 
+
 tooltip.swparasites:repulse=Repulse %s §9[Block]
 tooltip.swparasites:repulse.desc=§oShow them your §c§oRage§7§o. Higher levels of Repulse enrage you even further.
 tooltip.swparasites:cloaking=Cloaking %s §9[Sneak]
 tooltip.swparasites:cloaking.desc=§oNothing will §c§osee§7§o you coming. Higher levels of Cloaking make it harder to be detected.
-tooltip.swparasites:heavy=Heavy %s
-tooltip.swparasites:heavy.desc=§oThis weapon is $s slower due to being made of Parasite parts.
-tooltip.swparasites:uncapped=Uncapped
-tooltip.swparasites:uncapped.desc=§oYou §c§owon't§7§o be limited.
 tooltip.swparasites:shockwave=Shockwave %s §9[Use Item]
-tooltip.swparasites:shockwave.desc=§oCreate a §c§odevastating§7§o shockwave.
+tooltip.swparasites:shockwave.desc=§oDoesn't do anything... §c§oyet§7§o.
+
+tooltip.swparasites:malignant=Malignant
+tooltip.swparasites:malignant.desc=§o§c§oBleeds§7§o targets. Rends parasites. Induces §c§orage§7§o on target when near death.
+tooltip.swparasites:malignant=Malignant Parry %s
+tooltip.swparasites:malignant.desc=§oBlocking has a $s chance to §c§obleed§7§o attackers, §c§oenrage§7§o low health attackers, and deal damage to parasites.
 
 //nocubes combat
 item.swparasites:greatsword_twisted.name=Twisted Greatsword
