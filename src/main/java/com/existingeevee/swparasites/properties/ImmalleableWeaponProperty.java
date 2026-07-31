@@ -11,13 +11,17 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.SoundCategory;
 
 public class ImmalleableWeaponProperty extends WeaponPropertyWithCallback {
 
+	final int immalLevel;
+	
 	public ImmalleableWeaponProperty(int propLevel) {
 		super("immalleable", SRPSpartanWeaponry.MODID, propLevel, propLevel);
+		immalLevel = propLevel;
 	}
 
 	@Override
@@ -30,7 +34,7 @@ public class ImmalleableWeaponProperty extends WeaponPropertyWithCallback {
 				return;
 			}
 			if (attacker.world.rand.nextDouble() < chance) {
-				target.addPotionEffect(new PotionEffect(SRPPotions.RES_E, 40, 0, false, false));
+				target.addPotionEffect(new PotionEffect(SRPPotions.RES_E, 10+(immalLevel*20), 0, false, false));
 				if (!(stack.getItem() instanceof ItemThrowingWeapon)) {
 					((EntityPlayer) attacker).getCooldownTracker().setCooldown(stack.getItem(), 60);
 				}

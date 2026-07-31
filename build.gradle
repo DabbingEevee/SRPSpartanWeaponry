@@ -57,7 +57,7 @@ dependencies {
 
     //Note: SRParasites-1.12.2v1.9.21.jar MUST be placed within the libs folder for this to build
     implementation ("curse.maven:spartan-weaponry-278141:5564836")
-    implementation ("localjars:SRParasites:1.12.2v1.9.21")
+    implementation ("localjars:SRParasites-1.10.7")
     implementation ("curse.maven:spartan-shields-252239:3567495")
     implementation ("localjars:NoCubes_SRP_Combat_Addon_3.0.0:1")
 }
