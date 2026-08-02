@@ -187,8 +187,6 @@ public class HeavyWeaponProperty extends WeaponPropertyWithCallback { // https:/
 		String percent = FORMATTER
 				.format((lvl2 ? ParasiteSWConfig.weaponIISlowness : ParasiteSWConfig.weaponSlowness) * 100);
 		
-		System.out.println("GOD DAMNIT");
-
 		tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler
 				.translateString(type + ".desc", "tooltip", modId).replace("$s", percent + "%"));
 	}

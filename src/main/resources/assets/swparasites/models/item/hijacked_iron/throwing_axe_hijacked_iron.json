@@ -1,0 +1,14 @@
+{
+    "parent": "spartanweaponry:item/throwing_axe_wood",
+    "textures": {
+        "layer0": "swparasites:hijackediron/throwing_axe"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "empty": 1
+            },
+            "model": "spartanweaponry:item/throwing_axe_empty"
+        }
+    ]
+}

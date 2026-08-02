@@ -84,8 +84,6 @@ public class MalignantParryWeaponProperty extends WeaponProperty {
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) {
 		String percent = FORMATTER
 				.format((propLevel==1d ? 0.33d : 1d) * 100d);
-
-		System.out.println("yes dumbass, this runs");
 		
 		tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler
 				.translateString(type + ".desc", "tooltip", modId).replace("$s", percent + "%"));

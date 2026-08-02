@@ -9,6 +9,7 @@ import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.init.CustomWeaponCreator;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
 import com.existingeevee.swparasites.items.ItemParasiteCrossbowNocube;
+import com.existingeevee.swparasites.items.ItemParasiteLongbowNocube;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
@@ -146,9 +147,9 @@ public class ParasiteSWHijackedIron {
 		crossbowHijackedIron.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
 		items.add(crossbowHijackedIron);
 
-		//longbowHijackedIron = new ItemParasiteLongbowNocube("crossbow_hijacked_iron", SRPSpartanWeaponry.MODID, hijackedIronMaterial);
-		//longbowHijackedIron.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
-		//items.add(crossbowHijackedIron);
+		longbowHijackedIron = new ItemParasiteLongbowNocube("longbow_hijacked_iron", SRPSpartanWeaponry.MODID, hijackedIronMaterial);
+		longbowHijackedIron.setCreativeTab(CreativeTabsSW.TAB_SW_MOD);
+		items.add(longbowHijackedIron);
 		return items;
 	}
 	

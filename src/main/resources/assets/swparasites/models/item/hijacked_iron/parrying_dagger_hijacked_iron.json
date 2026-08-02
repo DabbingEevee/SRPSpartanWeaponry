@@ -1,0 +1,14 @@
+{
+    "parent":"spartanweaponry:item/parrying_dagger_wood",
+    "textures": {
+        "layer0":"swparasites:hijackediron/parrying_dagger"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "swparasites:hijackediron/parrying_dagger_blocking"
+        }
+    ]
+}

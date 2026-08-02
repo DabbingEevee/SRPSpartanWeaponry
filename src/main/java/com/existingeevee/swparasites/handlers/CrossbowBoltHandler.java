@@ -1,5 +1,6 @@
 package com.existingeevee.swparasites.handlers;
 
+import com.dhanantry.scapeandrunparasites.item.hijacked.HijackedHitEffects;
 import com.existingeevee.swparasites.Utils;
 import com.existingeevee.swparasites.items.ItemParasiteCrossbow;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityBolt;
@@ -66,6 +67,11 @@ public class CrossbowBoltHandler {
 		
 		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowEvolution")) {
 			e.getEntityLiving().setFire(10);
+		}
+		
+		if (immSource instanceof EntityBolt && immSource.getTags().contains("ParasiteCrossbowHijackedIron")) {
+			EntityLivingBase player = (EntityLivingBase) e.getSource().getTrueSource();
+			HijackedHitEffects.apply(player, e.getEntityLiving());
 		}
 	}
 	

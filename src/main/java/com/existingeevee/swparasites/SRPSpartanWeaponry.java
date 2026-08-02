@@ -8,6 +8,7 @@ import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.existingeevee.swparasites.config.ParasiteSWConfig;
 import com.existingeevee.swparasites.handlers.CrossbowBoltHandler;
 import com.existingeevee.swparasites.handlers.DisplayTooltipsHandler;
+import com.existingeevee.swparasites.handlers.LongbowArrowHandler;
 import com.existingeevee.swparasites.init.ParasiteSWItems;
 import com.existingeevee.swparasites.init.ParasiteSWProperties;
 import com.existingeevee.swparasites.init.weapons.ParasiteSWEvolution;
@@ -40,6 +41,7 @@ public class SRPSpartanWeaponry {
 	public void onPreInit(FMLPreInitializationEvent event) {
 		MinecraftForge.EVENT_BUS.register(DisplayTooltipsHandler.class);
 		MinecraftForge.EVENT_BUS.register(CrossbowBoltHandler.class);
+		MinecraftForge.EVENT_BUS.register(LongbowArrowHandler.class);
 		
 		MinecraftForge.EVENT_BUS.register(ParasiteSWItems.class);
 

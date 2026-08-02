@@ -71,6 +71,8 @@ public class ItemParasiteCrossbowNocube extends ItemCrossbow {
 		boolean pestilent = crossbow.getTranslationKey().equals("item.swparasites:spartanweaponry:crossbow_pestilent");
 		boolean gore = crossbow.getTranslationKey().equals("item.swparasites:spartanweaponry:crossbow_gore");
 		boolean evolution = crossbow.getTranslationKey().equals("item.swparasites:spartanweaponry:crossbow_evolution");
+		
+		boolean hijackedIron = crossbow.getTranslationKey().equals("item.swparasites:spartanweaponry:crossbow_hijacked_iron");
 
 		int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, crossbow);
 
@@ -109,6 +111,10 @@ public class ItemParasiteCrossbowNocube extends ItemCrossbow {
 		
 		if (evolution) {
 			bolt.getTags().add("ParasiteCrossbowEvolution");
+		}
+		
+		if (hijackedIron) {
+			bolt.getTags().add("ParasiteCrossbowHijackedIron");
 		}
 		
 		world.spawnEntity(bolt);

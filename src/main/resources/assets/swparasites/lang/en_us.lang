@@ -89,7 +89,6 @@ item.swparasites:spartanweaponry:crossbow_sentient.name=§6Sentient Crossbow
 item.swparasites:gauntlet_sentient.name=§6Sentient Gauntlet
 
 //hijacked iron weapons
-material.swparasites:hijacked_iron=§cHijacked Iron
 item.swparasites:greatsword_hijacked_iron.name=§cHijacked Iron Greatsword
 item.swparasites:boomerang_hijacked_iron.name=§cHijacked Iron Boomerang
 item.swparasites:battleaxe_hijacked_iron.name=§cHijacked Iron Battleaxe
@@ -160,8 +159,8 @@ tooltip.swparasites:shockwave.desc=§oDoesn't do anything... §c§oyet§7§o.
 
 tooltip.swparasites:malignant=Malignant
 tooltip.swparasites:malignant.desc=§o§c§oBleeds§7§o targets. Rends parasites. Induces §c§orage§7§o on target when near death.
-tooltip.swparasites:malignant=Malignant Parry %s
-tooltip.swparasites:malignant.desc=§oBlocking has a $s chance to §c§obleed§7§o attackers, §c§oenrage§7§o low health attackers, and deal damage to parasites.
+tooltip.swparasites:malignantparry=Malignant Parry %s
+tooltip.swparasites:malignantparry.desc=§oBlocking has a $s chance to §c§obleed§7§o attackers, §c§oenrage§7§o low health attackers, and deal damage to parasites.
 
 //nocubes combat
 item.swparasites:greatsword_twisted.name=Twisted Greatsword
@@ -267,5 +266,8 @@ easter_egg.swparasites:sweebozo.desc=§6Sweeping
 easter_egg.swparasites:ev.desc=§6ExistingEevee §fwas here §c:3
 easter_egg.swparasites:light.desc=§6Light §fI §cHATE §fyou.
 
+material.swparasites:hijacked_iron=§cHijacked Iron
+
+//unused backup
 material.swparasites:living=§eLiving
 material.swparasites:sentient=§6Sentient
