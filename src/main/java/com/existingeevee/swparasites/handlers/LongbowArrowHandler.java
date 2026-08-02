@@ -15,7 +15,7 @@ public class LongbowArrowHandler {
 		Entity immSource = e.getSource().getImmediateSource();
 
 		
-		System.out.println(immSource.getTags());
+		//System.out.println(immSource.getTags()); evil print statement that crashes the fucking game
 		if (immSource instanceof IProjectile && immSource.getTags().contains("ParasiteLongbowHijackedIron")) {
 			EntityLivingBase player = (EntityLivingBase) e.getSource().getTrueSource();
 			HijackedHitEffects.apply(player, e.getEntityLiving());
